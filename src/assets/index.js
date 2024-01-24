@@ -17,18 +17,32 @@ import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
+import threejs from "./tech/threejs.svg";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import java from "./tech/java.png";
+import microsoftsql from "./tech/microsoftsql.png";
+import python from "./tech/python.png";
+import pytorch from "./tech/pytorch.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import purdue from "./company/purdue.png";
+import microsoft from "./company/microsoft.png";
+
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+
+import clientprototyping from "./projects/ClientPrototyping2.PNG";
+import editortrees from "./projects/EditorTree.png";
+import linter from "./projects/Linter.png";
+import portfolio from "./projects/Portfolio.png";
+import swimming from "./projects/SwimmingDatabase.png";
+import computerprocessor from "./projects/ComputerProcessor.png";
 
 export {
   logo,
@@ -59,4 +73,17 @@ export {
   carrent,
   jobit,
   tripguide,
+  clientprototyping,
+  editortrees,
+  linter,
+  computerprocessor,
+  portfolio,
+  swimming,
+  purdue,
+  microsoft,
+  java,
+  microsoftsql,
+  python,
+  pytorch
 };
+

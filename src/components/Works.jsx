@@ -60,7 +60,7 @@ const Works = () => {
         className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         These are my independent and course projects. Feel free to explore
-        my different projects and explore their GitHubs.
+        my different projects and their GitHubs.
       </motion.p>
     </div>
 
