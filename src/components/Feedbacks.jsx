@@ -27,7 +27,7 @@ const FeedbackCard = ({title, index, testimonial, name, designation, company, im
 
 const Feedbacks = () => {
   return (
-    <div classNa="mt-12 bg-black-100 rounded-[40px]">
+    <div className="mt-12 bg-black-100 rounded-[40px]">
       <div className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}>
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Delving deeper</p>

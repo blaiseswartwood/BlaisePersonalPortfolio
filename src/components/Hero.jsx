@@ -10,18 +10,18 @@ const Hero = () => {
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#0063DB]' />
-          <div className='w-1 sm:h-80 h-40 bg-[#0063DB]' />
+          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
+          <div className='w-1 sm:h-80 h-40 bg-[#915EFF]' />
         </div>
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#0063DB]'>Blaise Swartwood</span>
+            Hi, I'm <span className='text-[#915EFF]'>Blaise Swartwood</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I am a software engineer <br className='sm:block hidden' />
-            with a focus in data science <br className='sm:block hidden' />
-            and machine learning
+            A computer science major <br className='sm:block hidden'/>
+            focused on machine learning <br className='sm:block hidden'/>
+            and Engineering Management<br className='sm:block hidden' />
           </p>
         </div>
       </div>

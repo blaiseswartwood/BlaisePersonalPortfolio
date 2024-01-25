@@ -43,8 +43,10 @@ const About = () => {
       <motion.p 
         variants={fadeIn("","",0.1,1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I'm a computer science major at Rose-Hulman
-        Institute of Technology specializing in AI/Data Science.
+        I'm a computer science major at Rose-Hulman Institute of Technology.
+        I am also earning my Masters in Engineering Management during my 4 years of undergrad so that I 
+        both execute and lead a project successfully. My main interests lie in Machine Learning/AI, but I 
+        am flexible and willing to expand my skillset.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

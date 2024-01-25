@@ -24,7 +24,7 @@ const Tech = () => {
           {technologies.map((technology) => (
             <div className="w-28 h-28 text-center" key={technology.name}>
               <BallCanvas icon={technology.icon} />
-              <h4 className={styles.sectionSubText}> {technology.name} </h4>
+              <p className="text-secondary"> {technology.name}</p>
             </div>
 
           ))}

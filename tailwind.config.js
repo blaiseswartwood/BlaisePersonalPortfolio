@@ -23,5 +23,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [    function ({ addUtilities }) {
+    const newUtilities = {
+      '.darken-85': {
+        'filter': 'brightness(85%)',
+      },
+    };
+    addUtilities(newUtilities, ['responsive', 'hover']);
+  },],
 };

@@ -24,6 +24,7 @@ import {
     microsoftsql,
     python,
     pytorch,
+    scikitlearn,
   } from "../assets";
   
   export const navLinks = [
@@ -68,6 +69,10 @@ import {
     {
       name: "Python",
       icon: python,
+    },
+    {
+      name: "SciKit-Learn",
+      icon: scikitlearn,
     },
     {
       name: "PyTorch",
@@ -133,7 +138,7 @@ import {
     {
       title: "Parson's Problems",
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+        "CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts. Implementing an IRB approved trial in Rose-Hulman CSSE132 course",
       name: "Dr. Joseph Hollingsworth",
       designation: "Computer Science Professor",
       company: "Rose-Hulman Institute of Technology",
@@ -142,7 +147,7 @@ import {
     {
       title: "Criticality Score Algorithm",
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
+        "Improved the criticality score algorithm to rank the importance of open-source projects using machine learning in Python Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon",
       name: "Dr. Celik Berkay",
       designation: "Computer Science Professor",
       company: "Purdue University",
@@ -151,7 +156,7 @@ import {
     {
       title: "Neural Network Classification of Myopathy Signals",
       testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+        "Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair",
       name: "Dr. Abdulkadir Sengur",
       designation: "Electrical Engineering Professor",
       company: "Firat University",

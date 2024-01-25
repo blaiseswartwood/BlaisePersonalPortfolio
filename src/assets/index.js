@@ -24,6 +24,7 @@ import java from "./tech/java.png";
 import microsoftsql from "./tech/microsoftsql.png";
 import python from "./tech/python.png";
 import pytorch from "./tech/pytorch.png";
+import scikitlearn from "./tech/scikit-learn.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -84,6 +85,7 @@ export {
   java,
   microsoftsql,
   python,
-  pytorch
+  pytorch,
+  scikitlearn
 };
 
