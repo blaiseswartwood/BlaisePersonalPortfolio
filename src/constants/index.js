@@ -8,10 +8,7 @@ import {
     css,
     reactjs,
     tailwind,
-    mongodb,
     git,
-    starbucks,
-    tesla,
     clientprototyping,
     editortrees,
     linter,
@@ -134,33 +131,33 @@ import {
     },
   ];
   
-  const testimonials = [
+  const researchprojects = [
     {
       title: "Parson's Problems",
-      testimonial:
+      description:
         "CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts. Implementing an IRB approved trial in Rose-Hulman CSSE132 course",
-      name: "Dr. Joseph Hollingsworth",
+      mentor: "Dr. Joseph Hollingsworth",
       designation: "Computer Science Professor",
-      company: "Rose-Hulman Institute of Technology",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      institution: "Rose-Hulman Institute of Technology",
+      source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation"
     },
     {
       title: "Criticality Score Algorithm",
-      testimonial:
+      description:
         "Improved the criticality score algorithm to rank the importance of open-source projects using machine learning in Python Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon",
-      name: "Dr. Celik Berkay",
+      mentor: "Dr. Celik Berkay",
       designation: "Computer Science Professor",
-      company: "Purdue University",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+      institution: "Purdue University",
+      source_code_link: "https://github.com/rhit-swartwba/CriticalityScoreAnalysis",
     },
     {
       title: "Neural Network Classification of Myopathy Signals",
-      testimonial:
+      description:
         "Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair",
-      name: "Dr. Abdulkadir Sengur",
+      mentor: "Dr. Abdulkadir Sengur",
       designation: "Electrical Engineering Professor",
-      company: "Firat University",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      institution: "Firat University",
+      source_code_link: "https://github.com/rhit-swartwba/MyopathyClassification",
     },
   ];
   
@@ -293,4 +290,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, researchprojects, projects };

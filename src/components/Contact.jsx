@@ -51,9 +51,9 @@ const Contact = () => {
         email: '',
         message: '',
        }), (error) => {
-        setLoading(false)
+        setLoading(false);
         console.log(error);
-        alert('Something went wrong')
+        alert('Something went wrong');
        }
   }
 
