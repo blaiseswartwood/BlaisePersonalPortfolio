@@ -1,57 +1,75 @@
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
 import { researchprojects } from '../constants';
-import React, { useState } from "react";
+import { github, plus } from '../assets';
 
-// const ResearchCard = ({ title, index, description, mentor, designation, institution, source_code_link }) => (
-//   <motion.div
-//     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-//     className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
-//   >
-//     <h3 className="text-white font-bold text-[24px]">{title}</h3>
 
-//     <div className="flex-1 flex flex-col">
-//       <p className="text-white font-medium text-[16px]">
-//         <span className="blue-text-gradient">Mentor </span> {mentor}
-//       </p>
-//       <p className="mt-1 text-secondary text-[12px]"> {designation} of {institution} </p>
-//     </div>
+const ResearchCard = ({ title, index, description, mentor, designation, institution, source_code_link, extra_link, img, tags, date }) => (
+  <motion.div variants={fadeIn("left", "spring", index * 0.5, 0.75)}
+  >
+    <Tilt
+      options={{ max: 45, scale: 1, speed: 450 }}
+    >
+      <div className="p-[1px] rounded-2xl green-pink-gradient">
+        <div className="bg-black-200 p-7 rounded-3xl xs:w-[495px] w-full hover:bg-tertiary transition duration-300 ease-in-out">
 
-//     <div className="mt-1">
-//       <p className="text-white tracking-wider text-[18px]">{description}</p>
-//     </div>
-//   </motion.div>
-// )
+          <h3 className="text-white font-bold text-[28px]">{title}</h3>
 
-const ResearchCard = ({ item, width }) => {
-  return (
-    <div className="mt-5 carousel-item flex flex-col" style={{ width: width }}>
-      <h3 className="carousel-item-text text-white font-bold text-[32px]">{item.title}</h3>
-      <div className="flex-1 flex flex-col">
-        <p className="mt-2 carousel-item-text tracking-wider text-[18px]">{item.description}</p>
-        <p className="carousel-item-text text-white font-medium text-[16px]">
-          <span className="blue-text-gradient">Mentor </span> {item.mentor}
-        </p>
-        <p className="carousel-item-text text-secondary text-[12px]"> {item.designation} of {item.institution} </p>
+          <div className="flex-1 flex flex-col">
+            <p className=" text-secondary text-[14px]"> {date} </p>
+            <p className="text-secondary font-medium text-[14px]">
+              <span className="blue-text-gradient">Mentor:</span> {mentor}
+            </p>
+            <p className=" text-secondary text-[12px]"> {designation}, {institution} </p>
+          </div>
+
+          <div className="mt-3 relative w-full h-[230px]">
+            <img src={img} alt={title} className="w-full h-full object-cover rounded-2xl darken-85" />
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div
+                onClick={() => window.open(extra_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              >
+                <img src={plus} alt="extra" className="w-1/2 h-1/2 object-contain" />
+              </div>
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient w-10 h-10 ml-1 rounded-full flex justify-center items-center cursor-pointer"
+              >
+                <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
+              </div>
+
+            </div>
+          </div>
+
+          <div className="mt-1">
+            <ul className="mt-5 list-disc ml-5 space-y-2">
+              {description.map((point, index) => (
+                <li key={index}
+                  className="text-secondary text-[14px] pl-1 tracking-wider"
+                >{point}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                #{tag.name}
+              </p>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  );
-};
+    </Tilt>
+  </motion.div>
+)
 
 const Research = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const updateIndex = (newIndex) => {
-    if (newIndex < 0) {
-      newIndex = 0;
-    } else if (newIndex >= researchprojects.length) {
-      newIndex = researchprojects.length - 1;
-    }
-
-    setActiveIndex(newIndex);
-  };
   return (
     <div className="mt-12 bg-black-100 rounded-[40px]">
       <div className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}>
@@ -62,64 +80,9 @@ const Research = () => {
       </div>
 
       <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
-        <motion.div
-          variants={fadeIn("up", "spring", 0.5, 0.75)}>
-          <div className="carousel w-full bg-black-200 rounded-[40px]">
-            <div
-              className="inner round"
-              style={{
-                transform: `translate(-${activeIndex * 100}%)`
-              }}
-            >
-              {researchprojects.map((item) => {
-                return <ResearchCard item={item} width={"100%"} />;
-              })}
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          variants={fadeIn("up", "spring", 1, 0.75)}>
-          <div className="carousel-buttons justify-center text-center">
-            <button
-              className="button-arrow"
-              onClick={() => {
-                updateIndex(activeIndex - 1);
-              }}
-            >
-              <span className="material-symbols-outlined">arrow_back_ios</span>{" "}
-            </button>
-            <div className="indicators">
-              {researchprojects.map((item, index) => {
-                return (
-                  <button
-                    className="indicator-buttons"
-                    onClick={() => {
-                      updateIndex(index);
-                    }}
-                  >
-                    <span
-                      className={`material-symbols-outlined ${index === activeIndex
-                        ? "indicator-symbol-active"
-                        : "indicator-symbol"
-                        }`}
-                    >
-                      radio_button_checked
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-            <button
-              className="button-arrow"
-              onClick={() => {
-                updateIndex(activeIndex + 1);
-              }}
-            >
-              <span className="material-icons-outlined">arrow_forward_ios</span>
-            </button>
-          </div>
-        </motion.div>
+        {researchprojects.map((researchproject, index) => {
+          return <ResearchCard key={index} {...researchproject} />;
+        })}
       </div>
     </div>
   )

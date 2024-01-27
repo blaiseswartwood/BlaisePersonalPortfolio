@@ -7,6 +7,8 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import linkedin from "./linkedin.png";
+import plus from "./plus.png"
+
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -29,6 +31,9 @@ import linter from "./projects/Linter.png";
 import portfolio from "./projects/Portfolio.png";
 import swimming from "./projects/SwimmingDatabase.png";
 import computerprocessor from "./projects/ComputerProcessor.png";
+import criticalityscore from "./projects/criticalityscore.png";
+import myopathy from "./projects/Myopathy.png";
+import plearn from "./projects/plearn.png";
 
 export {
   logo,
@@ -59,6 +64,10 @@ export {
   pytorch,
   scikitlearn,
   linkedin,
+  plearn,
+  criticalityscore,
+  myopathy,
+  plus,
 };
 
 

@@ -22,6 +22,9 @@ import {
     python,
     pytorch,
     scikitlearn,
+    criticalityscore,
+    myopathy,
+    plearn,
   } from "../assets";
   
   export const navLinks = [
@@ -135,29 +138,83 @@ import {
     {
       title: "Parson's Problems",
       description:
-        "CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts. Implementing an IRB approved trial in Rose-Hulman CSSE132 course",
+        ["CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts.",
+        " Implementing an IRB approved trial in Rose-Hulman CSSE132 course"],
+        tags: [
+          {
+            name: "Education",
+            color: "blue-text-gradient",
+          },
+          {
+            name: "HTML",
+            color: "green-text-gradient",
+          },
+          {
+            name: "Java",
+            color: "pink-text-gradient",
+          },
+        ],
       mentor: "Dr. Joseph Hollingsworth",
-      designation: "Computer Science Professor",
+      designation: "Computer Science",
       institution: "Rose-Hulman Institute of Technology",
-      source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation"
+      source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation",
+      extra_link: "https://us.prairielearn.com/pl/course_instance/143635",
+      img: plearn,
+      date: "02/03/2023 - Current",
     },
     {
       title: "Criticality Score Algorithm",
       description:
-        "Improved the criticality score algorithm to rank the importance of open-source projects using machine learning in Python Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon",
+        ["Improved the criticality score algorithm to rank the importance of open-source projects using machine learning in Python",
+        "Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon"],
+        tags: [
+          {
+            name: "SciKit-Learn",
+            color: "blue-text-gradient",
+          },
+          {
+            name: "Machine Learning",
+            color: "green-text-gradient",
+          },
+          {
+            name: "Python",
+            color: "pink-text-gradient",
+          },
+        ],
       mentor: "Dr. Celik Berkay",
-      designation: "Computer Science Professor",
+      designation: "Computer Science",
       institution: "Purdue University",
       source_code_link: "https://github.com/rhit-swartwba/CriticalityScoreAnalysis",
+      extra_link: "https://drive.google.com/file/d/1QzbW7GuYYveRGOo0fwb-a43s3KiAaSU8/view?usp=sharing",
+      img: criticalityscore,
+      date: "06/01/2023 - 07/26/2023",
     },
     {
-      title: "Neural Network Classification of Myopathy Signals",
+      title: "Classifying Myopathy EMGs",
       description:
-        "Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair",
+        ["Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy",
+         "Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair"],
+         tags: [
+          {
+            name: "PyTorch",
+            color: "blue-text-gradient",
+          },
+          {
+            name: "MATLAB",
+            color: "green-text-gradient",
+          },
+          {
+            name: "Python",
+            color: "pink-text-gradient",
+          },
+        ],
       mentor: "Dr. Abdulkadir Sengur",
-      designation: "Electrical Engineering Professor",
+      designation: "Electrical Engineering",
       institution: "Firat University",
       source_code_link: "https://github.com/rhit-swartwba/MyopathyClassification",
+      extra_link: "https://projectboard.world/isef2021/project/cbio044---high-accuracy-classification-of-myopathy",
+      img: myopathy,
+      date: "05/02/2020 - 09/10/2020",
     },
   ];
   

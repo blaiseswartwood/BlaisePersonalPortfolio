@@ -2,7 +2,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { About, Contact, Education, Experience, Research, Hero, Navbar, Tech, Works,
 StarsCanvas, Footer} from './components';
-import Carousel from './components/Carousel';
 
 const App = () => {
   return (
@@ -13,7 +12,6 @@ const App = () => {
                 <Hero />
             </div>
             <About />
-            <Education />
             <Experience />
             <Tech />
             <Works />
