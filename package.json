@@ -18,11 +18,13 @@
     "framer-motion": "^10.18.0",
     "maath": "^0.10.7",
     "react": "^18.2.0",
+    "react-card-flip": "^1.2.2",
     "react-dom": "^18.2.0",
     "react-parallax-tilt": "^1.7.198",
     "react-router-dom": "^6.21.3",
     "react-slick": "^0.30.1",
     "react-vertical-timeline-component": "^3.6.0",
+    "slick-carousel": "^1.8.1",
     "three": "^0.160.0"
   },
   "devDependencies": {

@@ -219,3 +219,29 @@ body {
   background-color: #85a8c5;
 }
 
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  font-size: 12px;
+  line-height: 1;
+  color: #888;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.slick-dots button:hover {
+  opacity: 1;
+}

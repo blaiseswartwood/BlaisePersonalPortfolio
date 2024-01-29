@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="mt-12 flex w-full flex-col items-center justify-center py-5 md:flex-row md:justify-between max-w-7xl mx-auto">
               <Typography
                 variant="small"
-                className="mb-4 pl-10 text-center font-normal md:mb-0 text-secondary cursor-pointer flex"
+                className="mb-4 pl-10 text-center font-normal md:mb-0 text-secondary"
               >
                 &copy; {currentYear} 
                 {/* <a href="https://drive.google.com/file/d/10Ybj21mwfqhpkoe54ls5oZURLARTfiou/view?usp=sharing" target="_blank"> */}
@@ -23,7 +23,7 @@ const Footer = () => {
                 <Typography as="a" href="https://github.com/rhit-swartwba" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
                     <img src={github} alt="github" className="h-5 w-5 object-cover rounded-2xl"/>
                 </Typography>
-                <Typography as="a" href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" className="opacity-80 transition-opacity hover:opacity-100">
+                <Typography as="a" href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
                     <img src={linkedin} alt="LinkedIn" className="h-5 w-5 object-cover rounded-2xl"/>
                 </Typography>
               </div>

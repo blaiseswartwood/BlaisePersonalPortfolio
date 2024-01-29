@@ -8,7 +8,7 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import linkedin from "./linkedin.png";
 import plus from "./plus.png"
-
+import rosehulman from "./rosehulman.png"
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -68,6 +68,7 @@ export {
   criticalityscore,
   myopathy,
   plus,
+  rosehulman,
 };
 
 

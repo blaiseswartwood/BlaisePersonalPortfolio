@@ -25,6 +25,7 @@ import {
     criticalityscore,
     myopathy,
     plearn,
+    rosehulman,
   } from "../assets";
   
   export const navLinks = [
@@ -48,7 +49,7 @@ import {
       icon: web,
     },
     {
-      title: "Artifical Intelligence",
+      title: "Artificial Intelligence",
       icon: mobile,
     },
     {
@@ -60,6 +61,26 @@ import {
       icon: creator,
     },
   ];
+
+  const education = [
+    {
+        titlefront: "Bachelor's of Science, Computer Science",
+        school: "Rose-Hulman Institute of Technology",
+        iconfront: rosehulman,
+        date: "August 2022 - May 2026",
+        points: ["Artificial Intelligence", "Software Requirements Engineering", "Software Architecture Design",
+                "Introduction to Databases", "Operating Systems", "Web Development", "Data Structures and Algorithms"],
+        GPA: "4.0",
+    },
+    {
+        titlefront: "Master's in Engineering Management",
+        school: "Rose-Hulman Institute of Technology",
+        iconfront: rosehulman,
+        date: "August 2022 - May 2026",
+        points: ["Project Management", "Risk Analysis and Management", "Work Analysis and Design", "Measuring User Experience"],
+        GPA: "4.0",
+    },
+];
   
   const technologies = [
     {
@@ -347,4 +368,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, researchprojects, projects };
+  export { services, technologies, experiences, researchprojects, projects, education};
