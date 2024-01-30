@@ -9,13 +9,13 @@ import { SectionWrapper } from '../hoc'
 
 const EducationCardFront = ({ index, title, school, icon, onClick }) => {
     return (
-        <div className="xs:w-[400px] md:w-[550px] w-full" onClick={onClick} >
+        <div className="xs:w-[400px] md:w-[550px] w-full " onClick={onClick} >
             <motion.div
                 variants={fadeIn("left", "spring", 0.75 * index, 1.50)}
                 className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
             >
                 <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly 
-            items-center flex-col"
+            items-center flex-col hover:brightness-125 transition"
                 >
                     <img src={icon} alt={title} className="w-[150px] h-[150px] object-contain" />
                     <p className="text-secondary text-center text-[14px] -mt-5"> {school} </p>
@@ -32,7 +32,7 @@ const EducationCardBack = ({ date, gpa, points, onClick }) => {
             <div
                 className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
             >
-                <div className="bg-tertiary rounded-[20px] min-h-[280px] flex flex-col w-full"
+                <div className="bg-tertiary rounded-[20px] min-h-[280px] flex flex-col w-full hover:brightness-125 transition"
                 >
                     <div className="mt-4 mx-5">
 

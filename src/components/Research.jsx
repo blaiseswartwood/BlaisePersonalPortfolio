@@ -1,3 +1,4 @@
+import React, { useState} from 'react'
 import { motion } from 'framer-motion';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,14 +11,9 @@ import { researchprojects } from '../constants';
 import { github, plus } from '../assets';
 
 
-const ResearchCard = ({ title, index, description, mentor, designation, institution, source_code_link, extra_link, img, tags, date }) => (
-  // <motion.div variants={fadeIn("left", "spring", index * 0.5, 0.75)}
-  // >
-  //   <Tilt
-  //     options={{ max: 45, scale: 1, speed: 450 }}
-  //   >
-  <div className="p-[1px] rounded-2xl green-pink-gradient">
-    <div className="bg-black-200 p-7 rounded-3xl w-full hover:bg-tertiary transition duration-300 ease-in-out">
+const ResearchCard = ({ title, description, mentor, designation, institution, source_code_link, extra_link, img, tags, date }) => (
+  <div className="p-[1px] rounded-2xl green-pink-gradient w-5/6 flex justify-center items-center mx-auto">
+    <div className="bg-black-200 p-7 rounded-3xl">
 
       <h3 className="text-white font-bold text-[28px]">{title}</h3>
 
@@ -29,8 +25,8 @@ const ResearchCard = ({ title, index, description, mentor, designation, institut
         <p className=" text-secondary text-[12px]"> {designation}, {institution} </p>
       </div>
 
-      <div className="mt-3 relative w-full h-[400px]">
-        <img src={img} alt={title} className="w-full h-full object-cover rounded-2xl darken-85" />
+      <div className="mt-3 relative w-full h-1/2">
+        <img src={img} alt={title} className="w-full h-full object-cover rounded-2xl darken-75" />
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div
             onClick={() => window.open(extra_link, "_blank")}
@@ -72,6 +68,22 @@ const ResearchCard = ({ title, index, description, mentor, designation, institut
 )
 
 const Research = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const CustomPrevArrow = (props) => (
+    <div className="custom-prev-arrow cursor-pointer hover:opacity-100 " onClick={() => {
+      console.log('Left arrow clicked');
+      props.onClick();
+    }}>
+      <span className="material-symbols-outlined">arrow_back_ios</span>
+    </div>
+  );
+
+  const CustomNextArrow = (props) => (
+    <div className="custom-next-arrow cursor-pointer hover:opacity-100 " onClick={props.onClick}>
+      <span className="material-symbols-outlined">arrow_forward_ios</span>
+    </div>
+  );
 
   const settings = {
     dots: true,
@@ -79,6 +91,20 @@ const Research = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <CustomNextArrow/>,
+    prevArrow: <CustomPrevArrow/>,
+    customPaging: (index) => (
+      <div
+        className={`custom-dot ${activeIndex === index ? 'active' : ''}`}
+        onClick={() => {
+          setActiveIndex(index);
+        }}
+      ></div>
+    ),
+    afterChange: (index) => {
+      console.log('Slide changed to index:', index);
+      setActiveIndex(index);
+    },
   };
 
   return (
@@ -89,6 +115,8 @@ const Research = () => {
           <h2 className={styles.sectionHeadText}> Research </h2>
         </motion.div>
       </div>
+
+      <motion.div variants={fadeIn("right", "spring", 0.5, 0.75)}>
       <div className={`${styles.paddingX} -mt-20 pb-14 gap-7`}>
         <Slider {...settings}>
           {researchprojects.map((researchproject, index) => {
@@ -96,6 +124,8 @@ const Research = () => {
           })}
         </Slider>
       </div>
+      </motion.div>
+
 
     </div>
   )

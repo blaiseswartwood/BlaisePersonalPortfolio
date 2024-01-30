@@ -28,6 +28,9 @@ module.exports = {
       '.darken-85': {
         'filter': 'brightness(85%)',
       },
+      '.darken-75': {
+        'filter': 'brightness(75%)',
+      },
     };
     addUtilities(newUtilities, ['responsive', 'hover']);
   },],
