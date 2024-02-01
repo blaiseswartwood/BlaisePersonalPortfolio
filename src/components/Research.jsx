@@ -12,7 +12,7 @@ import { github, plus } from '../assets';
 
 
 const ResearchCard = ({ title, description, mentor, designation, institution, source_code_link, extra_link, img, tags, date }) => (
-  <div className="p-[1px] rounded-2xl green-pink-gradient w-5/6 flex justify-center items-center mx-auto">
+  <div className="p-[1px] rounded-2xl green-pink-gradient xs:w-[360px] sm:w-5/6 flex justify-center items-center mx-auto shadow-card">
     <div className="bg-black-200 p-7 rounded-3xl">
 
       <h3 className="text-white font-bold text-[28px]">{title}</h3>
@@ -72,7 +72,6 @@ const Research = () => {
 
   const CustomPrevArrow = (props) => (
     <div className="custom-prev-arrow cursor-pointer hover:opacity-100 " onClick={() => {
-      console.log('Left arrow clicked');
       props.onClick();
     }}>
       <span className="material-symbols-outlined">arrow_back_ios</span>
@@ -102,7 +101,6 @@ const Research = () => {
       ></div>
     ),
     afterChange: (index) => {
-      console.log('Slide changed to index:', index);
       setActiveIndex(index);
     },
   };
@@ -117,7 +115,7 @@ const Research = () => {
       </div>
 
       <motion.div variants={fadeIn("right", "spring", 0.5, 0.75)}>
-      <div className={`${styles.paddingX} -mt-20 pb-14 gap-7`}>
+      <div className={`${styles.paddingX} -mt-36 sm:-mt-20 pb-14 gap-7`}>
         <Slider {...settings}>
           {researchprojects.map((researchproject, index) => {
             return <ResearchCard key={index} {...researchproject} />;
