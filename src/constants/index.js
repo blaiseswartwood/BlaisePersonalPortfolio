@@ -131,7 +131,7 @@ import {
   
   const experiences = [
     {
-      title: "Purdue Research Intern",
+      title: "Research Intern",
       company_name: "Purdue University",
       icon: purdue,
       iconBg: "#CEB888",
@@ -160,6 +160,7 @@ import {
       title: "Parson's Problems",
       description:
         ["CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts.",
+        "Wrote questions in html along with the parsing information in Java",
         " Implementing an IRB approved trial in Rose-Hulman CSSE132 course"],
         tags: [
           {
@@ -186,7 +187,8 @@ import {
     {
       title: "Criticality Score Algorithm",
       description:
-        ["Improved the criticality score algorithm to rank the importance of open-source projects using machine learning in Python",
+        ["Improved the criticality score algorithm to rank the importance of open-source projects",
+        "Used SciKit-Learn and Python to run machine learning t-SNE visualization, regressions, and recursive feature analysis",
         "Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon"],
         tags: [
           {
@@ -214,6 +216,7 @@ import {
       title: "Classifying Myopathy EMGs",
       description:
         ["Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy",
+          "Transformed images into spectrogram and scalogram images to improve neural network detection",
          "Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair"],
          tags: [
           {
@@ -241,7 +244,7 @@ import {
   
   const projects = [
     {
-      name: "This Website",
+      name: "Portfolio Website",
       description:
         "Personal portfolio website with 3-D image displays and advanced animation",
       tags: [
@@ -306,7 +309,7 @@ import {
     {
       name: "Computer Processor",
       description:
-        "Java graphics interface to keep track of local swimmers times with a MySQL database.",
+        "Designed a multi-cycle load-store computer processor for simplicity and speed.",
       tags: [
         {
           name: "Verilog",
@@ -348,7 +351,7 @@ import {
     {
       name: "Editor Trees",
       description:
-        "Created a data structure for a text editor: a balanced tree with rank and balance codes.",
+        "Created a data structure for a text editor: a balanced tree with rank and balance codes",
       tags: [
         {
           name: "Java",
