@@ -21,18 +21,12 @@ const Contact = () => {
     setForm({...form, [name]: value})
   }
 
-
-  //template_mezpsw7
-  //service_iviapem
-  //I17PFOqYBXWlyOjnV
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
     emailjs.send(
-      'service_iviapem', 
-      'template_mezpsw7',
+
        {
           from_name: form.name,
           to_name: 'Blaise',
@@ -40,7 +34,6 @@ const Contact = () => {
           to_email: 'blaise.swartwood@gmail.com',
           message: form.message, 
        },
-       'I17PFOqYBXWlyOjnV'
        ).then(() => {
         setLoading(false);
           alert('Thank you. I will get back to you as soon as possible!')
