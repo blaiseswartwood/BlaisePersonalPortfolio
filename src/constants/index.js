@@ -26,6 +26,8 @@ import {
     myopathy,
     plearn,
     rosehulman,
+    sunsetsails,
+    xv6threads,
   } from "../assets";
   
   export const navLinks = [
@@ -244,6 +246,27 @@ import {
   
   const projects = [
     {
+      name: "Sunset Sails",
+      description:
+        "Designed the Sunset Sails website and functionality for business clients",
+      tags: [
+        {
+          name: "Typescript",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "TailwindCSS",
+          color: "green-text-gradient",
+        },
+        {
+          name: "NextJS",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sunsetsails,
+      source_code_link: "https://sunsetsailshawaii.com",
+    },
+    {
       name: "Portfolio Website",
       description:
         "Personal portfolio website with 3-D image displays and advanced animation",
@@ -263,6 +286,27 @@ import {
       ],
       image: portfolio,
       source_code_link: "https://github.com/rhit-swartwba/BlaisePersonalPortfolio",
+    },
+        {
+      name: "XV6 Threads",
+      description:
+        "Implemented thread API and syscalls in the xv6 operating system",
+      tags: [
+        {
+          name: "C",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Operating Systems",
+          color: "green-text-gradient",
+        },
+        {
+          name: "xv6",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: xv6threads,
+      source_code_link: "https://github.com/rhit-swartwba/XV6Threads",
     },
     {
       name: "Client Prototyping",

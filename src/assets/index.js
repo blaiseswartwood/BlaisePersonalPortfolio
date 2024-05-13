@@ -34,6 +34,8 @@ import computerprocessor from "./projects/ComputerProcessor.png";
 import criticalityscore from "./projects/criticalityscore.png";
 import myopathy from "./projects/Myopathy.png";
 import plearn from "./projects/plearn.png";
+import sunsetsails from "./projects/sunsetsailwebsite.png"
+import xv6threads from "./projects/xv6threads.png"
 
 export {
   logo,
@@ -69,6 +71,8 @@ export {
   myopathy,
   plus,
   rosehulman,
+  sunsetsails,
+  xv6threads,
 };
 
 
