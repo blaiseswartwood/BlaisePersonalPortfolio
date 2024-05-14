@@ -28,6 +28,7 @@ import {
     rosehulman,
     sunsetsails,
     xv6threads,
+    indiana211,
   } from "../assets";
   
   export const navLinks = [
@@ -309,9 +310,9 @@ import {
       source_code_link: "https://github.com/rhit-swartwba/XV6Threads",
     },
     {
-      name: "Client Prototyping",
+      name: "Valley Inns Prototyping",
       description:
-        "Eliciting needs and features from a client and transforming that software requirements",
+        "Eliciting needs and features from hotel management clients into software requirements",
       tags: [
         {
           name: "Balsamiq",
@@ -328,6 +329,27 @@ import {
       ],
       image: clientprototyping,
       source_code_link: "https://github.com/rhit-swartwba/ClientPrototyping",
+    },
+    {
+      name: "Indiana 211 Welfare",
+      description:
+        "Created a website prototype for Indiana 211 government clients for welfare programs",
+      tags: [
+        {
+          name: "Clients",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Requirements",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Javascript",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: indiana211,
+      source_code_link: "https://github.com/rhit-swartwba/Indiana211Website",
     },
     {
       name: "Swimming Database",

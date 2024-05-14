@@ -36,6 +36,7 @@ import myopathy from "./projects/Myopathy.png";
 import plearn from "./projects/plearn.png";
 import sunsetsails from "./projects/sunsetsailwebsite.png"
 import xv6threads from "./projects/xv6threads.png"
+import indiana211 from "./projects/Indiana211Website.png"
 
 export {
   logo,
@@ -73,6 +74,7 @@ export {
   rosehulman,
   sunsetsails,
   xv6threads,
+  indiana211,
 };
 
 
