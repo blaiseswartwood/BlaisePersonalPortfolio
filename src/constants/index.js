@@ -48,7 +48,7 @@ import {
   
   const services = [
     {
-      title: "Engineering Management",
+      title: "Software Engineering",
       icon: web,
     },
     {
@@ -75,14 +75,14 @@ import {
                 "Introduction to Databases", "Operating Systems", "Web Development", "Data Structures and Algorithms"],
         GPA: "4.0",
     },
-    {
-        titlefront: "Master's in Engineering Management",
-        school: "Rose-Hulman Institute of Technology",
-        iconfront: rosehulman,
-        date: "August 2022 - May 2026",
-        points: ["Project Management", "Risk Analysis and Management", "Work Analysis and Design", "Measuring User Experience"],
-        GPA: "4.0",
-    },
+    // {
+    //     titlefront: "Master's in Engineering Management",
+    //     school: "Rose-Hulman Institute of Technology",
+    //     iconfront: rosehulman,
+    //     date: "August 2022 - May 2026",
+    //     points: ["Project Management", "Risk Analysis and Management", "Work Analysis and Design", "Measuring User Experience"],
+    //     GPA: "4.0",
+    // },
 ];
   
   const technologies = [
@@ -153,7 +153,20 @@ import {
       iconBg: "#D3D3D3",
       date: "June 2024 - September 2024",
       points: [
-        "TBD",
+        "Designed a new 3rd party endpoint feature in Azure Front Door (AFD), Azure's content delivery network",
+        "Developed the two-rule design to promote customer flexibility in AFD's rules engine",
+        "Added customer ability to send client requests to third-party endpoints using a subrequest",
+        "Implemented in both the control and data plane and tested end-to-end in test environments using a security use case"
+      ],
+    },
+    {
+      title: "Software Engineer",
+      company_name: "Microsoft",
+      icon: microsoft,
+      iconBg: "#D3D3D3",
+      date: "July 2025 - Current",
+      points: [
+        "Azure Networking software engineer"
       ],
     },
   ];
@@ -247,9 +260,30 @@ import {
   
   const projects = [
     {
+      name: "Rust ASCII Art Animation",
+      description:
+        "Designed a Rust ASCII animation framework using OpenGL",
+      tags: [
+        {
+          name: "Rust",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "OpenGL",
+          color: "green-text-gradient",
+        },
+        {
+          name: "System Design",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sunsetsails,
+      source_code_link: "https://sunsetsailshawaii.com",
+    },
+    {
       name: "Sunset Sails",
       description:
-        "Designed the Sunset Sails website and functionality for business clients",
+        "Designed the Sunset Sails website for business clients",
       tags: [
         {
           name: "Typescript",
@@ -261,6 +295,27 @@ import {
         },
         {
           name: "NextJS",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sunsetsails,
+      source_code_link: "https://sunsetsailshawaii.com",
+    },
+    {
+      name: "Deep Learning",
+      description:
+        "Created a prediction system for ",
+      tags: [
+        {
+          name: "PyTorch",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Python",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Deep Learning",
           color: "pink-text-gradient",
         },
       ],
@@ -310,7 +365,7 @@ import {
       source_code_link: "https://github.com/rhit-swartwba/XV6Threads",
     },
     {
-      name: "Valley Inns Prototyping",
+      name: "ValleyInns SRE",
       description:
         "Eliciting needs and features from hotel management clients into software requirements",
       tags: [

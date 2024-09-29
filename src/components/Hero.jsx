@@ -22,7 +22,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             A computer science major <br className='sm:block hidden' />
             focused on machine learning <br className='sm:block hidden' />
-            and Engineering Management<br className='sm:block hidden' />
+            and artificial intelligence<br className='sm:block hidden' />
           </p>
         </div>
       </div>

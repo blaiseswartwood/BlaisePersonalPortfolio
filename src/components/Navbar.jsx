@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className="font-poppins text-secondary hover:text-white font-medium cursor-point text-[18px]">
-            <a href="https://drive.google.com/file/d/10Ybj21mwfqhpkoe54ls5oZURLARTfiou/view?usp=sharing" target="_blank">Resume</a>
+            <a href="https://drive.google.com/file/d/1GelExml7GkmBehUtWqChXHXopSoHezhd/view?usp=sharing" target="_blank">Resume</a>
           </li>
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">

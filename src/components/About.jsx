@@ -45,8 +45,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
         I'm a computer science major at Rose-Hulman Institute of Technology with an 
-        interest in business management. I'm earing my Masters in Engineering Management to
-        execute and lead a project successfully. My main interests lie in Machine Learning/AI, but I
+        interest in data science. I'm earing my Bachelors in Computer Science as well
+        as minors in Mathematics and Data Science. My main interests lie in Machine Learning/AI, but I
         am flexible and willing to expand my skillset.
       </motion.p>
 

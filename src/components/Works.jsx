@@ -9,7 +9,7 @@ import { fadeIn, textVariant } from '../utils/motion';
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
-    <Tilt className="xs:w-[360px] w-full">
+    <Tilt className="xs:w-[300px] sm:w-[360px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
@@ -20,10 +20,9 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             scale: 1,
             speed: 450
           }}
-          className="bg-tertiary rounded-[20px] p-3 xs:p-5"
+          className="bg-tertiary rounded-[20px] p-2 sm:p-5"
         >
-
-          <div className="relative w-full h-[230px]">
+          <div className="relative w-full h-[200px] sm:h-[230px]">
             <img src={image} alt={name} className="w-full h-full object-cover rounded-2xl darken-85" />
             <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
               <div
@@ -34,9 +33,11 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
               </div>
             </div>
           </div>
+          {/* Issues in sizing occur here */}
           <div className="mt-5">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[14px]">{description}</p>
+            {/* Sizing of text issue on website, on mobile if these are not commented out, will not show up at all */}
+            <h3 className=" text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
+            <p className=" mt-2 text-secondary text-[14px]">{description}</p>
           </div>
 
           <div className="mt-4 flex flex-wrap gap-2">
@@ -72,7 +73,7 @@ const Works = () => {
         topics in computer science. Feel free to explore them and their GitHubs in more detail.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-7 ">
+      <div className="mt-10 flex flex-wrap gap-7 justify-center sm:justify-start">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`}
             index={index}
