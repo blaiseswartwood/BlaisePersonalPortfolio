@@ -9,6 +9,7 @@ import close from "./close.svg";
 import linkedin from "./linkedin.png";
 import plus from "./plus.png"
 import rosehulman from "./rosehulman.png"
+import masters from "./masters.png"
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -24,6 +25,7 @@ import scikitlearn from "./tech/scikit-learn.png";
 
 import purdue from "./company/purdue.png";
 import microsoft from "./company/microsoft.png";
+import googlelogo from "./company/google.webp";
 
 import clientprototyping from "./projects/ClientPrototyping2.PNG";
 import editortrees from "./projects/EditorTree.png";
@@ -37,6 +39,10 @@ import plearn from "./projects/plearn.png";
 import sunsetsails from "./projects/sunsetsailwebsite.png"
 import xv6threads from "./projects/xv6threads.png"
 import indiana211 from "./projects/Indiana211Website.png"
+import poker from "./projects/Poker.png"
+import swimdata from "./projects/SwimData.png"
+import pneu from "./projects/pneu.png"
+import rustascii from "./projects/rustascii.png"
 
 export {
   logo,
@@ -75,6 +81,12 @@ export {
   sunsetsails,
   xv6threads,
   indiana211,
+  googlelogo,
+  poker,
+  swimdata,
+  pneu,
+  rustascii,
+  masters,
 };
 
 

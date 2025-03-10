@@ -33,9 +33,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
               </div>
             </div>
           </div>
-          {/* Issues in sizing occur here */}
           <div className="mt-5">
-            {/* Sizing of text issue on website, on mobile if these are not commented out, will not show up at all */}
             <h3 className=" text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
             <p className=" mt-2 text-secondary text-[14px]">{description}</p>
           </div>
@@ -69,8 +67,8 @@ const Works = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        These are my independent and course projects, which span across many different <br className='sm:block hidden' />
-        topics in computer science. Feel free to explore them and their GitHubs in more detail.
+        These are my independent and course projects, which span across various <br className='sm:block hidden' />
+        topics in computer science. Feel free to explore them and my Github in more detail.
       </motion.p>
 
       <div className="mt-10 flex flex-wrap gap-7 justify-center sm:justify-start">

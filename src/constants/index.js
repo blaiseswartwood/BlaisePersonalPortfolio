@@ -29,6 +29,13 @@ import {
     sunsetsails,
     xv6threads,
     indiana211,
+    googlelogo,
+    poker,
+    swimdata,
+    pneu,
+    rustascii,
+    masters,
+
   } from "../assets";
   
   export const navLinks = [
@@ -52,7 +59,7 @@ import {
       icon: web,
     },
     {
-      title: "Artificial Intelligence",
+      title: "Generative AI",
       icon: mobile,
     },
     {
@@ -70,19 +77,21 @@ import {
         titlefront: "Bachelor's of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
         iconfront: rosehulman,
-        date: "August 2022 - May 2026",
+        date: "August 2022 - May 2025",
         points: ["Artificial Intelligence", "Software Requirements Engineering", "Software Architecture Design",
                 "Introduction to Databases", "Operating Systems", "Web Development", "Data Structures and Algorithms"],
+        GPA: "4.0  Minor: Mathematics, Data Science",
+    },
+    {
+        titlefront: "Masters in Science, Data Science",
+        school: "Georgia Institute of Technology",
+        iconfront: masters,
+        date: "August 2025 - May 2027",
+        points: ["Introduction to Graduate Algorithms", "Machine Learning", "Reinforcement Learning and Decision Making", "Machine Learning for Trading", "Bayesian Methods", 
+          "Big Data for Health", "Distributed Computing", "System Design for Cloud Computing", "Network Security", "Robotics: AI Techniques"
+        ],
         GPA: "4.0",
     },
-    // {
-    //     titlefront: "Master's in Engineering Management",
-    //     school: "Rose-Hulman Institute of Technology",
-    //     iconfront: rosehulman,
-    //     date: "August 2022 - May 2026",
-    //     points: ["Project Management", "Risk Analysis and Management", "Work Analysis and Design", "Measuring User Experience"],
-    //     GPA: "4.0",
-    // },
 ];
   
   const technologies = [
@@ -147,7 +156,7 @@ import {
       ],
     },
     {
-      title: "Software Engineering Intern",
+      title: "Software Engineer Intern",
       company_name: "Microsoft",
       icon: microsoft,
       iconBg: "#D3D3D3",
@@ -157,6 +166,16 @@ import {
         "Developed the two-rule design to promote customer flexibility in AFD's rules engine",
         "Added customer ability to send client requests to third-party endpoints using a subrequest",
         "Implemented in both the control and data plane and tested end-to-end in test environments using a security use case"
+      ],
+    },
+    {
+      title: "Software Engineer Intern",
+      company_name: "Google",
+      icon: googlelogo,
+      iconBg: "#D3D3D3",
+      date: "June 2025 - September 2025",
+      points: [
+        "Contract lifecycle management using LLMs"
       ],
     },
     {
@@ -198,7 +217,7 @@ import {
       source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation",
       extra_link: "https://us.prairielearn.com/pl/course_instance/143635",
       img: plearn,
-      date: "02/03/2023 - Current",
+      date: "02/03/2023 - 05/02/2025",
     },
     {
       title: "Criticality Score Algorithm",
@@ -262,7 +281,7 @@ import {
     {
       name: "Rust ASCII Art Animation",
       description:
-        "Designed a Rust ASCII animation framework using OpenGL",
+        "Designed a Rust ASCII animation framework using OpenGL with an XP approach",
       tags: [
         {
           name: "Rust",
@@ -277,8 +296,8 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: sunsetsails,
-      source_code_link: "https://sunsetsailshawaii.com",
+      image: rustascii,
+      source_code_link: "https://github.com/rhit-Dexterra/SeniorProject",
     },
     {
       name: "Sunset Sails",
@@ -302,9 +321,114 @@ import {
       source_code_link: "https://sunsetsailshawaii.com",
     },
     {
-      name: "Deep Learning",
+      name: "Algorithmic Game Theory",
       description:
-        "Created a prediction system for ",
+        "Analyzed webscraped data to find trends in high school versus college swim times",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Pandas",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Data Mining",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimdata,
+      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+    },
+    {
+      name: "Generative AI",
+      description:
+        "Analyzed webscraped data to find trends in high school versus college swim times",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Pandas",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Data Mining",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimdata,
+      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+    },
+    {
+      name: "Computer Networks",
+      description:
+        "Analyzed webscraped data to find trends in high school versus college swim times",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Pandas",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Data Mining",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimdata,
+      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+    },
+    {
+      name: "Blackjack Detection",
+      description:
+        "Created a card dataset generator and live detection system to guide blackjack players",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "MATLAB",
+          color: "green-text-gradient",
+        },
+        {
+          name: "YOLO",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: poker,
+      source_code_link: "https://github.com/rhit-swartwba/PlayingCardHandRecognition",
+    },
+    {
+      name: "College Swim Analysis",
+      description:
+        "Analyzed webscraped data to find trends in high school versus college swim times",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Pandas",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Data Mining",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimdata,
+      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+    },
+    {
+      name: "Pneumonia Detection",
+      description:
+        "Used a ResNet50 model to distinguish normal and pneumonia chest X-rays",
       tags: [
         {
           name: "PyTorch",
@@ -319,8 +443,8 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: sunsetsails,
-      source_code_link: "https://sunsetsailshawaii.com",
+      image: pneu,
+      source_code_link: "https://github.com/rhit-swartwba/XRayPneumoniaDetection",
     },
     {
       name: "Portfolio Website",

@@ -26,8 +26,6 @@ const ServiceCard = ({ index, title, icon }) => {
           <img src={icon} alt={title} className="w-16 h-16 object-contain" />
           <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
         </div>
-
-
       </motion.div>
     </Tilt>
   )
@@ -44,10 +42,11 @@ const About = () => {
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I'm a computer science major at Rose-Hulman Institute of Technology with an 
-        interest in data science. I'm earing my Bachelors in Computer Science as well
-        as minors in Mathematics and Data Science. My main interests lie in Machine Learning/AI, but I
-        am flexible and willing to expand my skillset.
+        I'm a software engineer with an interest in data science. I have 
+        work experience at Microsoft as a software engineer, along with internships at 
+        Google and Microsoft. I've earned my Bachelors in Computer Science along with
+        minors in Mathematics and Data Science. I am pursing my Masters in Data Science 
+        at . My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
