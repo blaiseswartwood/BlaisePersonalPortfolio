@@ -45,8 +45,9 @@ const About = () => {
         I'm a software engineer with an interest in data science. I have 
         work experience at Microsoft as a software engineer, along with internships at 
         Google and Microsoft. I've earned my Bachelors in Computer Science along with
-        minors in Mathematics and Data Science. I am pursing my Masters in Data Science 
-        at . My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
+        minors in Mathematics and Data Science at Rose-Hulman Institute of Technology. 
+        I am pursing my Masters in Data Science at the University of California, Berkeley. 
+        My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

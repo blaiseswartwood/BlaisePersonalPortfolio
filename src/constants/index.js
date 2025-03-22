@@ -8,6 +8,11 @@ import {
     css,
     reactjs,
     tailwind,
+    clogo,
+    rust,
+    matlab,
+    nginx,
+    rlogo,
     git,
     clientprototyping,
     editortrees,
@@ -54,10 +59,7 @@ import {
   ];
   
   const services = [
-    {
-      title: "Software Engineering",
-      icon: web,
-    },
+
     {
       title: "Generative AI",
       icon: mobile,
@@ -70,9 +72,23 @@ import {
       title: "Data Science",
       icon: creator,
     },
+    {
+      title: "Software Engineering",
+      icon: web,
+    },
   ];
 
   const education = [
+    {
+      titlefront: "Masters in Science, Data Science",
+      school: "Georgia Institute of Technology",
+      iconfront: masters,
+      date: "August 2025 - May 2028",
+      points: ["Introduction to Graduate Algorithms", "Machine Learning", "Reinforcement Learning and Decision Making", "Machine Learning for Trading", "Bayesian Methods", 
+        "Big Data for Health", "Distributed Computing", "System Design for Cloud Computing", "Network Security", "Robotics: AI Techniques"
+      ],
+      GPA: "4.0",
+    },
     {
         titlefront: "Bachelor's of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
@@ -82,16 +98,7 @@ import {
                 "Introduction to Databases", "Operating Systems", "Web Development", "Data Structures and Algorithms"],
         GPA: "4.0  Minor: Mathematics, Data Science",
     },
-    {
-        titlefront: "Masters in Science, Data Science",
-        school: "Georgia Institute of Technology",
-        iconfront: masters,
-        date: "August 2025 - May 2027",
-        points: ["Introduction to Graduate Algorithms", "Machine Learning", "Reinforcement Learning and Decision Making", "Machine Learning for Trading", "Bayesian Methods", 
-          "Big Data for Health", "Distributed Computing", "System Design for Cloud Computing", "Network Security", "Robotics: AI Techniques"
-        ],
-        GPA: "4.0",
-    },
+
 ];
   
   const technologies = [
@@ -112,33 +119,30 @@ import {
       icon: pytorch,
     },
     {
-      name: "Git",
-      icon: git,
+      name: "R",
+      icon: rlogo,
+    },
+    {
+      name: "MATLAB",
+      icon: matlab,
+    },
+    {
+      name: "C",
+      icon: clogo,
+    },
+    {
+      name: "Rust",
+      icon: rust,
+    },
+    {
+      name: "Nginx",
+      icon: nginx,
     },
     {
       name: "MicrosoftSQL",
       icon: microsoftsql,
     },
-    {
-      name: "HTML",
-      icon: html,
-    },
-    {
-      name: "CSS",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
+
   ];
   
   const experiences = [
@@ -215,7 +219,7 @@ import {
       designation: "Computer Science",
       institution: "Rose-Hulman Institute of Technology",
       source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation",
-      extra_link: "https://us.prairielearn.com/pl/course_instance/143635",
+      extra_link: "https://drive.google.com/file/d/1yV_amOxD7P3IUF6ptWxDlPKKbTiq6Y_v/view?usp=sharing",
       img: plearn,
       date: "02/03/2023 - 05/02/2025",
     },
@@ -271,7 +275,7 @@ import {
       designation: "Electrical Engineering",
       institution: "Firat University",
       source_code_link: "https://github.com/rhit-swartwba/MyopathyClassification",
-      extra_link: "https://projectboard.world/isef2021/project/cbio044---high-accuracy-classification-of-myopathy",
+      extra_link: "https://isef.net/project/cbio044---high-accuracy-classification-of-myopathy",
       img: myopathy,
       date: "05/02/2020 - 09/10/2020",
     },
@@ -491,7 +495,7 @@ import {
     {
       name: "ValleyInns SRE",
       description:
-        "Eliciting needs and features from hotel management clients into software requirements",
+        "Eliciting needs and features from clients into software requirements",
       tags: [
         {
           name: "Balsamiq",

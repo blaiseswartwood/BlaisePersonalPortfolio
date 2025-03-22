@@ -22,6 +22,11 @@ import microsoftsql from "./tech/microsoftsql.png";
 import python from "./tech/python.png";
 import pytorch from "./tech/pytorch.png";
 import scikitlearn from "./tech/scikit-learn.png";
+import rust from "./tech/rust.png";
+import nginx from "./tech/Nginx.png";
+import rlogo from "./tech/R.png";
+import matlab from "./tech/matlab.png";
+import clogo from "./tech/c.png";
 
 import purdue from "./company/purdue.png";
 import microsoft from "./company/microsoft.png";
@@ -71,6 +76,11 @@ export {
   microsoftsql,
   python,
   pytorch,
+  rlogo,
+  nginx,
+  matlab,
+  rust,
+  clogo,
   scikitlearn,
   linkedin,
   plearn,
