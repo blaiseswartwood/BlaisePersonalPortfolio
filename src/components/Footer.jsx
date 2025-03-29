@@ -20,7 +20,7 @@ const Footer = () => {
               </Typography>
 
               <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-                <Typography as="a" href="https://github.com/rhit-swartwba" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
+                <Typography as="a" href="https://github.com/blaiseswartwood" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
                     <img src={github} alt="github" className="h-5 w-5 object-cover rounded-2xl"/>
                 </Typography>
                 <Typography as="a" href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">

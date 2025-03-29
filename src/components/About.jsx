@@ -42,11 +42,11 @@ const About = () => {
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        I'm a software engineer with an interest in data science. I have 
-        work experience at Microsoft as a software engineer, along with internships at 
-        Google and Microsoft. I've earned my Bachelors in Computer Science along with
+        I'm a software engineer with an interest in data science, generative AI, and
+        machine learning. I have work experience at Microsoft, along with internships at 
+        Google and Microsoft. I am pursing my Masters in Data Science at the University of California, Berkeley.  
+        I've earned my Bachelors in Computer Science along with
         minors in Mathematics and Data Science at Rose-Hulman Institute of Technology. 
-        I am pursing my Masters in Data Science at the University of California, Berkeley. 
         My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
       </motion.p>
 

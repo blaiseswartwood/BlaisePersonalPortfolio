@@ -80,17 +80,23 @@ import {
 
   const education = [
     {
-      titlefront: "Masters in Science, Data Science",
-      school: "Georgia Institute of Technology",
+      titlefront: "Masters in Information and Data Science",
+      school: "University of California, Berkeley",
       iconfront: masters,
       date: "August 2025 - May 2028",
-      points: ["Introduction to Graduate Algorithms", "Machine Learning", "Reinforcement Learning and Decision Making", "Machine Learning for Trading", "Bayesian Methods", 
-        "Big Data for Health", "Distributed Computing", "System Design for Cloud Computing", "Network Security", "Robotics: AI Techniques"
+      points: [ "Research Design and Application for Data and Analysis",
+                 "Statistics for Data Science",
+                 "Fundamentals of Data Engineering",
+                 "Applied Machine Learning",
+                 "Machine Learning at Scale",
+                 "Natural Lang Processing with Deep Learning",
+                 "Generative AI: Foundations, Techniques, and Challenges",
+                 "Machine Learning Systems Engineering",
       ],
       GPA: "4.0",
     },
     {
-        titlefront: "Bachelor's of Science, Computer Science",
+        titlefront: "Bachelors of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
         iconfront: rosehulman,
         date: "August 2022 - May 2025",
