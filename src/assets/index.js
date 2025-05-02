@@ -48,6 +48,11 @@ import poker from "./projects/Poker.png"
 import swimdata from "./projects/SwimData.png"
 import pneu from "./projects/pneu.png"
 import rustascii from "./projects/rustascii.png"
+import auction from "./projects/Auction.png"
+import lb from "./projects/lb.png"
+import bitnet from "./projects/bitnet.png"
+
+
 
 export {
   logo,
@@ -97,6 +102,9 @@ export {
   pneu,
   rustascii,
   masters,
+  auction,
+  lb,
+  bitnet,
 };
 
 

@@ -21,7 +21,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             A generative AI and <br className='sm:block hidden' />
-            machine learning focused <br className='sm:block hidden' />
+            data science focused <br className='sm:block hidden' />
             software engineer <br className='sm:block hidden' />
           </p>
         </div>

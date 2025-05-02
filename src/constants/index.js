@@ -40,6 +40,9 @@ import {
     pneu,
     rustascii,
     masters,
+    auction,
+    lb,
+    bitnet,
 
   } from "../assets";
   
@@ -65,11 +68,11 @@ import {
       icon: mobile,
     },
     {
-      title: "Machine Learning",
+      title: "Data Science",
       icon: backend,
     },
     {
-      title: "Data Science",
+      title: "Machine Learning",
       icon: creator,
     },
     {
@@ -85,13 +88,12 @@ import {
       iconfront: masters,
       date: "August 2025 - May 2028",
       points: [ "Research Design and Application for Data and Analysis",
-                 "Statistics for Data Science",
                  "Fundamentals of Data Engineering",
                  "Applied Machine Learning",
                  "Machine Learning at Scale",
+                 "Machine Learning Systems Engineering",
                  "Natural Lang Processing with Deep Learning",
                  "Generative AI: Foundations, Techniques, and Challenges",
-                 "Machine Learning Systems Engineering",
       ],
       GPA: "4.0",
     },
@@ -100,8 +102,13 @@ import {
         school: "Rose-Hulman Institute of Technology",
         iconfront: rosehulman,
         date: "August 2022 - May 2025",
-        points: ["Artificial Intelligence", "Software Requirements Engineering", "Software Architecture Design",
-                "Introduction to Databases", "Operating Systems", "Web Development", "Data Structures and Algorithms"],
+        points: ["Artificial Intelligence", 
+                "Generative AI", 
+                "Deep Learning", 
+                "Data Mining", 
+                "Computer Networks", 
+                "Image Recognition",
+        ],
         GPA: "4.0  Minor: Mathematics, Data Science",
     },
 
@@ -159,10 +166,9 @@ import {
       iconBg: "#CEB888",
       date: "June 2023 - July 2023",
       points: [
-        "Mentor: Dr. Celik Berkay, Computer Science, Purdue Security Laboratory",
-        "Improving the Criticality Score Algorithm to identify most important open-source projects for enhanced security",
-        "Using machine learning, linear regression, t-SNE visualization, and feature selection for analysis",
-        "Identifying the most important features to create and measure a project's importance",
+        "Presented my research at SACNAS Conference in Portland Oregon with a travel scholarship",
+        "Used machine learning and statistical analysis to identify weaknesses in the Criticality Score Algorithm to improve the consistency in ranking the most important open-source projects",
+        "Mentored by Dr. Celik Berkay, Computer Science, Purdue Security Laboratory",
       ],
     },
     {
@@ -173,8 +179,8 @@ import {
       date: "June 2024 - September 2024",
       points: [
         "Designed a new 3rd party endpoint feature in Azure Front Door (AFD), Azure's content delivery network",
-        "Developed the two-rule design to promote customer flexibility in AFD's rules engine",
         "Added customer ability to send client requests to third-party endpoints using a subrequest",
+        "Developed the two-rule design to promote customer flexibility",
         "Implemented in both the control and data plane and tested end-to-end in test environments using a security use case"
       ],
     },
@@ -204,9 +210,9 @@ import {
     {
       title: "Parson's Problems",
       description:
-        ["CS Educational Research with Parson's Blocks, ordering blocks of Assembly and C code and saving each attempt to visualize it to gain insight into student thoughts.",
-        "Wrote questions in html along with the parsing information in Java",
-        " Implementing an IRB approved trial in Rose-Hulman CSSE132 course"],
+        ["Researched Parson Blocks as an intermediate question type to test their effectiveness while also gaining insights into student thinking to improve course curriculum and test",
+          "Created a data pipeline to extract and analyze the ordering of student submissions",
+          "Completed IRB approved study in Spring 2024, all of 2025 with 2 question sets for CSSE132 Intro to Systems Programming"],
         tags: [
           {
             name: "Education",
@@ -298,11 +304,11 @@ import {
           color: "blue-text-gradient",
         },
         {
-          name: "OpenGL",
+          name: "Glium",
           color: "green-text-gradient",
         },
         {
-          name: "System Design",
+          name: "Tokio",
           color: "pink-text-gradient",
         },
       ],
@@ -331,66 +337,62 @@ import {
       source_code_link: "https://sunsetsailshawaii.com",
     },
     {
-      name: "Algorithmic Game Theory",
+      name: "Auction Truthfulness",
       description:
-        "Analyzed webscraped data to find trends in high school versus college swim times",
+        "Verifying truthfulness of VCG auctions using reinforcement learning and game theory.",
       tags: [
         {
-          name: "Python",
+          name: "Reinforcement Learning",
           color: "blue-text-gradient",
         },
         {
-          name: "Pandas",
+          name: "Game Theory",
           color: "green-text-gradient",
         },
-        {
-          name: "Data Mining",
-          color: "pink-text-gradient",
-        },
       ],
-      image: swimdata,
-      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+      image: auction,
+      source_code_link: "https://github.com/blaiseswartwood/Auction-Analysis-with-Reinforcement-Learning",
     },
     {
-      name: "Generative AI",
+      name: "LLM Load Balancer",
       description:
-        "Analyzed webscraped data to find trends in high school versus college swim times",
+        "Created a load balancer for LLM servers with semantic caching and heartbeats.",
       tags: [
         {
-          name: "Python",
+          name: "Generative AI",
           color: "blue-text-gradient",
         },
         {
-          name: "Pandas",
+          name: "Networks",
           color: "green-text-gradient",
         },
         {
-          name: "Data Mining",
+          name: "HuggingFace",
           color: "pink-text-gradient",
         },
       ],
-      image: swimdata,
-      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+      image: lb,
+      source_code_link: "https://github.com/blaiseswartwood/AILoadBalancer",
     },
     {
-      name: "Computer Networks",
+      name: "1-Bit LLM Testing",
       description:
-        "Analyzed webscraped data to find trends in high school versus college swim times",
+        "Compared performance of 1-bit LLM models to standard LLM models",
       tags: [
         {
-          name: "Python",
+          name: "Generative AI",
           color: "blue-text-gradient",
         },
         {
-          name: "Pandas",
+          name: "BitNet",
           color: "green-text-gradient",
         },
         {
-          name: "Data Mining",
+          name: "ChatGPT",
           color: "pink-text-gradient",
         },
       ],
-      image: swimdata,
+      image: bitnet,
       source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
     },
     {
