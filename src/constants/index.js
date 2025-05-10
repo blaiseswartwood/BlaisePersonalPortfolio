@@ -375,27 +375,6 @@ import {
       source_code_link: "https://github.com/blaiseswartwood/AILoadBalancer",
     },
     {
-      name: "1-Bit LLM Testing",
-      description:
-        "Compared performance of 1-bit LLM models to standard LLM models",
-      tags: [
-        {
-          name: "Generative AI",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "BitNet",
-          color: "green-text-gradient",
-        },
-        {
-          name: "ChatGPT",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: bitnet,
-      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
-    },
-    {
       name: "Blackjack Detection",
       description:
         "Created a card dataset generator and live detection system to guide blackjack players",
