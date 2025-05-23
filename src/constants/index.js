@@ -313,7 +313,7 @@ import {
         },
       ],
       image: rustascii,
-      source_code_link: "https://github.com/rhit-Dexterra/SeniorProject",
+      source_code_link: "https://github.com/blaiseswartwood/RustASCIIArt",
     },
     {
       name: "Sunset Sails",
