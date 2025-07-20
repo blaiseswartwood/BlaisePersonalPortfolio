@@ -1,11 +1,13 @@
-import {useRef} from 'react';
-import {motion} from 'framer-motion';
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
-import {styles} from '../styles';
-import {EarthCanvas} from './canvas';
-import {SectionWrapper} from '../hoc';
-import {slideIn} from '../utils/motion';
+import { styles } from '../styles';
+import { EarthCanvas } from './canvas';
+import { SectionWrapper } from '../hoc';
+import { slideIn } from '../utils/motion';
+import { contactInfo } from '../constants/data';
+import { Button } from './common';
 import useForm from '../hooks/useForm';
 
 const Contact = () => {
@@ -21,23 +23,23 @@ const Contact = () => {
     setLoadingState(true);
 
     emailjs.send(
-       {
-          from_name: form.name,
-          to_name: 'Blaise',
-          from_email: form.email,
-          to_email: 'blaise.swartwood@gmail.com',
-          message: form.message, 
-       },
-       ).then(() => {
-        setLoadingState(false);
-        alert('Thank you. I will get back to you as soon as possible!')
-        resetForm();
-       }).catch((error) => {
-        setLoadingState(false);
-        console.log(error);
-        alert('Something went wrong');
-       })
-  }
+      {
+        from_name: form.name,
+        to_name: contactInfo.name,
+        from_email: form.email,
+        to_email: contactInfo.email,
+        message: form.message, 
+      },
+    ).then(() => {
+      setLoadingState(false);
+      alert('Thank you. I will get back to you as soon as possible!');
+      resetForm();
+    }).catch((error) => {
+      setLoadingState(false);
+      console.log(error);
+      alert('Something went wrong');
+    });
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -92,14 +94,14 @@ const Contact = () => {
             />
           </label>
 
-          <button
+          <Button
             type="submit"
-            className="bg-tertiary py-3 px-8 
-            outline-none w-fit text-white font-bold
-            shadow-md shadow-primary rounded-xl"
+            variant="primary"
+            disabled={loading}
+            className="bg-tertiary shadow-md shadow-primary"
           >
             {loading ? 'Sending...' : 'Send'}
-          </button>
+          </Button>
         </form>
       </motion.div>
 

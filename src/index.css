@@ -14,6 +14,38 @@
   color-scheme: dark;
 }
 
+/* Mobile-specific fixes */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Fix for iOS Safari viewport issues */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix for mobile touch targets */
+button, a, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Fix for mobile scrolling */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -204,12 +236,6 @@
   }
 }
 
-
-body {
-  margin: 0;
-  font-family: "Roboto";
-}
-
 .App {
   display: flex;
   justify-content: center;
@@ -219,6 +245,7 @@ body {
   background-color: #85a8c5;
 }
 
+/* Mobile-optimized slider styles */
 .custom-dot {
   width: 10px;
   height: 10px;
@@ -228,6 +255,7 @@ body {
   display: inline-block;
   cursor: pointer;
   opacity: 0.5;
+  touch-action: manipulation;
 }
 
 .custom-dot:hover {
@@ -242,17 +270,84 @@ body {
   position: absolute;
   top: 50%;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
   opacity: 0.5;
   z-index: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  transform: translateY(-50%);
 }
 
- 
 .custom-prev-arrow {
-  left: 10px; 
+  left: -50px;
 }
 
 .custom-next-arrow {
-  right: 10px; 
+  right: -50px;
+}
+
+/* Mobile-specific responsive fixes */
+@media (max-width: 768px) {
+  .custom-next-arrow, .custom-prev-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .custom-prev-arrow {
+    left: -30px;
+  }
+  
+  .custom-next-arrow {
+    right: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-next-arrow, .custom-prev-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .custom-prev-arrow {
+    left: -20px;
+  }
+  
+  .custom-next-arrow {
+    right: -20px;
+  }
+}
+
+/* Fix for mobile image loading */
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Fix for mobile touch interactions */
+.card-img_hover {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .card-img_hover {
+    opacity: 0;
+  }
+  
+  .card-img_hover:hover {
+    opacity: 1;
+  }
+}
+
+/* Show hover effects on mobile */
+@media (hover: none) {
+  .card-img_hover {
+    opacity: 1;
+  }
 }

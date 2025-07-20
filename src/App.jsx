@@ -3,7 +3,9 @@ import { Suspense, lazy } from 'react';
 
 import { Navbar, Hero, StarsCanvas, Footer } from './components';
 import LoadingSpinner from './components/LoadingSpinner';
+import MobileLoader from './components/MobileLoader';
 import ErrorBoundary from './components/ErrorBoundary';
+import useMediaQuery from './hooks/useMediaQuery';
 
 // Lazy load components
 const About = lazy(() => import('./components/About'));
@@ -15,6 +17,9 @@ const Research = lazy(() => import('./components/Research'));
 const Contact = lazy(() => import('./components/Contact'));
 
 const App = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const LoadingComponent = isMobile ? MobileLoader : LoadingSpinner;
+
   return (
     <ErrorBoundary>
       <BrowserRouter>
@@ -24,32 +29,32 @@ const App = () => {
                 <Hero />
             </div>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <About />
             </Suspense>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <Education />
             </Suspense>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <Experience />
             </Suspense>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <Tech />
             </Suspense>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <Works />
             </Suspense>
             
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingComponent />}>
               <Research />
             </Suspense>
             
             <div className="relative z-0">
-              <Suspense fallback={<LoadingSpinner />}>
+              <Suspense fallback={<LoadingComponent />}>
                 <Contact />
               </Suspense>
               <StarsCanvas />
