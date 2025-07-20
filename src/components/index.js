@@ -9,6 +9,7 @@ import Research from './Research';
 import Contact from './Contact';
 import Footer from'./Footer';
 import Education from'./Education';
+import LoadingSpinner from './LoadingSpinner';
 
 
 export {
@@ -22,6 +23,7 @@ export {
   Contact,
   Education,
   Footer,
+  LoadingSpinner,
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 
