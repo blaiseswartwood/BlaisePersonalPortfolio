@@ -1,10 +1,12 @@
 import Tilt from 'react-parallax-tilt'
 import { motion } from 'framer-motion'
+import { Suspense } from 'react'
 
 import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
+import { NeuralNetworkCanvas } from './canvas'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -50,6 +52,22 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+
+      {/* 3D Neural Network Visualization */}
+      <motion.div
+        variants={fadeIn("", "", 0.4, 1)}
+        className="mt-16"
+      >
+        <div className="relative rounded-2xl overflow-hidden border border-[#915EFF]/10">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0520]/80 via-transparent to-[#0a0520]/80 pointer-events-none z-10" />
+          <Suspense fallback={<div className="w-full h-[300px] sm:h-[400px] flex items-center justify-center"><span className="text-secondary text-sm">Loading neural network...</span></div>}>
+            <NeuralNetworkCanvas />
+          </Suspense>
+          <div className="absolute bottom-4 left-0 right-0 text-center z-10 pointer-events-none">
+            <p className="text-secondary/50 text-[11px] tracking-widest uppercase">Neural Network Visualization</p>
+          </div>
+        </div>
+      </motion.div>
     </>
   )
 }
