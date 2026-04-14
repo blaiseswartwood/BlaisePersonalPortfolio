@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks, resumeLinks } from '../constants/data';
@@ -8,6 +8,13 @@ import { cn } from '../utils/classNames';
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleNavClick = (title) => {
     setActive(title);
@@ -23,7 +30,7 @@ const Navbar = () => {
     <li
       key={link.id}
       className={cn(
-        "font-medium cursor-pointer",
+        "font-medium cursor-pointer relative group",
         active === link.title ? "text-white" : "text-secondary",
         "hover:text-white",
         isMobile ? "text-[16px]" : "text-[18px]"
@@ -31,22 +38,35 @@ const Navbar = () => {
       onClick={() => handleNavClick(link.title)}
     >
       <a href={`#${link.id}`}>{link.title}</a>
+      {!isMobile && (
+        <span className={cn(
+          "absolute -bottom-1 left-0 h-[2px] bg-[#915EFF] transition-all duration-300",
+          active === link.title ? "w-full" : "w-0 group-hover:w-full"
+        )} />
+      )}
     </li>
   );
 
   const ResumeLink = ({ isMobile = false }) => (
     <li className={cn(
-      "text-secondary hover:text-white font-medium cursor-pointer",
+      "text-secondary hover:text-white font-medium cursor-pointer relative group",
       isMobile ? "text-[16px]" : "text-[18px]"
     )}>
       <a href={isMobile ? resumeLinks.mobile : resumeLinks.desktop} target="_blank" rel="noopener noreferrer">
         Resume
       </a>
+      {!isMobile && (
+        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#915EFF] transition-all duration-300 group-hover:w-full" />
+      )}
     </li>
   );
 
   return (
-    <nav className={cn(styles.paddingX, "w-full flex items-center py-5 fixed top-0 z-20 navbar-glass")}>
+    <nav className={cn(
+      styles.paddingX,
+      "w-full flex items-center fixed top-0 z-20 transition-all duration-500",
+      scrolled ? "py-3 navbar-glass-scrolled" : "py-5 navbar-glass"
+    )}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={handleLogoClick}>

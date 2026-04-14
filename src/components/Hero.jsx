@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
@@ -23,7 +22,7 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-5 h-5 rounded-full bg-[#915EFF]" 
+            className="w-5 h-5 rounded-full bg-[#915EFF] pulse-glow" 
           />
           <motion.div 
             initial={{ height: 0 }}
@@ -41,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className={cn(styles.heroHeadText, "text-white")}
           >
-            Hi, I'm <span className="text-[#915EFF] drop-shadow-[0_0_25px_rgba(145,94,255,0.4)]">Blaise Swartwood</span>
+            Hi, I'm <span className="text-shimmer drop-shadow-[0_0_25px_rgba(145,94,255,0.4)]">Blaise Swartwood</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, x: -40 }}

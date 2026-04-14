@@ -5,6 +5,9 @@ import { Navbar, Hero, StarsCanvas, Footer } from './components';
 import LoadingSpinner from './components/LoadingSpinner';
 import MobileLoader from './components/MobileLoader';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
+import SectionBackground from './components/SectionBackground';
 import useMediaQuery from './hooks/useMediaQuery';
 
 // Lazy load components
@@ -23,35 +26,48 @@ const App = () => {
   return (
     <ErrorBoundary>
       <BrowserRouter>
-          <div className="relative z-0 bg-primary">
+          <ScrollProgress />
+          <div className="relative z-0">
             <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
                 <Navbar />
                 <Hero />
             </div>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <About />
-            </Suspense>
+            <SectionBackground variant="aurora">
+              <Suspense fallback={<LoadingComponent />}>
+                <About />
+              </Suspense>
+            </SectionBackground>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <Education />
-            </Suspense>
+            <SectionBackground variant="dots">
+              <Suspense fallback={<LoadingComponent />}>
+                <Education />
+              </Suspense>
+            </SectionBackground>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <Experience />
-            </Suspense>
+            <SectionBackground variant="grid">
+              <Suspense fallback={<LoadingComponent />}>
+                <Experience />
+              </Suspense>
+            </SectionBackground>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <Tech />
-            </Suspense>
+            <SectionBackground variant="pulse">
+              <Suspense fallback={<LoadingComponent />}>
+                <Tech />
+              </Suspense>
+            </SectionBackground>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <Works />
-            </Suspense>
+            <SectionBackground variant="lines">
+              <Suspense fallback={<LoadingComponent />}>
+                <Works />
+              </Suspense>
+            </SectionBackground>
             
-            <Suspense fallback={<LoadingComponent />}>
-              <Research />
-            </Suspense>
+            <SectionBackground variant="mesh">
+              <Suspense fallback={<LoadingComponent />}>
+                <Research />
+              </Suspense>
+            </SectionBackground>
             
             <div className="relative z-0">
               <Suspense fallback={<LoadingComponent />}>
@@ -61,6 +77,7 @@ const App = () => {
             </div>
             
             <Footer />
+            <BackToTop />
         </div>
       </BrowserRouter>
     </ErrorBoundary>

@@ -112,47 +112,53 @@ export * from './data';
   const experiences = [
     {
       title: "Research Intern",
+      subtitle: "",
       company_name: "Purdue University",
       icon: purdue,
       iconBg: "#CEB888",
-      date: "June 2023 - July 2023",
+      date: "June 2023 - August 2023",
       points: [
-        "Presented my research at SACNAS Conference in Portland Oregon with a travel scholarship",
-        "Used machine learning and statistical analysis to identify weaknesses in the Criticality Score Algorithm to improve the consistency in ranking the most important open-source projects",
-        "Mentored by Dr. Celik Berkay, Computer Science, Purdue Security Laboratory",
+        "Presented at NDiSTEM Conference — awarded **travel scholarship**",
+        "Retained **98%** algorithm performance using only **5 features** via ML (Python, R)",
+        "Improved open-source project ranking for the **Open Source Security Foundation**",
       ],
     },
     {
       title: "Software Engineer Intern",
+      subtitle: "Azure Networking",
       company_name: "Microsoft",
       icon: microsoft,
       iconBg: "#D3D3D3",
-      date: "June 2024 - September 2024",
+      date: "June 2024 - August 2024",
       points: [
-        "Designed a new 3rd party endpoint feature in Azure Front Door (AFD), Azure's content delivery network",
-        "Added customer ability to send client requests to third-party endpoints using a subrequest",
-        "Developed the two-rule design to promote customer flexibility",
-        "Implemented in both the control and data plane and tested end-to-end in test environments using a security use case"
+        "Designed new **Azure Front Door** feature routing requests to external endpoints for pre-origin verification",
+        "Built **two-rule system** enabling URL redirect, cache control, header modification & more",
+        "Implemented E2E across **control plane (C#)** and **data plane (C, Rust)**",
       ],
     },
     {
       title: "Software Engineer Intern",
+      subtitle: "Google Cloud Business Partner",
       company_name: "Google",
       icon: googlelogo,
       iconBg: "#D3D3D3",
-      date: "June 2025 - September 2025",
+      date: "June 2025 - August 2025",
       points: [
-        "Contract lifecycle management using LLMs"
+        "Reduced malformed responses to **0.0%**, improved extraction accuracy to **86%** via model tuning on **1,000+ obligations** (Python)",
+        "Cut integration time by **72%** across **50+ obligation types** with type-safe Gemini library (Java)",
+        "Shipped first **E2E redline obligation extraction** flow in pre-production",
       ],
     },
     {
       title: "Software Engineer",
+      subtitle: "Azure Front Door",
       company_name: "Microsoft",
       icon: microsoft,
       iconBg: "#D3D3D3",
-      date: "July 2025 - Current",
+      date: "September 2025 - Current",
       points: [
-        "Azure Networking software engineer"
+        "Built **traffic replayer** forking prod traffic to pre-prod for **A/B pre-release validation**",
+        "Boosted config coverage **24% → 91%** and dev efficiency **~62%** with automated Perl testing framework",
       ],
     },
   ];

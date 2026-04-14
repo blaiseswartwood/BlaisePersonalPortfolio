@@ -1,4 +1,3 @@
-import React from 'react'
 import Tilt from 'react-parallax-tilt'
 import { motion } from 'framer-motion'
 
@@ -39,11 +38,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
         I'm a software engineer with an interest in data science, generative AI, and
-        machine learning. I have work experience at Microsoft, along with internships at 
-        Google and Microsoft. I am pursing my Masters in Data Science at the University of California, Berkeley.  
+        machine learning. I have work experience at <span className="text-white font-medium">Microsoft</span>, along with internships at 
+        <span className="text-white font-medium"> Google</span> and <span className="text-white font-medium">Microsoft</span>. I am pursing my Masters in Data Science at the <span className="text-white font-medium">University of California, Berkeley</span>.  
         I've earned my Bachelors in Computer Science along with
-        minors in Mathematics and Data Science at Rose-Hulman Institute of Technology. 
-        My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
+        minors in Mathematics and Data Science at <span className="text-white font-medium">Rose-Hulman Institute of Technology</span>. 
+        My main interests lie in <span className="text-[#915EFF]">Generative AI</span> and <span className="text-[#915EFF]">Machine Learning</span>, but I am capable and willing to expand my skillset.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">

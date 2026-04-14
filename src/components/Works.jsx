@@ -11,9 +11,9 @@ import useMediaQuery from '../hooks/useMediaQuery';
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   
-  const handleImageClick = () => {
+  const handleCardClick = () => {
     if (source_code_link) {
-      window.open(source_code_link, '_blank');
+      window.open(source_code_link, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -31,7 +31,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ type: "spring", delay: 0.08 * index, duration: 0.6 }}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow"
+        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow cursor-pointer"
+        onClick={handleCardClick}
       >
         <div className="bg-tertiary rounded-[20px] p-3 sm:p-5">
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl group">
@@ -44,11 +45,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                 e.target.style.display = 'none';
               }}
             />
-            <div 
-              className="absolute inset-0 flex justify-end m-3 card-img_hover"
-              onClick={handleImageClick}
-            >
-              <div className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform">
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div className="black-gradient w-10 h-10 rounded-full flex justify-center items-center hover:scale-110 transition-transform">
                 <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
               </div>
             </div>
