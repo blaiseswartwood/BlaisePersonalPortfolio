@@ -24,7 +24,7 @@ const generateNetwork = () => {
   const layers = [3, 5, 7, 7, 5, 3];
   const nodes = [];
   const edges = [];
-  const layerSpacing = 2.2;
+  const layerSpacing = 3.5;
   const offsetX = -(layers.length - 1) * layerSpacing / 2;
 
   layers.forEach((count, layerIdx) => {
@@ -231,7 +231,7 @@ const NeuralNetworkCanvas = () => {
   return (
     <div className="w-full h-[350px] sm:h-[450px]">
       <Canvas
-        camera={{ position: [0, 0, 12], fov: 50 }}
+        camera={{ position: [0, 0, 16], fov: 55 }}
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 1.5]}
       >
