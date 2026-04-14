@@ -252,65 +252,6 @@ export * from './data';
   
   const projects = [
     {
-      name: "Rust ASCII Art Animation",
-      description:
-        "Designed a Rust ASCII animation framework using OpenGL with an XP approach",
-      tags: [
-        {
-          name: "Rust",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Glium",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Tokio",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: rustascii,
-      source_code_link: "https://github.com/blaiseswartwood/RustASCIIArt",
-    },
-    {
-      name: "Sunset Sails",
-      description:
-        "Designed the Sunset Sails website for business clients",
-      tags: [
-        {
-          name: "Typescript",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "TailwindCSS",
-          color: "green-text-gradient",
-        },
-        {
-          name: "NextJS",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: sunsetsails,
-      source_code_link: "https://sunsetsailshawaii.com",
-    },
-    {
-      name: "Auction Truthfulness",
-      description:
-        "Verifying truthfulness of VCG auctions using reinforcement learning and game theory.",
-      tags: [
-        {
-          name: "Reinforcement Learning",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Game Theory",
-          color: "green-text-gradient",
-        },
-      ],
-      image: auction,
-      source_code_link: "https://github.com/blaiseswartwood/Auction-Analysis-with-Reinforcement-Learning",
-    },
-    {
       name: "LLM Load Balancer",
       description:
         "Created a load balancer for LLM servers with semantic caching and heartbeats.",
@@ -332,46 +273,21 @@ export * from './data';
       source_code_link: "https://github.com/blaiseswartwood/AILoadBalancer",
     },
     {
-      name: "Blackjack Detection",
+      name: "Auction Truthfulness",
       description:
-        "Created a card dataset generator and live detection system to guide blackjack players",
+        "Verifying truthfulness of VCG auctions using reinforcement learning and game theory.",
       tags: [
         {
-          name: "Python",
+          name: "Reinforcement Learning",
           color: "blue-text-gradient",
         },
         {
-          name: "MATLAB",
+          name: "Game Theory",
           color: "green-text-gradient",
         },
-        {
-          name: "YOLO",
-          color: "pink-text-gradient",
-        },
       ],
-      image: poker,
-      source_code_link: "https://github.com/rhit-swartwba/PlayingCardHandRecognition",
-    },
-    {
-      name: "College Swim Analysis",
-      description:
-        "Analyzed webscraped data to find trends in high school versus college swim times",
-      tags: [
-        {
-          name: "Python",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Pandas",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Data Mining",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: swimdata,
-      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+      image: auction,
+      source_code_link: "https://github.com/blaiseswartwood/Auction-Analysis-with-Reinforcement-Learning",
     },
     {
       name: "Pneumonia Detection",
@@ -395,27 +311,48 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/XRayPneumoniaDetection",
     },
     {
-      name: "Portfolio Website",
+      name: "Blackjack Detection",
       description:
-        "Personal portfolio website with 3-D image displays and advanced animation",
+        "Created a card dataset generator and live detection system to guide blackjack players",
       tags: [
         {
-          name: "react",
+          name: "Python",
           color: "blue-text-gradient",
         },
         {
-          name: "tailwindcss",
+          name: "MATLAB",
           color: "green-text-gradient",
         },
         {
-          name: "three.js",
+          name: "YOLO",
           color: "pink-text-gradient",
         },
       ],
-      image: portfolio,
-      source_code_link: "https://github.com/rhit-swartwba/BlaisePersonalPortfolio",
+      image: poker,
+      source_code_link: "https://github.com/rhit-swartwba/PlayingCardHandRecognition",
     },
+    {
+      name: "Rust ASCII Art Animation",
+      description:
+        "Designed a Rust ASCII animation framework using OpenGL with an XP approach",
+      tags: [
         {
+          name: "Rust",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Glium",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Tokio",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: rustascii,
+      source_code_link: "https://github.com/blaiseswartwood/RustASCIIArt",
+    },
+    {
       name: "XV6 Threads",
       description:
         "Implemented thread API and syscalls in the xv6 operating system",
@@ -435,69 +372,6 @@ export * from './data';
       ],
       image: xv6threads,
       source_code_link: "https://github.com/rhit-swartwba/XV6Threads",
-    },
-    {
-      name: "ValleyInns SRE",
-      description:
-        "Eliciting needs and features from clients into software requirements",
-      tags: [
-        {
-          name: "Balsamiq",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Requirements",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Use Cases",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: clientprototyping,
-      source_code_link: "https://github.com/rhit-swartwba/ClientPrototyping",
-    },
-    {
-      name: "Indiana 211 Welfare",
-      description:
-        "Created a website prototype for Indiana 211 government clients for welfare programs",
-      tags: [
-        {
-          name: "Clients",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Requirements",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Javascript",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: indiana211,
-      source_code_link: "https://github.com/rhit-swartwba/Indiana211Website",
-    },
-    {
-      name: "Swimming Database",
-      description:
-        "Java graphics interface tracks local swim times using MicrosoftSQL database.",
-      tags: [
-        {
-          name: "MicrosoftSQL",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Java",
-          color: "green-text-gradient",
-        },
-        {
-          name: "Connectivity",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: swimming,
-      source_code_link: "https://github.com/rhit-swartwba/SwimmingDatabase",
     },
     {
       name: "Computer Processor",
@@ -521,6 +395,69 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/ComputerProcessor",
     },
     {
+      name: "College Swim Analysis",
+      description:
+        "Analyzed webscraped data to find trends in high school versus college swim times",
+      tags: [
+        {
+          name: "Python",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Pandas",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Data Mining",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimdata,
+      source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+    },
+    {
+      name: "Sunset Sails",
+      description:
+        "Designed the Sunset Sails website for business clients",
+      tags: [
+        {
+          name: "Typescript",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "TailwindCSS",
+          color: "green-text-gradient",
+        },
+        {
+          name: "NextJS",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sunsetsails,
+      source_code_link: "https://sunsetsailshawaii.com",
+    },
+    {
+      name: "Portfolio Website",
+      description:
+        "Personal portfolio website with 3-D image displays and advanced animation",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "green-text-gradient",
+        },
+        {
+          name: "three.js",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: portfolio,
+      source_code_link: "https://github.com/rhit-swartwba/BlaisePersonalPortfolio",
+    },
+    {
       name: "OOP Linter",
       description:
         "Java Linter that detects violations of object-orientated design and design patterns",
@@ -542,6 +479,27 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/LinterDesignPatterns",
     },
     {
+      name: "Indiana 211 Welfare",
+      description:
+        "Created a website prototype for Indiana 211 government clients for welfare programs",
+      tags: [
+        {
+          name: "Clients",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Requirements",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Javascript",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: indiana211,
+      source_code_link: "https://github.com/rhit-swartwba/Indiana211Website",
+    },
+    {
       name: "Editor Trees",
       description:
         "Created a data structure for a text editor: a balanced tree with rank and balance codes",
@@ -561,6 +519,48 @@ export * from './data';
       ],
       image: editortrees,
       source_code_link: "https://github.com/rhit-swartwba/EditorTrees",
+    },
+    {
+      name: "ValleyInns SRE",
+      description:
+        "Eliciting needs and features from clients into software requirements",
+      tags: [
+        {
+          name: "Balsamiq",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Requirements",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Use Cases",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: clientprototyping,
+      source_code_link: "https://github.com/rhit-swartwba/ClientPrototyping",
+    },
+    {
+      name: "Swimming Database",
+      description:
+        "Java graphics interface tracks local swim times using MicrosoftSQL database.",
+      tags: [
+        {
+          name: "MicrosoftSQL",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Java",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Connectivity",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: swimming,
+      source_code_link: "https://github.com/rhit-swartwba/SwimmingDatabase",
     },
   ];
   
