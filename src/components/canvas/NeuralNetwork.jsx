@@ -3,20 +3,20 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Preload } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Layer colors: input → hidden → output gradient
+// Layer colors: warm-to-cool gradient across the network
 const LAYER_COLORS = [
-  new THREE.Color('#4fc3f7'),  // Input — cyan
-  new THREE.Color('#7c4dff'),  // Hidden 1 — purple
-  new THREE.Color('#915EFF'),  // Hidden 2 — violet
-  new THREE.Color('#e040fb'),  // Hidden 3 — magenta
-  new THREE.Color('#ff4081'),  // Hidden 4 — pink
-  new THREE.Color('#00e676'),  // Output — green
+  new THREE.Color('#ff6f00'),  // Input — amber
+  new THREE.Color('#f06292'),  // Hidden 1 — rose
+  new THREE.Color('#ab47bc'),  // Hidden 2 — orchid
+  new THREE.Color('#5c6bc0'),  // Hidden 3 — indigo
+  new THREE.Color('#26c6da'),  // Hidden 4 — teal
+  new THREE.Color('#66bb6a'),  // Output — emerald
 ];
 
 const PULSE_COLORS = [
-  new THREE.Color('#ffab40'),  // Orange
-  new THREE.Color('#40c4ff'),  // Cyan  
-  new THREE.Color('#69f0ae'),  // Green
+  new THREE.Color('#ffd54f'),  // Gold
+  new THREE.Color('#80deea'),  // Light cyan
+  new THREE.Color('#ce93d8'),  // Lavender
 ];
 
 // Generate neural network layer positions — wider, cleaner layout
@@ -24,7 +24,7 @@ const generateNetwork = () => {
   const layers = [3, 5, 7, 7, 5, 3];
   const nodes = [];
   const edges = [];
-  const layerSpacing = 3.5;
+  const layerSpacing = 5.0;
   const offsetX = -(layers.length - 1) * layerSpacing / 2;
 
   layers.forEach((count, layerIdx) => {
@@ -245,9 +245,9 @@ const NeuralNetworkCanvas = () => {
 export const NeuralNetworkBackground = ({ children }) => {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-35">
         <Canvas
-          camera={{ position: [0, 0, 18], fov: 60 }}
+          camera={{ position: [0, 0, 22], fov: 70 }}
           gl={{ antialias: true, alpha: true }}
           dpr={[1, 1.5]}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
