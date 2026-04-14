@@ -245,9 +245,23 @@ const NeuralNetworkCanvas = () => {
 export const NeuralNetworkBackground = ({ children }) => {
   return (
     <div className="relative overflow-hidden">
+      {/* Gradient glow orbs in corners */}
+      <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(255,111,0,0.2) 0%, transparent 60%)', filter: 'blur(50px)' }}
+      />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[450px] h-[450px] rounded-full bg-orb-drift-3 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(38,198,218,0.2) 0%, transparent 60%)', filter: 'blur(50px)' }}
+      />
+      <div className="absolute top-[30%] right-[-3%] w-[350px] h-[350px] rounded-full bg-orb-drift-2 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(171,71,188,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
+      />
+      <div className="absolute bottom-[20%] left-[-3%] w-[300px] h-[300px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(102,187,106,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
+      />
+      {/* Neural network canvas — full width */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-35">
         <Canvas
-          camera={{ position: [0, 0, 22], fov: 70 }}
+          camera={{ position: [0, 0, 16], fov: 85 }}
           gl={{ antialias: true, alpha: true }}
           dpr={[1, 1.5]}
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
