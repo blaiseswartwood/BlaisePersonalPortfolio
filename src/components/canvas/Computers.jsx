@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
+import React, { Suspense, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-const Computers = ({ isMobile }) => {
+const Computers = memo(({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
@@ -19,7 +19,7 @@ const Computers = ({ isMobile }) => {
       />
     </mesh>
   );
-};
+});
 
 const ComputersCanvas = () => {
   const isMobile = useMediaQuery("(max-width: 500px)");

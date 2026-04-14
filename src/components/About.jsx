@@ -9,17 +9,12 @@ import { SectionWrapper } from '../hoc'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    <Tilt className="xs:w-[250px] w-full">
+    <Tilt className="xs:w-[250px] w-full" tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.02} transitionSpeed={400}>
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        variants={fadeIn("right", "spring", 0.2 * index, 0.75)}
+        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow"
       >
         <div
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450
-          }}
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly 
           items-center flex-col"
         >
@@ -35,8 +30,9 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}> Introduction</p>
+        <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <div className="section-divider" />
       </motion.div>
 
       <motion.p
@@ -50,10 +46,9 @@ const About = () => {
         My main interests lie in Generative AI/Machine Learning, but I am capable and willing to expand my skillset.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index=
-            {index} {...service} />
+          <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
     </>

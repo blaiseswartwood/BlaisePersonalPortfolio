@@ -21,33 +21,23 @@ const ResearchCard = ({ title, description, mentor, designation, institution, so
 
   return (
     <div className="px-2 sm:px-4">
-      <div className="p-[1px] rounded-2xl green-pink-gradient max-w-[700px] mx-auto shadow-card">
-        <div className="bg-black-200 p-4 sm:p-7 rounded-3xl">
-          <h3 className="text-white font-bold text-[18px] sm:text-[24px] md:text-[28px]">{title}</h3>
-
-          <div className="flex-1 flex flex-col mt-2">
-            <p className="text-secondary text-[11px] sm:text-[13px]">{date}</p>
-            <p className="text-secondary font-medium text-[11px] sm:text-[13px]">
-              <span className="blue-text-gradient">Mentor:</span> {mentor}
-            </p>
-            <p className="text-secondary text-[10px] sm:text-[12px]">{designation}, {institution}</p>
-          </div>
-
-          <div className="mt-3 relative w-full aspect-[16/9] sm:aspect-[2/1]">
-            <img 
-              src={img} 
-              alt={title} 
-              className="w-full h-full object-cover rounded-2xl darken-75"
-              loading="lazy"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+      <div className="p-[1px] rounded-2xl green-pink-gradient max-w-[750px] mx-auto shadow-card">
+        <div className="bg-black-200 p-5 sm:p-7 rounded-3xl">
+          {/* Header */}
+          <div className="flex justify-between items-start">
+            <div className="flex-1">
+              <h3 className="text-white font-bold text-[18px] sm:text-[24px] md:text-[28px] leading-tight">{title}</h3>
+              <p className="text-secondary text-[11px] sm:text-[13px] mt-1">
+                <span className="material-symbols-outlined text-[13px] align-middle mr-1">calendar_month</span>
+                {date}
+              </p>
+            </div>
+            {/* Action buttons */}
+            <div className="flex gap-2 ml-3 flex-shrink-0">
               {extra_link && (
                 <div
                   onClick={() => handleImageClick(extra_link)}
-                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  className="black-gradient w-9 h-9 sm:w-10 sm:h-10 rounded-full flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity"
                 >
                   <img src={plus} alt="extra" className="w-1/2 h-1/2 object-contain" />
                 </div>
@@ -55,7 +45,7 @@ const ResearchCard = ({ title, description, mentor, designation, institution, so
               {source_code_link && (
                 <div
                   onClick={() => handleImageClick(source_code_link)}
-                  className="black-gradient w-10 h-10 ml-1 rounded-full flex justify-center items-center cursor-pointer"
+                  className="black-gradient w-9 h-9 sm:w-10 sm:h-10 rounded-full flex justify-center items-center cursor-pointer hover:opacity-80 transition-opacity"
                 >
                   <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
                 </div>
@@ -63,24 +53,51 @@ const ResearchCard = ({ title, description, mentor, designation, institution, so
             </div>
           </div>
 
-          <div className="mt-1">
-            <ul className="mt-3 sm:mt-5 list-disc ml-3 sm:ml-5 space-y-1 sm:space-y-2">
+          {/* Mentor info */}
+          <div className="mt-3 py-2 px-3 bg-tertiary rounded-lg">
+            <p className="text-white font-medium text-[12px] sm:text-[14px]">
+              <span className="blue-text-gradient font-semibold">Mentor:</span> {mentor}
+            </p>
+            <p className="text-secondary text-[10px] sm:text-[12px]">{designation}, {institution}</p>
+          </div>
+
+          {/* Image */}
+          <div className="mt-4 relative w-full aspect-[16/9] sm:aspect-[2/1] overflow-hidden rounded-2xl">
+            <img 
+              src={img} 
+              alt={title} 
+              className="w-full h-full object-cover darken-75"
+              loading="lazy"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+
+          {/* Description */}
+          <div className="mt-4">
+            <ul className="space-y-2 sm:space-y-3">
               {description.map((point, index) => (
                 <li 
                   key={index}
-                  className="text-secondary text-[11px] sm:text-[13px] md:text-[14px] pl-1 tracking-wider"
+                  className="text-secondary text-[12px] sm:text-[13px] md:text-[14px] leading-relaxed flex items-start"
                 >
-                  {point}
+                  <span className="text-[#915EFF] mr-2 mt-[2px] flex-shrink-0">▸</span>
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="mt-3 sm:mt-4 flex flex-wrap gap-2">
+          {/* Tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <p key={tag.name} className={cn("text-[11px] sm:text-[13px] md:text-[14px]", tag.color)}>
-                #{tag.name}
-              </p>
+              <span key={tag.name} className={cn(
+                "text-[10px] sm:text-[12px] md:text-[13px] px-2 py-[2px] rounded-full bg-tertiary border border-gray-700",
+                tag.color
+              )}>
+                {tag.name}
+              </span>
             ))}
           </div>
         </div>
@@ -128,7 +145,8 @@ const Research = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
+    cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <CustomNextArrow />,
@@ -160,6 +178,7 @@ const Research = () => {
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Delving deeper</p>
           <h2 className={styles.sectionHeadText}>Research</h2>
+          <div className="section-divider" />
         </motion.div>
       </div>
 

@@ -46,7 +46,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className={cn(styles.paddingX, "w-full flex items-center py-5 fixed top-0 z-20 bg-black-100")}>
+    <nav className={cn(styles.paddingX, "w-full flex items-center py-5 fixed top-0 z-20 navbar-glass")}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" onClick={handleLogoClick}>
@@ -65,17 +65,23 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+          <button
+            aria-label="Toggle navigation menu"
+            aria-expanded={toggle}
+            className="w-[28px] h-[28px] flex items-center justify-center bg-transparent border-none cursor-pointer"
             onClick={() => setToggle(!toggle)}
-          />
+          >
+            <img
+              src={toggle ? close : menu}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          </button>
 
           {/* Mobile Menu */}
           <div className={cn(
-            "p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl",
-            toggle ? "flex" : "hidden"
+            "p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300 origin-top-right",
+            toggle ? "flex scale-100 opacity-100" : "hidden scale-95 opacity-0"
           )}>
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map(link => <NavLink key={link.id} link={link} isMobile />)}

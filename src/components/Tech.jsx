@@ -18,6 +18,7 @@ const Tech = () => {
         <h2 className={styles.sectionHeadText}>
           Technologies.
         </h2>
+        <div className="section-divider" />
       </motion.div> 
 
         <div className="mt-10 flex flex-row flex-wrap justify-center gap-10">

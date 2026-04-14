@@ -10,9 +10,9 @@ import { SectionWrapper } from '../hoc'
 const EducationCardFront = ({ title, school, icon, onClick }) => {
     return (
         <div className="w-full" onClick={onClick}>
-            <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+            <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow">
                 <div className="bg-tertiary rounded-[20px] py-5 px-8 sm:px-12 h-[320px] sm:h-[340px] flex justify-evenly 
-                    items-center flex-col hover:brightness-125 transition cursor-pointer"
+                    items-center flex-col hover:brightness-110 transition-all duration-300 cursor-pointer"
                 >
                     <img src={icon} alt={title} className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] object-contain" />
                     <p className="text-secondary text-center text-[13px] sm:text-[14px]">{school}</p>
@@ -106,13 +106,14 @@ const Education = () => {
             <motion.div variants={textVariant()}>
                 <p className={styles.sectionSubText}> Academic Journey </p>
                 <h2 className={styles.sectionHeadText}>Education</h2>
+                <div className="section-divider" />
             </motion.div>
 
             <div className="mt-20 flex flex-wrap gap-10 justify-center">
                 {education.map((card, index) => (
                     <motion.div
                         key={index}
-                        variants={fadeIn("left", "spring", 0.75 * index, 1.50)}
+                        variants={fadeIn("left", "spring", 0.4 * index, 1.0)}
                         className="xs:w-[400px] md:w-[520px] w-full"
                     >
                         <ReactCardFlip
