@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 @tailwind base;
 @tailwind components;
@@ -22,7 +21,6 @@ html {
 
 body {
   margin: 0;
-  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -236,40 +234,43 @@ button, a, [role="button"] {
   }
 }
 
-.App {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  background-color: #85a8c5;
-}
-
-/* Mobile-optimized slider styles */
+/* Slider styles */
 .custom-dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: #fff;
   border-radius: 50%;
-  margin: -10px 5px;
   display: inline-block;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   touch-action: manipulation;
 }
 
 .custom-dot:hover {
-  opacity: 1; 
+  opacity: 0.8; 
 }
 
 .custom-dot.active {
   opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Override slick dots positioning */
+.slick-dots {
+  bottom: -30px !important;
+}
+
+.slick-dots li {
+  margin: 0 4px !important;
 }
 
 .custom-next-arrow, .custom-prev-arrow {
   position: absolute;
   top: 50%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   opacity: 0.5;
@@ -277,44 +278,55 @@ button, a, [role="button"] {
   cursor: pointer;
   touch-action: manipulation;
   transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.custom-next-arrow:hover, .custom-prev-arrow:hover {
+  opacity: 1;
 }
 
 .custom-prev-arrow {
-  left: -50px;
+  left: -55px;
 }
 
 .custom-next-arrow {
-  right: -50px;
+  right: -55px;
+}
+
+@media (max-width: 1024px) {
+  .custom-prev-arrow {
+    left: -45px;
+  }
+  
+  .custom-next-arrow {
+    right: -45px;
+  }
 }
 
 /* Mobile-specific responsive fixes */
 @media (max-width: 768px) {
   .custom-next-arrow, .custom-prev-arrow {
-    width: 40px;
-    height: 40px;
+    display: none;
   }
   
-  .custom-prev-arrow {
-    left: -30px;
+  .slick-dots {
+    bottom: -25px !important;
   }
-  
-  .custom-next-arrow {
-    right: -30px;
+
+  .custom-dot {
+    width: 10px;
+    height: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .custom-next-arrow, .custom-prev-arrow {
-    width: 36px;
-    height: 36px;
+  .custom-dot {
+    width: 8px;
+    height: 8px;
   }
-  
-  .custom-prev-arrow {
-    left: -20px;
-  }
-  
-  .custom-next-arrow {
-    right: -20px;
+
+  .slick-dots {
+    bottom: -20px !important;
   }
 }
 

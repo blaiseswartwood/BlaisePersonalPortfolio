@@ -1,13 +1,3 @@
-// Performance monitoring utilities
-export const measurePerformance = (name, fn) => {
-  const start = performance.now();
-  const result = fn();
-  const end = performance.now();
-  
-  console.log(`${name} took ${end - start} milliseconds`);
-  return result;
-};
-
 export const trackPageLoad = () => {
   window.addEventListener('load', () => {
     const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;

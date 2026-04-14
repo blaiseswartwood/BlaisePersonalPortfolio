@@ -1,32 +1,16 @@
 import {
     mobile, backend, creator, web,
-    javascript, html, css, reactjs, tailwind,
-    clogo, rust, matlab, nginx, rlogo, git,
+    clogo, rust, matlab, nginx, rlogo,
     clientprototyping, editortrees, linter, computerprocessor,
     portfolio, swimming, purdue, microsoft, java, microsoftsql,
     python, pytorch, scikitlearn, criticalityscore, myopathy,
     plearn, rosehulman, sunsetsails, xv6threads, indiana211,
     googlelogo, poker, swimdata, pneu, rustascii, masters,
-    auction, lb, bitnet,
+    auction, lb,
 } from "../assets";
 
 // Re-export data constants
 export * from './data';
-  
-  export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
   
   const services = [
 

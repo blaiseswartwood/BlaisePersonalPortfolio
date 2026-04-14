@@ -27,7 +27,10 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
       gyroscope={!isMobile}
     >
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ type: "spring", delay: 0.1 * index, duration: 0.5 }}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       >
         <div

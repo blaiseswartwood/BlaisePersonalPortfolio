@@ -11,12 +11,6 @@ import plus from "./plus.png"
 import rosehulman from "./rosehulman.png"
 import masters from "./masters.png"
 
-import css from "./tech/css.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
 import java from "./tech/java.png";
 import microsoftsql from "./tech/microsoftsql.png";
 import python from "./tech/python.png";
@@ -50,62 +44,13 @@ import pneu from "./projects/pneu.png"
 import rustascii from "./projects/rustascii.png"
 import auction from "./projects/Auction.png"
 import lb from "./projects/lb.png"
-import bitnet from "./projects/bitnet.png"
-
-
 
 export {
-  logo,
-  backend,
-  creator,
-  mobile,
-  web,
-  github,
-  menu,
-  close,
-  css,
-  git,
-  html,
-  javascript,
-  reactjs,
-  tailwind,
-  clientprototyping,
-  editortrees,
-  linter,
-  computerprocessor,
-  portfolio,
-  swimming,
-  purdue,
-  microsoft,
-  java,
-  microsoftsql,
-  python,
-  pytorch,
-  rlogo,
-  nginx,
-  matlab,
-  rust,
-  clogo,
-  scikitlearn,
-  linkedin,
-  plearn,
-  criticalityscore,
-  myopathy,
-  plus,
-  rosehulman,
-  sunsetsails,
-  xv6threads,
-  indiana211,
-  googlelogo,
-  poker,
-  swimdata,
-  pneu,
-  rustascii,
-  masters,
-  auction,
-  lb,
-  bitnet,
+  logo, backend, creator, mobile, web, github, menu, close,
+  clientprototyping, editortrees, linter, computerprocessor,
+  portfolio, swimming, purdue, microsoft, java, microsoftsql,
+  python, pytorch, rlogo, nginx, matlab, rust, clogo, scikitlearn,
+  linkedin, plearn, criticalityscore, myopathy, plus, rosehulman,
+  sunsetsails, xv6threads, indiana211, googlelogo, poker, swimdata,
+  pneu, rustascii, masters, auction, lb,
 };
-
-
-
