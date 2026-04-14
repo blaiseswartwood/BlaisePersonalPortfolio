@@ -39,25 +39,25 @@ const App = () => {
               </Suspense>
             </SectionBackground>
             
-            <SectionBackground variant="dots">
+            <SectionBackground variant="grid">
               <Suspense fallback={<LoadingComponent />}>
                 <Education />
               </Suspense>
             </SectionBackground>
             
-            <SectionBackground variant="grid">
+            <SectionBackground variant="dots">
               <Suspense fallback={<LoadingComponent />}>
                 <Experience />
               </Suspense>
             </SectionBackground>
             
-            <SectionBackground variant="pulse">
+            <SectionBackground variant="lines">
               <Suspense fallback={<LoadingComponent />}>
                 <Tech />
               </Suspense>
             </SectionBackground>
             
-            <SectionBackground variant="lines">
+            <SectionBackground variant="pulse">
               <Suspense fallback={<LoadingComponent />}>
                 <Works />
               </Suspense>
