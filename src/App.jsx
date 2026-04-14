@@ -8,6 +8,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import SectionBackground from './components/SectionBackground';
+import { NeuralNetworkBackground } from './components/canvas';
 import useMediaQuery from './hooks/useMediaQuery';
 
 // Lazy load components
@@ -33,11 +34,11 @@ const App = () => {
                 <Hero />
             </div>
             
-            <SectionBackground variant="aurora">
+            <NeuralNetworkBackground>
               <Suspense fallback={<LoadingComponent />}>
                 <About />
               </Suspense>
-            </SectionBackground>
+            </NeuralNetworkBackground>
             
             <SectionBackground variant="grid">
               <Suspense fallback={<LoadingComponent />}>

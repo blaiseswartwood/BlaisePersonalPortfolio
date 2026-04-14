@@ -242,4 +242,25 @@ const NeuralNetworkCanvas = () => {
   );
 };
 
+export const NeuralNetworkBackground = ({ children }) => {
+  return (
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+        <Canvas
+          camera={{ position: [0, 0, 18], fov: 60 }}
+          gl={{ antialias: true, alpha: true }}
+          dpr={[1, 1.5]}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+        >
+          <NeuralNetworkScene />
+          <Preload all />
+        </Canvas>
+      </div>
+      <div className="relative z-[1]">
+        {children}
+      </div>
+    </div>
+  );
+};
+
 export default NeuralNetworkCanvas;
