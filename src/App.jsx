@@ -15,6 +15,7 @@ import useMediaQuery from './hooks/useMediaQuery';
 const About = lazy(() => import('./components/About'));
 const Education = lazy(() => import('./components/Education'));
 const Experience = lazy(() => import('./components/Experience'));
+const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
 const Research = lazy(() => import('./components/Research'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -51,15 +52,22 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Skills Matrix + Tech — consolidated */}
+        {/* Skills Matrix */}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <SkillsMatrix />
           </Suspense>
         </SectionBackground>
 
-        {/* Awards & Achievements — spotlight section */}
+        {/* Technologies — 3D floating balls */}
         <SectionBackground variant="pulse">
+          <Suspense fallback={<LoadingComponent />}>
+            <Tech />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Awards & Achievements — spotlight section */}
+        <SectionBackground variant="grid">
           <Suspense fallback={<LoadingComponent />}>
             <Awards />
           </Suspense>

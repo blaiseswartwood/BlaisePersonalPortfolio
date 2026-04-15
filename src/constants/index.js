@@ -635,12 +635,6 @@ export * from './data';
   ];
 
   const skills = [
-    { name: "Python", level: 95, category: "Languages" },
-    { name: "Java", level: 90, category: "Languages" },
-    { name: "C / C++", level: 80, category: "Languages" },
-    { name: "Rust", level: 75, category: "Languages" },
-    { name: "R", level: 70, category: "Languages" },
-    { name: "SQL", level: 85, category: "Languages" },
     { name: "PyTorch", level: 90, category: "AI / ML" },
     { name: "Scikit-Learn", level: 90, category: "AI / ML" },
     { name: "TensorFlow", level: 75, category: "AI / ML" },
@@ -892,4 +886,4 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     },
   ];
 
-  export { services, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };
+  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };

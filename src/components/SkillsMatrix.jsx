@@ -6,7 +6,7 @@ import { skills } from '../constants';
 import { textVariant } from '../utils/motion';
 import { cn } from '../utils/classNames';
 
-const categories = ["All", "Languages", "AI / ML", "Cloud / Infra", "Web / Systems"];
+const categories = ["All", "AI / ML", "Cloud / Infra", "Web / Systems"];
 
 const categoryColors = {
   "Languages": "#915EFF",
