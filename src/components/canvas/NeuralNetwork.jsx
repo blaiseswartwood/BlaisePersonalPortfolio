@@ -258,10 +258,10 @@ export const NeuralNetworkBackground = ({ children }) => {
       <div className="absolute bottom-[20%] left-[-3%] w-[300px] h-[300px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(102,187,106,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
       />
-      {/* Neural network canvas — full page background with padding */}
-      <div className="absolute z-0 pointer-events-none opacity-35" style={{ top: '5%', bottom: '5%', left: '3%', right: '3%' }}>
+      {/* Neural network canvas — stretches entire section */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-35">
         <Canvas
-          camera={{ position: [0, 0, 20], fov: 90 }}
+          camera={{ position: [0, 0, 18], fov: 100 }}
           gl={{ antialias: true, alpha: true }}
           dpr={[1, 1.5]}
           style={{ width: '100%', height: '100%' }}

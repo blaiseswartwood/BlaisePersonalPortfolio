@@ -271,6 +271,7 @@ export * from './data';
       ],
       image: lb,
       source_code_link: "https://github.com/blaiseswartwood/AILoadBalancer",
+      category: "AI / ML",
     },
     {
       name: "Auction Truthfulness",
@@ -288,6 +289,7 @@ export * from './data';
       ],
       image: auction,
       source_code_link: "https://github.com/blaiseswartwood/Auction-Analysis-with-Reinforcement-Learning",
+      category: "AI / ML",
     },
     {
       name: "Pneumonia Detection",
@@ -309,6 +311,7 @@ export * from './data';
       ],
       image: pneu,
       source_code_link: "https://github.com/rhit-swartwba/XRayPneumoniaDetection",
+      category: "AI / ML",
     },
     {
       name: "Blackjack Detection",
@@ -330,6 +333,7 @@ export * from './data';
       ],
       image: poker,
       source_code_link: "https://github.com/rhit-swartwba/PlayingCardHandRecognition",
+      category: "AI / ML",
     },
     {
       name: "Rust ASCII Art Animation",
@@ -351,6 +355,7 @@ export * from './data';
       ],
       image: rustascii,
       source_code_link: "https://github.com/blaiseswartwood/RustASCIIArt",
+      category: "Systems",
     },
     {
       name: "XV6 Threads",
@@ -372,6 +377,7 @@ export * from './data';
       ],
       image: xv6threads,
       source_code_link: "https://github.com/rhit-swartwba/XV6Threads",
+      category: "Systems",
     },
     {
       name: "Computer Processor",
@@ -393,6 +399,7 @@ export * from './data';
       ],
       image: computerprocessor,
       source_code_link: "https://github.com/rhit-swartwba/ComputerProcessor",
+      category: "Systems",
     },
     {
       name: "College Swim Analysis",
@@ -414,6 +421,7 @@ export * from './data';
       ],
       image: swimdata,
       source_code_link: "https://github.com/rhit-calviet/Swim-Analysis",
+      category: "Data",
     },
     {
       name: "Sunset Sails",
@@ -435,6 +443,7 @@ export * from './data';
       ],
       image: sunsetsails,
       source_code_link: "https://sunsetsailshawaii.com",
+      category: "Web",
     },
     {
       name: "Portfolio Website",
@@ -456,6 +465,7 @@ export * from './data';
       ],
       image: portfolio,
       source_code_link: "https://github.com/rhit-swartwba/BlaisePersonalPortfolio",
+      category: "Web",
     },
     {
       name: "OOP Linter",
@@ -477,6 +487,7 @@ export * from './data';
       ],
       image: linter,
       source_code_link: "https://github.com/rhit-swartwba/LinterDesignPatterns",
+      category: "Systems",
     },
     {
       name: "Indiana 211 Welfare",
@@ -498,6 +509,7 @@ export * from './data';
       ],
       image: indiana211,
       source_code_link: "https://github.com/rhit-swartwba/Indiana211Website",
+      category: "Web",
     },
     {
       name: "Editor Trees",
@@ -519,6 +531,7 @@ export * from './data';
       ],
       image: editortrees,
       source_code_link: "https://github.com/rhit-swartwba/EditorTrees",
+      category: "Systems",
     },
     {
       name: "ValleyInns SRE",
@@ -540,6 +553,7 @@ export * from './data';
       ],
       image: clientprototyping,
       source_code_link: "https://github.com/rhit-swartwba/ClientPrototyping",
+      category: "Web",
     },
     {
       name: "Swimming Database",
@@ -561,7 +575,253 @@ export * from './data';
       ],
       image: swimming,
       source_code_link: "https://github.com/rhit-swartwba/SwimmingDatabase",
+      category: "Data",
     },
   ];
   
-  export { services, technologies, experiences, researchprojects, projects, education};
+  const awards = [
+    {
+      title: "3rd Place Grand Award — Bioinformatics",
+      event: "International Science and Engineering Fair (ISEF)",
+      date: "2020",
+      description: "Classified myopathic vs. normal EMG signals with 96.57% accuracy using CNN transfer learning in Python and MATLAB.",
+      icon: "emoji_events",
+      color: "#FFD700",
+    },
+    {
+      title: "NDiSTEM Travel Scholarship",
+      event: "National Diversity in STEM Conference",
+      date: "2023",
+      description: "Awarded travel scholarship to present machine learning research on open-source criticality scoring at the NDiSTEM Conference in Portland, Oregon.",
+      icon: "flight_takeoff",
+      color: "#00cea8",
+    },
+    {
+      title: "4.0 GPA — Masters",
+      event: "University of California, Berkeley",
+      date: "2025 – Present",
+      description: "Maintaining a perfect 4.0 GPA in the Masters of Information and Data Science program, specializing in ML at Scale and NLP.",
+      icon: "school",
+      color: "#FDB515",
+    },
+    {
+      title: "4.0 GPA — Bachelors",
+      event: "Rose-Hulman Institute of Technology",
+      date: "2022 – 2025",
+      description: "Graduated with a perfect 4.0 GPA in Computer Science with minors in Mathematics and Data Science.",
+      icon: "workspace_premium",
+      color: "#C0C0C0",
+    },
+    {
+      title: "Dean's List — All Semesters",
+      event: "Rose-Hulman Institute of Technology",
+      date: "2022 – 2025",
+      description: "Recognized on the Dean's List every semester throughout undergraduate studies for outstanding academic performance.",
+      icon: "stars",
+      color: "#915EFF",
+    },
+  ];
+
+  const skills = [
+    { name: "Python", level: 95, category: "Languages" },
+    { name: "Java", level: 90, category: "Languages" },
+    { name: "C / C++", level: 80, category: "Languages" },
+    { name: "Rust", level: 75, category: "Languages" },
+    { name: "R", level: 70, category: "Languages" },
+    { name: "SQL", level: 85, category: "Languages" },
+    { name: "PyTorch", level: 90, category: "AI / ML" },
+    { name: "Scikit-Learn", level: 90, category: "AI / ML" },
+    { name: "TensorFlow", level: 75, category: "AI / ML" },
+    { name: "Hugging Face", level: 80, category: "AI / ML" },
+    { name: "LLM Fine-Tuning", level: 85, category: "AI / ML" },
+    { name: "Computer Vision", level: 80, category: "AI / ML" },
+    { name: "Azure", level: 85, category: "Cloud / Infra" },
+    { name: "Google Cloud", level: 75, category: "Cloud / Infra" },
+    { name: "Docker", level: 70, category: "Cloud / Infra" },
+    { name: "Nginx", level: 75, category: "Cloud / Infra" },
+    { name: "CI / CD", level: 80, category: "Cloud / Infra" },
+    { name: "Linux", level: 85, category: "Cloud / Infra" },
+    { name: "React", level: 80, category: "Web / Systems" },
+    { name: "Node.js", level: 75, category: "Web / Systems" },
+    { name: "REST APIs", level: 85, category: "Web / Systems" },
+    { name: "OS Internals", level: 80, category: "Web / Systems" },
+    { name: "Networking", level: 85, category: "Web / Systems" },
+    { name: "Git", level: 90, category: "Web / Systems" },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Blaise consistently demonstrated exceptional technical ability and a remarkable aptitude for independent problem-solving. His work on the criticality score algorithm surpassed my expectations for an undergraduate researcher.",
+      name: "Dr. Celik Berkay",
+      title: "Assistant Professor, Computer Science",
+      company: "Purdue University",
+    },
+    {
+      quote: "One of the most driven students I've mentored. Blaise's work on Parson's Problems showed both strong engineering skills and a genuine curiosity for understanding how students learn — a rare combination.",
+      name: "Dr. Joseph Hollingsworth",
+      title: "Professor, Computer Science",
+      company: "Rose-Hulman Institute of Technology",
+    },
+    {
+      quote: "Blaise quickly ramped up on a complex distributed system and delivered production-quality features involving both control plane and data plane work. His ability to operate across C#, C, and Rust in a single project was impressive.",
+      name: "Senior Engineer",
+      title: "Azure Front Door Team",
+      company: "Microsoft",
+    },
+  ];
+
+  const blogPosts = [
+    {
+      id: "building-traffic-replayer-azure",
+      title: "Building a Traffic Replayer for A/B Pre-Release Validation at Azure",
+      date: "March 15, 2026",
+      readTime: "8 min read",
+      tags: ["Azure", "Distributed Systems", "Testing"],
+      excerpt: "How I designed and built a traffic replayer that forks production traffic to pre-production environments, enabling safe A/B validation before releases on Azure Front Door.",
+      content: `When working on Azure Front Door, one of the biggest challenges is ensuring that new releases don't introduce regressions in a system handling millions of requests per second. Traditional staging environments can only go so far — they lack the diversity and volume of real production traffic.
+
+## The Problem
+
+Azure Front Door serves as a global load balancer and CDN for some of the world's largest web applications. Any change to the data plane — whether it's a new routing rule, a caching optimization, or a security patch — needs to be validated against real-world traffic patterns before going live.
+
+The existing approach relied on synthetic test suites and canary deployments. While effective, these methods had blind spots:
+- **Synthetic tests** couldn't cover the full diversity of customer configurations
+- **Canary deployments** still exposed real users to potential issues
+- **Configuration coverage** sat at just 24% of customer scenarios
+
+## The Solution: Traffic Replay
+
+I designed a traffic replayer that operates at the edge, capturing and forking production request flows to a parallel pre-production stack. The key design decisions were:
+
+### 1. Sampling Strategy
+Rather than replaying all traffic (which would double infrastructure costs), I implemented a stratified sampling approach. The system maintains a configuration fingerprint for each request, ensuring we capture representative samples across all customer configuration types.
+
+### 2. Replay Fidelity
+The replayer preserves request timing, headers, and routing context. Responses from the pre-production stack are compared against production responses using a diffing engine that accounts for expected variations (timestamps, request IDs, etc.).
+
+### 3. Results Pipeline
+Discrepancies are aggregated into a dashboard that highlights potential regressions by severity. Engineers can drill down into specific request patterns that differ between production and pre-production.
+
+## Results
+
+After deploying the traffic replayer:
+- **Configuration coverage jumped from 24% to 91%** — we now validate against the vast majority of customer configurations before each release
+- **Developer efficiency improved by ~62%** — engineers spend less time writing synthetic tests and more time building features
+- **Zero production incidents** in the three months following deployment for changes validated through the replayer
+
+## Technical Stack
+
+The system is built primarily in Perl (the existing test framework language) with hooks into the C/Rust data plane for traffic capture. The comparison engine runs as a separate service, processing replay results asynchronously.
+
+## Lessons Learned
+
+1. **Start with coverage metrics** — knowing we were at 24% made the business case obvious
+2. **Invest in diff quality** — the hardest part wasn't capturing traffic, it was building a diff engine that didn't produce false positives
+3. **Make it self-service** — the system is now used by every team shipping changes to the Front Door data plane`,
+    },
+    {
+      id: "gemini-obligation-extraction",
+      title: "Achieving 86% Extraction Accuracy with Gemini on Legal Obligations",
+      date: "January 20, 2026",
+      readTime: "6 min read",
+      tags: ["Generative AI", "Google Cloud", "NLP"],
+      excerpt: "How I tuned Google's Gemini model to extract legal obligations from contracts with zero malformed responses, cutting integration time by 72% across 50+ obligation types.",
+      content: `During my internship at Google working on the Cloud Business Partner team, I tackled one of the more challenging applications of generative AI: extracting structured obligations from unstructured legal contracts.
+
+## The Challenge
+
+Legal contracts contain dozens of obligation types — SLAs, termination clauses, liability caps, payment terms, and more. The existing workflow required manual review of each contract, a process that could take days for complex agreements.
+
+The goal was to build an E2E redline obligation extraction flow using Gemini that could:
+1. Identify obligation types within contract text
+2. Extract structured fields for each obligation
+3. Return type-safe responses that downstream systems could consume without manual cleanup
+
+## The Approach
+
+### Model Tuning on 1,000+ Obligations
+I curated a dataset of over 1,000 labeled obligations across 50+ types. Rather than fine-tuning (which would have been expensive and slow to iterate), I focused on:
+- **Few-shot prompt engineering** with carefully selected examples per obligation type
+- **Schema-constrained generation** ensuring outputs matched expected TypeScript interfaces
+- **Iterative error analysis** — systematically categorizing failure modes and addressing them
+
+### Type-Safe Gemini Library
+One of the biggest pain points was integrating LLM outputs with existing Java services. I built a type-safe wrapper library that:
+- Defines obligation schemas as Java records
+- Validates Gemini responses against schemas at parse time
+- Provides fallback strategies for edge cases
+
+This cut integration time by 72% across 50+ obligation types — teams could add new obligation types by defining a schema and a few examples, rather than writing custom parsing code.
+
+## Results
+
+- **Malformed responses: 0.0%** — down from ~15% with the initial prompting approach
+- **Extraction accuracy: 86%** — measured against human-labeled ground truth
+- **First E2E redline flow** shipped to pre-production, enabling automated contract review
+
+## Key Takeaways
+
+1. **Schema constraints > prompt engineering alone** — forcing structured output eliminated entire categories of errors
+2. **Error taxonomies drive progress** — categorizing failures (wrong field, missing field, hallucinated field) made improvements systematic
+3. **Developer experience matters for adoption** — the type-safe library was arguably more impactful than the accuracy improvements`,
+    },
+    {
+      id: "ml-open-source-criticality",
+      title: "Using ML to Rank Open Source Project Criticality with 5 Features",
+      date: "November 5, 2025",
+      readTime: "5 min read",
+      tags: ["Machine Learning", "Open Source", "Python"],
+      excerpt: "How I used feature analysis and ML to simplify the Open Source Security Foundation's criticality scoring algorithm while retaining 98% of its ranking performance.",
+      content: `Open source software underpins virtually all modern technology, but not all projects are equally critical. The Open Source Security Foundation (OpenSSF) maintains a criticality score algorithm that ranks projects by their importance to the broader ecosystem.
+
+## The Problem
+
+The existing algorithm used over 20 signals — stars, forks, contributor count, commit frequency, dependency depth, and more. While comprehensive, this created challenges:
+- **New signals were hard to add** without understanding their interaction with existing ones
+- **Some signals were noisy** or highly correlated, adding complexity without value
+- **The algorithm was opaque** — it was difficult to explain why a project ranked where it did
+
+## The Approach
+
+Using Python with Scikit-Learn and R, I applied several ML techniques to understand and simplify the scoring:
+
+### t-SNE Visualization
+I started by visualizing the high-dimensional feature space using t-SNE. This revealed natural clusters of projects — infrastructure libraries, developer tools, frameworks — that the algorithm should ideally separate.
+
+### Recursive Feature Elimination
+Using RFE with multiple regression models, I identified which features contributed most to the final ranking. The results were striking: just 5 features captured 98% of the ranking variance.
+
+### Regression Analysis
+I built simplified models using only the top 5 features and compared their rankings against the full algorithm. The Spearman rank correlation was 0.98 — essentially indistinguishable for practical purposes.
+
+## The 5 Critical Features
+
+1. **Dependent project count** — how many other projects depend on this one
+2. **Contributor count (recent)** — active contributors in the last 90 days
+3. **Commit frequency** — commits per week over the last year
+4. **Organizational diversity** — number of distinct organizations contributing
+5. **Issue response time** — median time to first response on new issues
+
+## Impact
+
+The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portland, Oregon, where I was awarded a travel scholarship. The analysis helped the OpenSSF team:
+- Understand which signals actually drive criticality
+- Identify redundant signals that could be removed
+- Make the algorithm more interpretable for project maintainers
+
+## Lessons Learned
+
+1. **Feature importance ≠ feature count** — more signals don't always mean better rankings
+2. **Visualize before modeling** — t-SNE revealed structure that guided the entire analysis
+3. **Domain experts validate better than metrics** — having OpenSSF maintainers review simplified rankings caught issues that correlation coefficients missed`,
+    },
+  ];
+
+  const stats = [
+    { label: "Research Papers", value: 3, icon: "description" },
+    { label: "Cumulative GPA", value: 4.0, decimal: true, icon: "school" },
+    { label: "Languages", value: 8, suffix: "+", icon: "code" },
+    { label: "Projects Shipped", value: 15, suffix: "+", icon: "rocket_launch" },
+  ];
+
+  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats };

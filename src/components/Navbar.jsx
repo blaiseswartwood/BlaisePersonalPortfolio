@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks, resumeLinks } from '../constants/data';
 import { logo, menu, close } from '../assets';
@@ -9,6 +9,9 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -16,14 +19,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNavClick = (title) => {
-    setActive(title);
+  const handleNavClick = (link) => {
+    setActive(link.title);
     setToggle(false);
+    if (!isHomePage) {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const handleLogoClick = () => {
     setActive("");
-    window.scrollTo(0, 0);
+    if (!isHomePage) {
+      navigate('/');
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   const NavLink = ({ link, isMobile = false }) => (
@@ -35,9 +48,9 @@ const Navbar = () => {
         "hover:text-white",
         isMobile ? "text-[16px]" : "text-[18px]"
       )}
-      onClick={() => handleNavClick(link.title)}
+      onClick={() => handleNavClick(link)}
     >
-      <a href={`#${link.id}`}>{link.title}</a>
+      <a href={isHomePage ? `#${link.id}` : `/#${link.id}`}>{link.title}</a>
       {!isMobile && (
         <span className={cn(
           "absolute -bottom-1 left-0 h-[2px] bg-[#915EFF] transition-all duration-300",

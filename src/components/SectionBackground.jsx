@@ -285,7 +285,7 @@ const SectionBackground = ({ variant = 'aurora', children }) => {
       </div>
       <div className="relative z-[1]">
         {children}
-      </div>}
+      </div>
     </div>
   );
 };

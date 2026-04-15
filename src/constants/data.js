@@ -1,7 +1,10 @@
 // Navigation
 export const navLinks = [
   { id: "about", title: "About" },
-  { id: "work", title: "Work" },
+  { id: "work", title: "Experience" },
+  { id: "skills", title: "Skills" },
+  { id: "awards", title: "Awards" },
+  { id: "blog", title: "Blog" },
   { id: "contact", title: "Contact" },
 ];
 

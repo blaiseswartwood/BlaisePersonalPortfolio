@@ -5,6 +5,7 @@ import { styles } from '../styles';
 import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
+import StatCounters from './StatCounters';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -45,7 +46,10 @@ const About = () => {
         My main interests lie in <span className="text-[#915EFF]">Generative AI</span> and <span className="text-[#915EFF]">Machine Learning</span>, but I am capable and willing to expand my skillset.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 justify-center">
+      {/* Animated Stat Counters */}
+      <StatCounters />
+
+      <div className="mt-16 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

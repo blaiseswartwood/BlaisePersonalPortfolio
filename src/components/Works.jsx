@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import { styles } from '../styles';
@@ -7,6 +8,8 @@ import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { cn } from '../utils/classNames';
 import useMediaQuery from '../hooks/useMediaQuery';
+
+const projectCategories = ["All", "AI / ML", "Systems", "Web", "Data"];
 
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -73,6 +76,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 };
 
 const Works = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredProjects = activeFilter === "All"
+    ? projects
+    : projects.filter(p => p.category === activeFilter);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -94,10 +103,31 @@ const Works = () => {
         topics in computer science. Feel free to explore them and my Github in more detail.
       </motion.p>
 
-      <div className="mt-10 flex flex-wrap gap-7 justify-center sm:justify-start">
-        {projects.map((project, index) => (
+      {/* Filter Tabs */}
+      <div className="mt-8 flex flex-wrap gap-3">
+        {projectCategories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveFilter(cat)}
+            className={cn(
+              "px-4 py-2 rounded-full text-[12px] sm:text-[13px] font-medium transition-all duration-300 border",
+              activeFilter === cat
+                ? "bg-[#915EFF]/20 border-[#915EFF]/50 text-white"
+                : "bg-transparent border-gray-700 text-secondary hover:border-[#915EFF]/30 hover:text-white"
+            )}
+          >
+            {cat}
+            <span className="ml-1.5 text-[10px] sm:text-[11px] text-secondary/60">
+              ({cat === "All" ? projects.length : projects.filter(p => p.category === cat).length})
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-7 justify-center sm:justify-start">
+        {filteredProjects.map((project, index) => (
           <ProjectCard 
-            key={`project-${index}`}
+            key={`project-${project.name}`}
             index={index}
             {...project}
           />
