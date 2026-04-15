@@ -41,10 +41,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
+    <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden items-stretch">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] relative"
+        className="flex-1 xl:flex-[0.55] relative"
       >
         {/* Card with gradient border */}
         <div className="relative rounded-2xl p-px bg-gradient-to-b from-[#915EFF]/40 via-[#915EFF]/10 to-[#00cea8]/20 overflow-hidden">
@@ -161,7 +161,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="flex-1 xl:flex-[0.45] xl:h-auto md:h-[550px] h-[350px] min-h-[400px]"
       >
         <EarthCanvas />
       </motion.div>

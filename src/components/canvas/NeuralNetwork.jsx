@@ -24,11 +24,11 @@ const generateNetwork = () => {
   const layers = [3, 5, 7, 7, 5, 3];
   const nodes = [];
   const edges = [];
-  const layerSpacing = 5.0;
+  const layerSpacing = 7.0;
   const offsetX = -(layers.length - 1) * layerSpacing / 2;
 
   layers.forEach((count, layerIdx) => {
-    const nodeSpacing = 1.4;
+    const nodeSpacing = 2.0;
     const offsetY = -(count - 1) * nodeSpacing / 2;
     for (let i = 0; i < count; i++) {
       nodes.push({
@@ -258,13 +258,13 @@ export const NeuralNetworkBackground = ({ children }) => {
       <div className="absolute bottom-[20%] left-[-3%] w-[300px] h-[300px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(102,187,106,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
       />
-      {/* Neural network canvas — full width */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-35">
+      {/* Neural network canvas — full page background with padding */}
+      <div className="absolute z-0 pointer-events-none opacity-35" style={{ top: '5%', bottom: '5%', left: '3%', right: '3%' }}>
         <Canvas
-          camera={{ position: [0, 0, 16], fov: 85 }}
+          camera={{ position: [0, 0, 20], fov: 90 }}
           gl={{ antialias: true, alpha: true }}
           dpr={[1, 1.5]}
-          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+          style={{ width: '100%', height: '100%' }}
         >
           <NeuralNetworkScene />
           <Preload all />
