@@ -39,7 +39,7 @@ const Interests = () => {
         className="mt-4 text-secondary text-[16px] max-w-2xl leading-[28px]"
       >
         When I'm not engineering software, you can find me in the pool, 
-        on a trail, or making music.
+        on a trail, or making music. Born and raised in <span className="text-white font-medium">Hawai'i</span>, now based in <span className="text-white font-medium">Washington</span>.
       </motion.p>
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
