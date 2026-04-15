@@ -437,16 +437,19 @@ img {
   background: linear-gradient(
     90deg, 
     #915EFF 0%, 
-    #c4a0ff 25%, 
-    #915EFF 50%, 
-    #c4a0ff 75%, 
+    #00cea8 15%,
+    #4fc3f7 30%, 
+    #e040fb 45%,
+    #ff6f00 60%,
+    #915EFF 75%,
+    #00cea8 90%,
     #915EFF 100%
   );
-  background-size: 200% auto;
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 4s linear infinite;
+  animation: shimmer 6s linear infinite;
 }
 
 /* Ambient glow orbs */

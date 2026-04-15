@@ -49,7 +49,7 @@ const Hero = () => {
             className={cn(styles.heroSubText, "mt-2 text-white-100")}
           >
             A software engineer at <br className="sm:block hidden" />
-            Microsoft focused on <br className="sm:block hidden" />
+            <span className="text-white font-bold">Microsoft</span> focused on <br className="sm:block hidden" />
             generative AI &amp; data science
           </motion.p>
         </div>
