@@ -139,6 +139,18 @@ export * from './data';
   
   const experiences = [
     {
+      title: "IT Intern",
+      subtitle: "",
+      company_name: "Aloha Pacific Federal Credit Union",
+      icon: purdue,
+      iconBg: "#D3D3D3",
+      date: "Summer 2021",
+      points: [
+        "Built an **inventory management program** (Python front-end, SQL back-end) to organize hardware assets",
+        "Assisted in general maintenance and inventory keeping of **IT equipment**",
+      ],
+    },
+    {
       title: "Research Intern",
       subtitle: "",
       company_name: "Purdue University",
@@ -883,7 +895,13 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
       description: "Paired with and mentored incoming freshmen joining Computer Science, helping them navigate coursework, campus life, and career planning.",
       icon: "group",
       color: "#00cea8",
-    },
-  ];
+    },    {
+      role: "RISE/ESCALATE Entrepreneur Club",
+      organization: "Rose-Hulman Institute of Technology",
+      date: "2023 \u2013 2024",
+      description: "Member of the entrepreneurship club focused on developing business ideas, pitching solutions, and collaborating across disciplines.",
+      icon: "lightbulb",
+      color: "#ffab40",
+    },  ];
 
   export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };

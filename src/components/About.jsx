@@ -6,6 +6,7 @@ import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
 import StatCounters from './StatCounters';
+import { microsoft, googlelogo } from '../assets';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -26,6 +27,22 @@ const ServiceCard = ({ index, title, icon }) => {
   )
 }
 
+const CompanyCard = ({ name, role, logo, index }) => (
+  <motion.div
+    variants={fadeIn("up", "spring", 0.2 * index, 0.6)}
+    className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-tertiary/70 border border-white/5
+      hover:border-[#915EFF]/25 transition-all duration-300 flex-1 min-w-[260px]"
+  >
+    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 p-2">
+      <img src={logo} alt={name} className="w-10 h-10 object-contain" />
+    </div>
+    <div>
+      <h4 className="text-white font-bold text-[18px]">{name}</h4>
+      <p className="text-secondary text-[13px]">{role}</p>
+    </div>
+  </motion.div>
+);
+
 const About = () => {
   return (
     <>
@@ -44,10 +61,23 @@ const About = () => {
         minors in Mathematics and Data Science. Focused on <span className="text-[#915EFF]">Generative AI</span> and <span className="text-[#915EFF]">Machine Learning</span>.
       </motion.p>
 
+      {/* Company Highlights */}
+      <div className="mt-10 flex flex-wrap gap-5 max-w-3xl">
+        <CompanyCard name="Microsoft" role="Software Engineer — Azure Front Door" logo={microsoft} index={0} />
+        <CompanyCard name="Google" role="Software Engineer Intern — Google Cloud" logo={googlelogo} index={1} />
+      </div>
+
       {/* Animated Stat Counters */}
       <StatCounters />
 
-      <div className="mt-16 flex flex-wrap gap-10 justify-center">
+      {/* Focus Areas */}
+      <motion.div variants={textVariant()} className="mt-16">
+        <p className={styles.sectionSubText}>What I specialize in</p>
+        <h3 className="text-white font-bold text-[24px] sm:text-[30px]">Focus Areas</h3>
+        <div className="section-divider" />
+      </motion.div>
+
+      <div className="mt-10 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
