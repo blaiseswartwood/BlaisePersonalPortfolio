@@ -23,6 +23,7 @@ const Awards = lazy(() => import('./components/Awards'));
 const SkillsMatrix = lazy(() => import('./components/SkillsMatrix'));
 const Blog = lazy(() => import('./components/Blog'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
+const Interests = lazy(() => import('./components/Interests'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 
 const HomePage = () => {
@@ -99,6 +100,13 @@ const HomePage = () => {
         <SectionBackground variant="pulse">
           <Suspense fallback={<LoadingComponent />}>
             <Testimonials />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Life Outside Career */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Interests />
           </Suspense>
         </SectionBackground>
 

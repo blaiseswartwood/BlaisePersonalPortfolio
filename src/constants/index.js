@@ -33,21 +33,21 @@ export * from './data';
   ];
 
   const education = [
-    {
-      titlefront: "Masters in Information and Data Science",
-      school: "University of California, Berkeley",
-      iconfront: masters,
-      date: "August 2025 - May 2028",
-      points: [ "Research Design and Application for Data and Analysis",
-                 "Fundamentals of Data Engineering",
-                 "Applied Machine Learning",
-                 "Machine Learning at Scale",
-                 "Machine Learning Systems Engineering",
-                 "Natural Lang Processing with Deep Learning",
-                 "Generative AI: Foundations, Techniques, and Challenges",
-      ],
-      GPA: "4.0",
-    },
+    // {
+    //   titlefront: "Masters in Information and Data Science",
+    //   school: "University of California, Berkeley",
+    //   iconfront: masters,
+    //   date: "August 2025 - May 2028",
+    //   points: [ "Research Design and Application for Data and Analysis",
+    //              "Fundamentals of Data Engineering",
+    //              "Applied Machine Learning",
+    //              "Machine Learning at Scale",
+    //              "Machine Learning Systems Engineering",
+    //              "Natural Lang Processing with Deep Learning",
+    //              "Generative AI: Foundations, Techniques, and Challenges",
+    //   ],
+    //   GPA: "4.0",
+    // },
     {
         titlefront: "Bachelors of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
@@ -596,14 +596,14 @@ export * from './data';
       icon: "flight_takeoff",
       color: "#00cea8",
     },
-    {
-      title: "4.0 GPA — Masters",
-      event: "University of California, Berkeley",
-      date: "2025 – Present",
-      description: "Maintaining a perfect 4.0 GPA in the Masters of Information and Data Science program, specializing in ML at Scale and NLP.",
-      icon: "school",
-      color: "#FDB515",
-    },
+    // {
+    //   title: "4.0 GPA \u2014 Masters",
+    //   event: "University of California, Berkeley",
+    //   date: "2025 \u2013 Present",
+    //   description: "Maintaining a perfect 4.0 GPA in the Masters of Information and Data Science program, specializing in ML at Scale and NLP.",
+    //   icon: "school",
+    //   color: "#FDB515",
+    // },
     {
       title: "4.0 GPA — Bachelors",
       event: "Rose-Hulman Institute of Technology",
@@ -826,4 +826,31 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     { label: "Internships", value: 3, icon: "work" },
   ];
 
-  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats };
+  const interests = [
+    {
+      title: "Competitive Swimming",
+      description: "Rose-Hulman DIII Varsity Athlete — Swim & Dive team",
+      icon: "pool",
+      color: "#4fc3f7",
+    },
+    {
+      title: "Piano",
+      description: "Classically trained with years of lessons",
+      icon: "piano",
+      color: "#ce93d8",
+    },
+    {
+      title: "Guitar",
+      description: "Acoustic & electric guitar player",
+      icon: "music_note",
+      color: "#ffab40",
+    },
+    {
+      title: "Hiking",
+      description: "Exploring trails and the outdoors",
+      icon: "hiking",
+      color: "#66bb6a",
+    },
+  ];
+
+  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats, interests };
