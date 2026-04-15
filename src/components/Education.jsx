@@ -7,16 +7,25 @@ import { styles } from '../styles';
 import { textVariant, fadeIn } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
 
-const EducationCardFront = ({ title, school, icon, onClick }) => {
+const EducationCardFront = ({ title, school, icon, minors, onClick }) => {
     return (
         <div className="w-full" onClick={onClick}>
             <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow">
-                <div className="bg-tertiary rounded-[20px] py-5 px-8 sm:px-12 h-[320px] sm:h-[340px] flex justify-evenly 
+                <div className="bg-tertiary rounded-[20px] py-5 px-8 sm:px-12 min-h-[340px] sm:min-h-[380px] flex justify-evenly 
                     items-center flex-col hover:brightness-110 transition-all duration-300 cursor-pointer"
                 >
                     <img src={icon} alt={title} className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] object-contain" />
                     <p className="text-secondary text-center text-[13px] sm:text-[14px]">{school}</p>
                     <h3 className="text-white text-[17px] sm:text-[20px] font-bold text-center">{title}</h3>
+                    {minors && minors.length > 0 && (
+                        <div className="flex gap-2 mt-1">
+                            {minors.map((minor) => (
+                                <span key={minor} className="text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full bg-[#915EFF]/15 border border-[#915EFF]/30 text-[#c4a0ff] font-medium">
+                                    Minor: {minor}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                     <p className="text-secondary text-[11px] sm:text-[12px] italic mt-1">Tap to see details</p>
                 </div>
             </div>
@@ -24,15 +33,14 @@ const EducationCardFront = ({ title, school, icon, onClick }) => {
     )
 }
 
-const EducationCardBack = ({ date, gpa, points, school, onClick }) => {
+const EducationCardBack = ({ date, gpa, points, school, minors, onClick }) => {
     const isBerkeley = school?.includes("Berkeley");
     const accentColor = isBerkeley ? "from-[#003262] to-[#FDB515]" : "from-[#800000] to-[#C0C0C0]";
-    const accentText = isBerkeley ? "text-[#FDB515]" : "text-[#C0C0C0]";
 
     return (
         <div className="w-full" onClick={onClick}>
             <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
-                <div className="bg-tertiary rounded-[20px] h-[320px] sm:h-[340px] flex flex-col w-full hover:brightness-125 transition cursor-pointer overflow-hidden relative">
+                <div className="bg-tertiary rounded-[20px] min-h-[340px] sm:min-h-[380px] flex flex-col w-full hover:brightness-125 transition cursor-pointer overflow-hidden relative">
                     {/* Accent bar at top */}
                     <div className={`w-full h-[4px] bg-gradient-to-r ${accentColor}`} />
                     
@@ -47,17 +55,25 @@ const EducationCardBack = ({ date, gpa, points, school, onClick }) => {
                             </div>
                             <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${accentColor} bg-opacity-20`}>
                                 <p className="text-white font-bold text-[12px] sm:text-[13px]">
-                                    GPA: {gpa.split('  ')[0]}
+                                    GPA: {gpa}
                                 </p>
                             </div>
                         </div>
 
-                        {/* Minor info if present */}
-                        {gpa.includes('Minor') && (
-                            <p className={`${accentText} text-[11px] sm:text-[12px] font-medium mb-2`}>
-                                <span className="material-symbols-outlined text-[13px] align-middle mr-1">school</span>
-                                {gpa.split('  ')[1]}
-                            </p>
+                        {/* Minors as distinct badges */}
+                        {minors && minors.length > 0 && (
+                            <div className="mb-3 flex items-center gap-2 flex-wrap">
+                                <span className="text-secondary text-[11px] sm:text-[12px] font-medium">Minors:</span>
+                                {minors.map((minor) => (
+                                    <span
+                                        key={minor}
+                                        className="text-[11px] sm:text-[12px] px-3 py-1 rounded-full font-semibold
+                                          bg-[#915EFF]/15 border border-[#915EFF]/30 text-[#c4a0ff]"
+                                    >
+                                        {minor}
+                                    </span>
+                                ))}
+                            </div>
                         )}
 
                         {/* Courses section */}
@@ -122,8 +138,8 @@ const Education = () => {
                             flipSpeedBackToFront={0.5}
                             flipSpeedFrontToBack={0.5}
                         >
-                            <EducationCardFront title={card.titlefront} school={card.school} icon={card.iconfront} onClick={() => handleClick(index)} />
-                            <EducationCardBack date={card.date} gpa={card.GPA} points={card.points} school={card.school} onClick={() => handleClick(index)} />
+                            <EducationCardFront title={card.titlefront} school={card.school} icon={card.iconfront} minors={card.minors} onClick={() => handleClick(index)} />
+                            <EducationCardBack date={card.date} gpa={card.GPA} points={card.points} school={card.school} minors={card.minors} onClick={() => handleClick(index)} />
                         </ReactCardFlip>
                     </motion.div>
                 ))}

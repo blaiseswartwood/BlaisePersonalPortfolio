@@ -67,7 +67,8 @@ export * from './data';
                 "Computer Networks", 
                 "Image Recognition",
         ],
-        GPA: "4.0  Minor: Mathematics, Data Science",
+        GPA: "4.0",
+        minors: ["Mathematics", "Data Science"],
     },
 
 ];
