@@ -5,7 +5,7 @@ import {
     portfolio, swimming, purdue, microsoft, java, microsoftsql,
     python, pytorch, scikitlearn, criticalityscore, myopathy,
     plearn, rosehulman, sunsetsails, xv6threads, indiana211,
-    googlelogo, poker, swimdata, pneu, rustascii, masters,
+    googlelogo, poker, swimdata, pneu, rustascii,
     auction, lb, mililani,
 } from "../assets";
 
@@ -83,6 +83,10 @@ export * from './data';
                 "AP Biology",
                 "AP Psychology",
                 "AP World History",
+                "AP US History",
+                "AP Environmental Science",
+                "AP Computer Science A",
+                "AP Computer Science Principles",
                 "AP Language & Composition",
                 "AP Literature",
         ],
@@ -688,153 +692,6 @@ export * from './data';
     },
   ];
 
-  const blogPosts = [
-    {
-      id: "building-traffic-replayer-azure",
-      title: "Building a Traffic Replayer for A/B Pre-Release Validation at Azure",
-      date: "March 15, 2026",
-      readTime: "8 min read",
-      tags: ["Azure", "Distributed Systems", "Testing"],
-      excerpt: "How I designed and built a traffic replayer that forks production traffic to pre-production environments, enabling safe A/B validation before releases on Azure Front Door.",
-      content: `When working on Azure Front Door, one of the biggest challenges is ensuring that new releases don't introduce regressions in a system handling millions of requests per second. Traditional staging environments can only go so far — they lack the diversity and volume of real production traffic.
-
-## The Problem
-
-Azure Front Door serves as a global load balancer and CDN for some of the world's largest web applications. Any change to the data plane — whether it's a new routing rule, a caching optimization, or a security patch — needs to be validated against real-world traffic patterns before going live.
-
-The existing approach relied on synthetic test suites and canary deployments. While effective, these methods had blind spots:
-- **Synthetic tests** couldn't cover the full diversity of customer configurations
-- **Canary deployments** still exposed real users to potential issues
-- **Configuration coverage** sat at just 24% of customer scenarios
-
-## The Solution: Traffic Replay
-
-I designed a traffic replayer that operates at the edge, capturing and forking production request flows to a parallel pre-production stack. The key design decisions were:
-
-### 1. Sampling Strategy
-Rather than replaying all traffic (which would double infrastructure costs), I implemented a stratified sampling approach. The system maintains a configuration fingerprint for each request, ensuring we capture representative samples across all customer configuration types.
-
-### 2. Replay Fidelity
-The replayer preserves request timing, headers, and routing context. Responses from the pre-production stack are compared against production responses using a diffing engine that accounts for expected variations (timestamps, request IDs, etc.).
-
-### 3. Results Pipeline
-Discrepancies are aggregated into a dashboard that highlights potential regressions by severity. Engineers can drill down into specific request patterns that differ between production and pre-production.
-
-## Results
-
-After deploying the traffic replayer:
-- **Configuration coverage jumped from 24% to 91%** — we now validate against the vast majority of customer configurations before each release
-- **Developer efficiency improved by ~62%** — engineers spend less time writing synthetic tests and more time building features
-- **Zero production incidents** in the three months following deployment for changes validated through the replayer
-
-## Technical Stack
-
-The system is built primarily in Perl (the existing test framework language) with hooks into the C/Rust data plane for traffic capture. The comparison engine runs as a separate service, processing replay results asynchronously.
-
-## Lessons Learned
-
-1. **Start with coverage metrics** — knowing we were at 24% made the business case obvious
-2. **Invest in diff quality** — the hardest part wasn't capturing traffic, it was building a diff engine that didn't produce false positives
-3. **Make it self-service** — the system is now used by every team shipping changes to the Front Door data plane`,
-    },
-    {
-      id: "gemini-obligation-extraction",
-      title: "Achieving 86% Extraction Accuracy with Gemini on Legal Obligations",
-      date: "January 20, 2026",
-      readTime: "6 min read",
-      tags: ["Generative AI", "Google Cloud", "NLP"],
-      excerpt: "How I tuned Google's Gemini model to extract legal obligations from contracts with zero malformed responses, cutting integration time by 72% across 50+ obligation types.",
-      content: `During my internship at Google working on the Cloud Business Partner team, I tackled one of the more challenging applications of generative AI: extracting structured obligations from unstructured legal contracts.
-
-## The Challenge
-
-Legal contracts contain dozens of obligation types — SLAs, termination clauses, liability caps, payment terms, and more. The existing workflow required manual review of each contract, a process that could take days for complex agreements.
-
-The goal was to build an E2E redline obligation extraction flow using Gemini that could:
-1. Identify obligation types within contract text
-2. Extract structured fields for each obligation
-3. Return type-safe responses that downstream systems could consume without manual cleanup
-
-## The Approach
-
-### Model Tuning on 1,000+ Obligations
-I curated a dataset of over 1,000 labeled obligations across 50+ types. Rather than fine-tuning (which would have been expensive and slow to iterate), I focused on:
-- **Few-shot prompt engineering** with carefully selected examples per obligation type
-- **Schema-constrained generation** ensuring outputs matched expected TypeScript interfaces
-- **Iterative error analysis** — systematically categorizing failure modes and addressing them
-
-### Type-Safe Gemini Library
-One of the biggest pain points was integrating LLM outputs with existing Java services. I built a type-safe wrapper library that:
-- Defines obligation schemas as Java records
-- Validates Gemini responses against schemas at parse time
-- Provides fallback strategies for edge cases
-
-This cut integration time by 72% across 50+ obligation types — teams could add new obligation types by defining a schema and a few examples, rather than writing custom parsing code.
-
-## Results
-
-- **Malformed responses: 0.0%** — down from ~15% with the initial prompting approach
-- **Extraction accuracy: 86%** — measured against human-labeled ground truth
-- **First E2E redline flow** shipped to pre-production, enabling automated contract review
-
-## Key Takeaways
-
-1. **Schema constraints > prompt engineering alone** — forcing structured output eliminated entire categories of errors
-2. **Error taxonomies drive progress** — categorizing failures (wrong field, missing field, hallucinated field) made improvements systematic
-3. **Developer experience matters for adoption** — the type-safe library was arguably more impactful than the accuracy improvements`,
-    },
-    {
-      id: "ml-open-source-criticality",
-      title: "Using ML to Rank Open Source Project Criticality with 5 Features",
-      date: "November 5, 2025",
-      readTime: "5 min read",
-      tags: ["Machine Learning", "Open Source", "Python"],
-      excerpt: "How I used feature analysis and ML to simplify the Open Source Security Foundation's criticality scoring algorithm while retaining 98% of its ranking performance.",
-      content: `Open source software underpins virtually all modern technology, but not all projects are equally critical. The Open Source Security Foundation (OpenSSF) maintains a criticality score algorithm that ranks projects by their importance to the broader ecosystem.
-
-## The Problem
-
-The existing algorithm used over 20 signals — stars, forks, contributor count, commit frequency, dependency depth, and more. While comprehensive, this created challenges:
-- **New signals were hard to add** without understanding their interaction with existing ones
-- **Some signals were noisy** or highly correlated, adding complexity without value
-- **The algorithm was opaque** — it was difficult to explain why a project ranked where it did
-
-## The Approach
-
-Using Python with Scikit-Learn and R, I applied several ML techniques to understand and simplify the scoring:
-
-### t-SNE Visualization
-I started by visualizing the high-dimensional feature space using t-SNE. This revealed natural clusters of projects — infrastructure libraries, developer tools, frameworks — that the algorithm should ideally separate.
-
-### Recursive Feature Elimination
-Using RFE with multiple regression models, I identified which features contributed most to the final ranking. The results were striking: just 5 features captured 98% of the ranking variance.
-
-### Regression Analysis
-I built simplified models using only the top 5 features and compared their rankings against the full algorithm. The Spearman rank correlation was 0.98 — essentially indistinguishable for practical purposes.
-
-## The 5 Critical Features
-
-1. **Dependent project count** — how many other projects depend on this one
-2. **Contributor count (recent)** — active contributors in the last 90 days
-3. **Commit frequency** — commits per week over the last year
-4. **Organizational diversity** — number of distinct organizations contributing
-5. **Issue response time** — median time to first response on new issues
-
-## Impact
-
-The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portland, Oregon, where I was awarded a travel scholarship. The analysis helped the OpenSSF team:
-- Understand which signals actually drive criticality
-- Identify redundant signals that could be removed
-- Make the algorithm more interpretable for project maintainers
-
-## Lessons Learned
-
-1. **Feature importance ≠ feature count** — more signals don't always mean better rankings
-2. **Visualize before modeling** — t-SNE revealed structure that guided the entire analysis
-3. **Domain experts validate better than metrics** — having OpenSSF maintainers review simplified rankings caught issues that correlation coefficients missed`,
-    },
-  ];
-
   const stats = [
     { label: "Research Papers", value: 3, icon: "description" },
     { label: "Cumulative GPA", value: 4.0, decimal: true, icon: "school" },
@@ -868,12 +725,24 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
       icon: "hiking",
       color: "#66bb6a",
     },
+    {
+      title: "Gym",
+      description: "Strength training and consistent fitness routines",
+      icon: "fitness_center",
+      color: "#ef5350",
+    },
+    {
+      title: "Traveling",
+      description: "Exploring new places, cultures, and food",
+      icon: "flight_takeoff",
+      color: "#29b6f6",
+    },
   ];
 
   const volunteering = [
     {
       role: "Varsity Swim & Dive Captain",
-      organization: "Rose-Hulman Institute of Technology",
+      organization: "Rose-Hulman",
       date: "2023 – 2025",
       description: "Led team practices, coordinated meets, and mentored underclassmen as DIII varsity team captain.",
       icon: "sports",
@@ -881,7 +750,7 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     },
     {
       role: "Teaching Assistant",
-      organization: "Rose-Hulman Institute of Technology",
+      organization: "Rose-Hulman",
       date: "2024 – 2025",
       description: "TA for Data Structures & Algorithms and Design & Analysis of Algorithms. Guided 60+ students, held office hours, and graded assignments.",
       icon: "school",
@@ -889,14 +758,14 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     },
     {
       role: "Rose-Hulman Buddy Program",
-      organization: "Rose-Hulman Institute of Technology",
+      organization: "Rose-Hulman",
       date: "2024 – 2025",
       description: "Paired with and mentored incoming freshmen joining Computer Science, helping them navigate coursework, campus life, and career planning.",
       icon: "group",
       color: "#00cea8",
     },    {
       role: "RISE/ESCALATE Entrepreneur Club",
-      organization: "Rose-Hulman Institute of Technology",
+      organization: "Rose-Hulman",
       date: "2023 \u2013 2024",
       description: "Member of the entrepreneurship club focused on developing business ideas, pitching solutions, and collaborating across disciplines.",
       icon: "lightbulb",

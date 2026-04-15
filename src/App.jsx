@@ -94,7 +94,7 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Testimonials */}}
+        {/* Testimonials */}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <Testimonials />

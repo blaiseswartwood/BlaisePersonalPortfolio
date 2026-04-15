@@ -11,14 +11,14 @@ const EducationCardFront = ({ title, school, icon, minors, onClick }) => {
     return (
         <div className="w-full" onClick={onClick}>
             <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow">
-                <div className="bg-tertiary rounded-[20px] py-5 px-8 sm:px-12 min-h-[340px] sm:min-h-[380px] flex justify-evenly 
+                <div className="bg-tertiary rounded-[20px] py-6 px-8 sm:px-12 min-h-[340px] sm:min-h-[380px] flex justify-evenly 
                     items-center flex-col hover:brightness-110 transition-all duration-300 cursor-pointer"
                 >
-                    <img src={icon} alt={title} className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] object-contain" />
-                    <p className="text-secondary text-center text-[13px] sm:text-[14px]">{school}</p>
-                    <h3 className="text-white text-[17px] sm:text-[20px] font-bold text-center">{title}</h3>
+                    <img src={icon} alt={title} className="w-[110px] h-[110px] sm:w-[140px] sm:h-[140px] object-contain" />
+                    <p className="text-secondary text-center text-[13px] sm:text-[14px] mt-2">{school}</p>
+                    <h3 className="text-white text-[17px] sm:text-[20px] font-bold text-center leading-snug">{title}</h3>
                     {minors && minors.length > 0 && (
-                        <div className="flex gap-2 mt-1">
+                        <div className="flex gap-2 mt-2 flex-wrap justify-center">
                             {minors.map((minor) => (
                                 <span key={minor} className="text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full bg-[#915EFF]/15 border border-[#915EFF]/30 text-[#c4a0ff] font-medium">
                                     Minor: {minor}
@@ -26,7 +26,10 @@ const EducationCardFront = ({ title, school, icon, minors, onClick }) => {
                             ))}
                         </div>
                     )}
-                    <p className="text-secondary text-[11px] sm:text-[12px] italic mt-1">Tap to see details</p>
+                    <div className="flex items-center gap-1.5 mt-3 text-secondary/60">
+                        <span className="material-symbols-outlined text-[14px]">touch_app</span>
+                        <p className="text-[11px] sm:text-[12px]">Tap to see details</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,20 +44,18 @@ const EducationCardBack = ({ date, gpa, points, school, minors, courseworkLabel,
     return (
         <div className="w-full" onClick={onClick}>
             <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
-                <div className="bg-tertiary rounded-[20px] min-h-[340px] sm:min-h-[380px] flex flex-col w-full hover:brightness-125 transition cursor-pointer overflow-hidden relative">
+                <div className="bg-tertiary rounded-[20px] min-h-[340px] sm:min-h-[380px] flex flex-col w-full hover:brightness-110 transition cursor-pointer overflow-hidden relative">
                     {/* Accent bar at top */}
                     <div className={`w-full h-[4px] bg-gradient-to-r ${accentColor}`} />
                     
-                    <div className="px-5 sm:px-6 pt-4 pb-3 flex flex-col h-full">
+                    <div className="px-5 sm:px-7 pt-4 pb-4 flex flex-col h-full">
                         {/* Header section with date and GPA */}
-                        <div className="flex justify-between items-start mb-3">
-                            <div>
-                                <p className="text-white font-semibold text-[13px] sm:text-[15px]">
-                                    <span className="material-symbols-outlined text-[14px] sm:text-[16px] align-middle mr-1">calendar_month</span>
-                                    {date}
-                                </p>
-                            </div>
-                            <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${accentColor} bg-opacity-20`}>
+                        <div className="flex justify-between items-center mb-3">
+                            <p className="text-white font-semibold text-[13px] sm:text-[15px] flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-[16px] text-secondary">calendar_month</span>
+                                {date}
+                            </p>
+                            <div className={`px-3 py-1.5 rounded-full bg-gradient-to-r ${accentColor}`}>
                                 <p className="text-white font-bold text-[12px] sm:text-[13px]">
                                     GPA: {gpa}
                                 </p>
@@ -94,15 +95,15 @@ const EducationCardBack = ({ date, gpa, points, school, minors, courseworkLabel,
 
                         {/* Courses section */}
                         <div className="flex-1 overflow-hidden">
-                            <p className="text-white font-semibold text-[12px] sm:text-[13px] mb-2 flex items-center">
-                                <span className="material-symbols-outlined text-[14px] sm:text-[16px] mr-1">menu_book</span>
+                            <p className="text-white font-semibold text-[12px] sm:text-[13px] mb-2.5 flex items-center gap-1.5">
+                                <span className="material-symbols-outlined text-[16px] text-secondary">menu_book</span>
                                 {courseworkLabel || "Relevant Coursework"}
                             </p>
                             <div className="flex flex-wrap gap-[6px] sm:gap-2">
                                 {points.map((point, index) => (
                                     <span
                                         key={`course-${index}`}
-                                        className="bg-black-200 text-secondary text-[10px] sm:text-[12px] px-2 sm:px-3 py-1 rounded-full border border-gray-700"
+                                        className="bg-black-200 text-secondary text-[10px] sm:text-[12px] px-2.5 sm:px-3 py-1 rounded-full border border-gray-700/60 leading-tight"
                                     >
                                         {point}
                                     </span>
@@ -111,7 +112,10 @@ const EducationCardBack = ({ date, gpa, points, school, minors, courseworkLabel,
                         </div>
 
                         {/* Footer hint */}
-                        <p className="text-secondary text-[11px] sm:text-[12px] italic text-center mt-2">Tap to flip back</p>
+                        <div className="flex items-center justify-center gap-1.5 mt-3 text-secondary/60">
+                            <span className="material-symbols-outlined text-[14px]">touch_app</span>
+                            <p className="text-[11px] sm:text-[12px]">Tap to flip back</p>
+                        </div>
                     </div>
                 </div>
             </div>

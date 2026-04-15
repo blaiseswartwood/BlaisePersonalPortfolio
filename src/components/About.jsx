@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 import { styles } from '../styles';
 import { services } from '../constants';
+import { microsoft, googlelogo } from '../assets';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
 import StatCounters from './StatCounters';
