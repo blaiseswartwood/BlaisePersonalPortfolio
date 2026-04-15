@@ -244,10 +244,10 @@ const NeuralNetworkCanvas = () => {
 
 export const NeuralNetworkBackground = ({ children }) => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden pb-10">
       {/* Subtle background tint to stand out from page */}
       <div className="absolute inset-0 pointer-events-none z-0"
-        style={{ background: 'linear-gradient(180deg, rgba(12,7,32,0.9) 0%, rgba(15,10,40,1) 30%, rgba(15,10,40,1) 70%, rgba(12,7,32,0.9) 100%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(12,7,32,0.9) 0%, rgba(15,10,40,1) 15%, rgba(15,10,40,1) 85%, rgba(12,7,32,0.9) 100%)' }}
       />
       <div className="absolute inset-0 pointer-events-none z-0 opacity-40"
         style={{
@@ -268,8 +268,8 @@ export const NeuralNetworkBackground = ({ children }) => {
       <div className="absolute bottom-[20%] left-[-3%] w-[300px] h-[300px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(102,187,106,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
       />
-      {/* Neural network canvas — stretches entire section */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-35">
+      {/* Neural network canvas — extends beyond content with extra height */}
+      <div className="absolute pointer-events-none opacity-35 z-0" style={{ top: '-10%', bottom: '-10%', left: 0, right: 0 }}>
         <Canvas
           camera={{ position: [0, 0, 18], fov: 100 }}
           gl={{ antialias: true, alpha: true }}
