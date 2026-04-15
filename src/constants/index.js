@@ -6,7 +6,7 @@ import {
     python, pytorch, scikitlearn, criticalityscore, myopathy,
     plearn, rosehulman, sunsetsails, xv6threads, indiana211,
     googlelogo, poker, swimdata, pneu, rustascii, masters,
-    auction, lb,
+    auction, lb, mililani,
 } from "../assets";
 
 // Re-export data constants
@@ -69,6 +69,21 @@ export * from './data';
         ],
         GPA: "4.0",
         minors: ["Mathematics", "Data Science"],
+    },
+    {
+        titlefront: "Valedictorian",
+        school: "Mililani High School, Hawai'i",
+        iconfront: mililani,
+        date: "August 2018 - May 2022",
+        points: [
+                "14 AP Exams — All 5s",
+                "36 ACT",
+                "ISEF 3rd Place — Bioinformatics",
+                "Science Olympiad",
+                "CyberPatriots",
+                "Math Team",
+        ],
+        GPA: "4.5 / 4.0",
     },
 
 ];
