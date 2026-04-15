@@ -10,7 +10,7 @@ import linkedin from "./linkedin.png";
 import plus from "./plus.png"
 import rosehulman from "./rosehulman.png"
 import masters from "./masters.png"
-import mililani from "./mililani.svg"
+import mililani from "./mililani.png"
 
 import java from "./tech/java.png";
 import microsoftsql from "./tech/microsoftsql.png";

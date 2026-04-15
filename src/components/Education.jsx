@@ -33,9 +33,10 @@ const EducationCardFront = ({ title, school, icon, minors, onClick }) => {
     )
 }
 
-const EducationCardBack = ({ date, gpa, points, school, minors, onClick }) => {
+const EducationCardBack = ({ date, gpa, points, school, minors, courseworkLabel, highlights, onClick }) => {
     const isBerkeley = school?.includes("Berkeley");
-    const accentColor = isBerkeley ? "from-[#003262] to-[#FDB515]" : "from-[#800000] to-[#C0C0C0]";
+    const isMililani = school?.includes("Mililani");
+    const accentColor = isBerkeley ? "from-[#003262] to-[#FDB515]" : isMililani ? "from-[#4a2c0a] to-[#d4a843]" : "from-[#800000] to-[#C0C0C0]";
 
     return (
         <div className="w-full" onClick={onClick}>
@@ -76,11 +77,26 @@ const EducationCardBack = ({ date, gpa, points, school, minors, onClick }) => {
                             </div>
                         )}
 
+                        {/* Highlights row (e.g., 14 AP 5s, 36 ACT) */}
+                        {highlights && highlights.length > 0 && (
+                            <div className="mb-3 flex flex-wrap gap-2">
+                                {highlights.map((h) => (
+                                    <span
+                                        key={h}
+                                        className="text-[10px] sm:text-[11px] px-2.5 py-1 rounded-full font-bold
+                                          bg-[#d4a843]/15 border border-[#d4a843]/40 text-[#d4a843]"
+                                    >
+                                        {h}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+
                         {/* Courses section */}
                         <div className="flex-1 overflow-hidden">
                             <p className="text-white font-semibold text-[12px] sm:text-[13px] mb-2 flex items-center">
                                 <span className="material-symbols-outlined text-[14px] sm:text-[16px] mr-1">menu_book</span>
-                                Relevant Coursework
+                                {courseworkLabel || "Relevant Coursework"}
                             </p>
                             <div className="flex flex-wrap gap-[6px] sm:gap-2">
                                 {points.map((point, index) => (
@@ -139,7 +155,7 @@ const Education = () => {
                             flipSpeedFrontToBack={0.5}
                         >
                             <EducationCardFront title={card.titlefront} school={card.school} icon={card.iconfront} minors={card.minors} onClick={() => handleClick(index)} />
-                            <EducationCardBack date={card.date} gpa={card.GPA} points={card.points} school={card.school} minors={card.minors} onClick={() => handleClick(index)} />
+                            <EducationCardBack date={card.date} gpa={card.GPA} points={card.points} school={card.school} minors={card.minors} courseworkLabel={card.courseworkLabel} highlights={card.highlights} onClick={() => handleClick(index)} />
                         </ReactCardFlip>
                     </motion.div>
                 ))}
