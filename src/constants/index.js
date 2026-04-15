@@ -604,6 +604,14 @@ export * from './data';
   
   const awards = [
     {
+      title: "John A. Logan Award",
+      event: "Rose-Hulman Institute of Technology",
+      date: "2022 – 2025",
+      description: "Awarded to the student-athlete with the highest GPA. Maintained a perfect 4.0 GPA as a four-year DIII Varsity Swim & Dive athlete.",
+      icon: "military_tech",
+      color: "#ff6f00",
+    },
+    {
       title: "3rd Place Grand Award — Bioinformatics",
       event: "International Science and Engineering Fair (ISEF)",
       date: "2020",
@@ -618,38 +626,6 @@ export * from './data';
       description: "Awarded travel scholarship to present machine learning research on open-source criticality scoring at the NDiSTEM Conference in Portland, Oregon.",
       icon: "flight_takeoff",
       color: "#00cea8",
-    },
-    // {
-    //   title: "4.0 GPA \u2014 Masters",
-    //   event: "University of California, Berkeley",
-    //   date: "2025 \u2013 Present",
-    //   description: "Maintaining a perfect 4.0 GPA in the Masters of Information and Data Science program, specializing in ML at Scale and NLP.",
-    //   icon: "school",
-    //   color: "#FDB515",
-    // },
-    {
-      title: "4.0 GPA — Bachelors",
-      event: "Rose-Hulman Institute of Technology",
-      date: "2022 – 2025",
-      description: "Graduated with a perfect 4.0 GPA in Computer Science with minors in Mathematics and Data Science.",
-      icon: "workspace_premium",
-      color: "#C0C0C0",
-    },
-    {
-      title: "Dean's List — All Semesters",
-      event: "Rose-Hulman Institute of Technology",
-      date: "2022 – 2025",
-      description: "Recognized on the Dean's List every semester throughout undergraduate studies for outstanding academic performance.",
-      icon: "stars",
-      color: "#915EFF",
-    },
-    {
-      title: "John A. Logan Award",
-      event: "Rose-Hulman Institute of Technology",
-      date: "2022 – 2025",
-      description: "Awarded to the student-athlete with the highest GPA. Maintained a perfect 4.0 GPA as a four-year DIII Varsity Swim & Dive athlete.",
-      icon: "military_tech",
-      color: "#ff6f00",
     },
   ];
 
