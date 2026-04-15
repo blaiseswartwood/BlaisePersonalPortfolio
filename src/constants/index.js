@@ -15,20 +15,20 @@ export * from './data';
   const services = [
 
     {
-      title: "Generative AI",
-      icon: mobile,
+      title: "Software Engineering",
+      icon: web,
     },
     {
-      title: "Data Science",
-      icon: backend,
+      title: "AI Agents",
+      icon: mobile,
     },
     {
       title: "Machine Learning",
       icon: creator,
     },
     {
-      title: "Software Engineering",
-      icon: web,
+      title: "Data Science",
+      icon: backend,
     },
   ];
 
