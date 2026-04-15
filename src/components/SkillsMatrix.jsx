@@ -60,7 +60,7 @@ const SkillsMatrix = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Proficiency</p>
-        <h2 className={styles.sectionHeadText}>Skills Matrix.</h2>
+        <h2 className={styles.sectionHeadText}>Skills Matrix</h2>
         <div className="section-divider" />
       </motion.div>
 

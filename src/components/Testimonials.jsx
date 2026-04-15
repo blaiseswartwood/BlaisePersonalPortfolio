@@ -46,7 +46,7 @@ const Testimonials = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>What others say</p>
-        <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+        <h2 className={styles.sectionHeadText}>Testimonials</h2>
         <div className="section-divider" />
       </motion.div>
 

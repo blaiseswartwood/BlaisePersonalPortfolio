@@ -66,13 +66,6 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Awards & Achievements — spotlight section */}
-        <SectionBackground variant="grid">
-          <Suspense fallback={<LoadingComponent />}>
-            <Awards />
-          </Suspense>
-        </SectionBackground>
-
         {/* Education */}
         <SectionBackground variant="grid">
           <Suspense fallback={<LoadingComponent />}>
@@ -94,7 +87,14 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Testimonials */}
+        {/* Awards & Achievements */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Awards />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Testimonials */}}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <Testimonials />

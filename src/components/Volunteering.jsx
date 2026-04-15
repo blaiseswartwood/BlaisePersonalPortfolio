@@ -34,7 +34,7 @@ const Volunteering = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Giving back</p>
-        <h2 className={styles.sectionHeadText}>Leadership & Volunteering.</h2>
+        <h2 className={styles.sectionHeadText}>Leadership & Volunteering</h2>
         <div className="section-divider" />
       </motion.div>
 

@@ -48,7 +48,7 @@ const Awards = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Recognition</p>
-        <h2 className={styles.sectionHeadText}>Awards & Achievements.</h2>
+        <h2 className={styles.sectionHeadText}>Awards & Achievements</h2>
         <div className="section-divider" />
       </motion.div>
 

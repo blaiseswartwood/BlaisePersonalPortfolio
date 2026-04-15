@@ -30,7 +30,7 @@ const Interests = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Beyond the code</p>
-        <h2 className={styles.sectionHeadText}>Life Outside Career.</h2>
+        <h2 className={styles.sectionHeadText}>Life Outside Career</h2>
         <div className="section-divider" />
       </motion.div>
 

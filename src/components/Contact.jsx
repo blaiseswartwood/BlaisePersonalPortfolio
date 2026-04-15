@@ -62,7 +62,7 @@ const Contact = () => {
             
             <div className="relative z-10">
               <p className={styles.sectionSubText}> Get in touch </p>
-              <h3 className={styles.sectionHeadText}>Contact.</h3>
+              <h3 className={styles.sectionHeadText}>Contact</h3>
               <div className="section-divider" />
 
               <form

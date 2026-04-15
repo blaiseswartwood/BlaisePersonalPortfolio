@@ -16,7 +16,7 @@ const Tech = () => {
           My skills
         </p>
         <h2 className={styles.sectionHeadText}>
-          Technologies.
+          Tech Stack
         </h2>
         <div className="section-divider" />
       </motion.div> 
