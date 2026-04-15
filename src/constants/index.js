@@ -628,6 +628,14 @@ export * from './data';
       icon: "stars",
       color: "#915EFF",
     },
+    {
+      title: "John A. Logan Award",
+      event: "Rose-Hulman Institute of Technology",
+      date: "2022 – 2025",
+      description: "Awarded to the student-athlete with the highest GPA. Maintained a perfect 4.0 GPA as a four-year DIII Varsity Swim & Dive athlete.",
+      icon: "military_tech",
+      color: "#ff6f00",
+    },
   ];
 
   const skills = [
