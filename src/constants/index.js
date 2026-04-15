@@ -144,7 +144,7 @@ export * from './data';
       company_name: "Aloha Pacific Federal Credit Union",
       icon: purdue,
       iconBg: "#D3D3D3",
-      date: "Summer 2021",
+      date: "June 2021 - August 2021",
       points: [
         "Built an **inventory management program** (Python front-end, SQL back-end) to organize hardware assets",
         "Assisted in general maintenance and inventory keeping of **IT equipment**",
@@ -836,7 +836,6 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
   ];
 
   const stats = [
-    { label: "Companies", value: 2, icon: "business", highlights: ["Microsoft", "Google"] },
     { label: "Research Papers", value: 3, icon: "description" },
     { label: "Cumulative GPA", value: 4.0, decimal: true, icon: "school" },
     { label: "Languages", value: 8, suffix: "+", icon: "code" },

@@ -6,7 +6,6 @@ import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
 import StatCounters from './StatCounters';
-import { microsoft, googlelogo } from '../assets';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
