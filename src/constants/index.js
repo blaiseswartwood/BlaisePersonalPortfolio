@@ -869,7 +869,7 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
       color: "#4fc3f7",
     },
     {
-      role: "Teaching Assistant — Data Structures & Algorithms",
+      role: "Teaching Assistant",
       organization: "Rose-Hulman Institute of Technology",
       date: "2024 – 2025",
       description: "TA for Data Structures & Algorithms and Design & Analysis of Algorithms. Guided 60+ students, held office hours, and graded assignments.",
@@ -877,11 +877,11 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
       color: "#915EFF",
     },
     {
-      role: "Undergraduate Research Mentor",
-      organization: "Purdue University Security Lab",
-      date: "2023",
-      description: "Collaborated with graduate researchers on open-source security analysis and presented findings at a national conference.",
-      icon: "science",
+      role: "Rose-Hulman Buddy Program",
+      organization: "Rose-Hulman Institute of Technology",
+      date: "2024 – 2025",
+      description: "Paired with and mentored incoming freshmen joining Computer Science, helping them navigate coursework, campus life, and career planning.",
+      icon: "group",
       color: "#00cea8",
     },
   ];
