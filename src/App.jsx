@@ -52,17 +52,11 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Skills Matrix — visual proficiency */}
+        {/* Skills Matrix + Tech — combined */}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <SkillsMatrix />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Education */}
-        <SectionBackground variant="grid">
-          <Suspense fallback={<LoadingComponent />}>
-            <Education />
+            <Tech />
           </Suspense>
         </SectionBackground>
 
@@ -70,6 +64,13 @@ const HomePage = () => {
         <SectionBackground variant="pulse">
           <Suspense fallback={<LoadingComponent />}>
             <Awards />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Education */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Education />
           </Suspense>
         </SectionBackground>
 
@@ -87,15 +88,8 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Tech */}
-        <SectionBackground variant="lines">
-          <Suspense fallback={<LoadingComponent />}>
-            <Tech />
-          </Suspense>
-        </SectionBackground>
-
         {/* Blog */}
-        <SectionBackground variant="grid">
+        <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <Blog />
           </Suspense>
