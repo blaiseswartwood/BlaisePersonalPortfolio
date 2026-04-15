@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
-import { skills, technologies } from '../constants';
+import { skills } from '../constants';
 import { textVariant } from '../utils/motion';
 import { cn } from '../utils/classNames';
-import { BallCanvas } from './canvas';
 
 const categories = ["All", "Languages", "AI / ML", "Cloud / Infra", "Web / Systems"];
 
@@ -88,30 +87,6 @@ const SkillsMatrix = () => {
         {filteredSkills.map((skill, index) => (
           <SkillBar key={skill.name} index={index} {...skill} />
         ))}
-      </div>
-
-      {/* Technologies — 3D Balls */}
-      <div className="mt-20">
-        <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>My toolkit</p>
-          <h2 className={styles.sectionHeadText}>Technologies.</h2>
-          <div className="section-divider" />
-        </motion.div>
-        <div className="mt-10 flex flex-row flex-wrap justify-center gap-10">
-          {technologies.map((technology, index) => (
-            <motion.div
-              className="w-28 h-28 text-center"
-              key={technology.name}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ type: "spring", delay: 0.05 * index, duration: 0.5 }}
-            >
-              <BallCanvas icon={technology.icon} />
-              <p className="text-secondary text-[13px] mt-1">{technology.name}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </>
   );

@@ -449,18 +449,6 @@ img {
   animation: shimmer 4s linear infinite;
 }
 
-/* Smooth scroll progress indicator */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Ambient glow orbs */
 .ambient-glow {
   position: absolute;

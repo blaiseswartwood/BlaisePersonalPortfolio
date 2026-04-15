@@ -880,4 +880,4 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     },
   ];
 
-  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats, interests, volunteering };
+  export { services, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };
