@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Preload } from '@react-three/drei';
 import * as THREE from 'three';
@@ -243,8 +243,20 @@ const NeuralNetworkCanvas = () => {
 };
 
 export const NeuralNetworkBackground = ({ children }) => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative overflow-hidden pb-10">
+    <div ref={containerRef} className="relative overflow-hidden pb-10">
       {/* Subtle background tint to stand out from page */}
       <div className="absolute inset-0 pointer-events-none z-0"
         style={{ background: 'linear-gradient(180deg, rgba(12,7,32,0.9) 0%, rgba(15,10,40,1) 15%, rgba(15,10,40,1) 85%, rgba(12,7,32,0.9) 100%)' }}
@@ -270,15 +282,17 @@ export const NeuralNetworkBackground = ({ children }) => {
       />
       {/* Neural network canvas — extends beyond content with extra height */}
       <div className="absolute pointer-events-none opacity-35 z-0" style={{ top: '-10%', bottom: '-10%', left: 0, right: 0 }}>
-        <Canvas
-          camera={{ position: [0, 0, 18], fov: 100 }}
-          gl={{ antialias: true, alpha: true }}
-          dpr={[1, 1.5]}
-          style={{ width: '100%', height: '100%' }}
-        >
-          <NeuralNetworkScene />
-          <Preload all />
-        </Canvas>
+        {isVisible && (
+          <Canvas
+            camera={{ position: [0, 0, 18], fov: 100 }}
+            gl={{ antialias: true, alpha: true }}
+            dpr={[1, 1.5]}
+            style={{ width: '100%', height: '100%' }}
+          >
+            <NeuralNetworkScene />
+            <Preload all />
+          </Canvas>
+        )}
       </div>
       <div className="relative z-[1]">
         {children}

@@ -853,4 +853,31 @@ The simplified algorithm was presented at the 2023 NDiSTEM Conference in Portlan
     },
   ];
 
-  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats, interests };
+  const volunteering = [
+    {
+      role: "Varsity Swim & Dive Captain",
+      organization: "Rose-Hulman Institute of Technology",
+      date: "2023 – 2025",
+      description: "Led team practices, coordinated meets, and mentored underclassmen as DIII varsity team captain.",
+      icon: "sports",
+      color: "#4fc3f7",
+    },
+    {
+      role: "Teaching Assistant — Intro to Systems Programming",
+      organization: "Rose-Hulman Institute of Technology",
+      date: "2024 – 2025",
+      description: "Guided 60+ students through C programming, debugging, and systems concepts. Held office hours and graded assignments.",
+      icon: "school",
+      color: "#915EFF",
+    },
+    {
+      role: "Undergraduate Research Mentor",
+      organization: "Purdue University Security Lab",
+      date: "2023",
+      description: "Collaborated with graduate researchers on open-source security analysis and presented findings at a national conference.",
+      icon: "science",
+      color: "#00cea8",
+    },
+  ];
+
+  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, blogPosts, stats, interests, volunteering };

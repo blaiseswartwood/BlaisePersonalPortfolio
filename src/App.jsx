@@ -15,16 +15,14 @@ import useMediaQuery from './hooks/useMediaQuery';
 const About = lazy(() => import('./components/About'));
 const Education = lazy(() => import('./components/Education'));
 const Experience = lazy(() => import('./components/Experience'));
-const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
 const Research = lazy(() => import('./components/Research'));
 const Contact = lazy(() => import('./components/Contact'));
 const Awards = lazy(() => import('./components/Awards'));
 const SkillsMatrix = lazy(() => import('./components/SkillsMatrix'));
-const Blog = lazy(() => import('./components/Blog'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Interests = lazy(() => import('./components/Interests'));
-const BlogPost = lazy(() => import('./components/BlogPost'));
+const Volunteering = lazy(() => import('./components/Volunteering'));
 
 const HomePage = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -53,11 +51,10 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Skills Matrix + Tech — combined */}
+        {/* Skills Matrix + Tech — consolidated */}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
             <SkillsMatrix />
-            <Tech />
           </Suspense>
         </SectionBackground>
 
@@ -89,17 +86,17 @@ const HomePage = () => {
           </Suspense>
         </SectionBackground>
 
-        {/* Blog */}
+        {/* Testimonials */}
         <SectionBackground variant="lines">
           <Suspense fallback={<LoadingComponent />}>
-            <Blog />
+            <Testimonials />
           </Suspense>
         </SectionBackground>
 
-        {/* Testimonials */}
+        {/* Volunteering & Leadership */}
         <SectionBackground variant="pulse">
           <Suspense fallback={<LoadingComponent />}>
-            <Testimonials />
+            <Volunteering />
           </Suspense>
         </SectionBackground>
 
@@ -134,14 +131,6 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/blog/:slug"
-            element={
-              <Suspense fallback={<LoadingComponent />}>
-                <BlogPost />
-              </Suspense>
-            }
-          />
         </Routes>
       </BrowserRouter>
     </ErrorBoundary>

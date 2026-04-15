@@ -48,9 +48,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             className={cn(styles.heroSubText, "mt-2 text-white-100")}
           >
-            A generative AI and <br className="sm:block hidden" />
-            data science focused <br className="sm:block hidden" />
-            software engineer
+            A software engineer at <br className="sm:block hidden" />
+            Microsoft focused on <br className="sm:block hidden" />
+            generative AI &amp; data science
           </motion.p>
         </div>
       </div>
