@@ -245,6 +245,16 @@ const NeuralNetworkCanvas = () => {
 export const NeuralNetworkBackground = ({ children }) => {
   return (
     <div className="relative overflow-hidden">
+      {/* Subtle background tint to stand out from page */}
+      <div className="absolute inset-0 pointer-events-none z-0"
+        style={{ background: 'linear-gradient(180deg, rgba(12,7,32,0.9) 0%, rgba(15,10,40,1) 30%, rgba(15,10,40,1) 70%, rgba(12,7,32,0.9) 100%)' }}
+      />
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-40"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(145,94,255,0.06) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }}
+      />
       {/* Gradient glow orbs in corners */}
       <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
         style={{ background: 'radial-gradient(circle, rgba(255,111,0,0.2) 0%, transparent 60%)', filter: 'blur(50px)' }}
