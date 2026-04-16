@@ -1,17 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
-import { Navbar, Hero, StarsCanvas, Footer } from './components';
+import { Navbar, Hero, Footer } from './components';
 import LoadingSpinner from './components/LoadingSpinner';
 import MobileLoader from './components/MobileLoader';
 import ErrorBoundary from './components/ErrorBoundary';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import SectionBackground from './components/SectionBackground';
-import { NeuralNetworkBackground } from './components/canvas';
 import useMediaQuery from './hooks/useMediaQuery';
 
-// Lazy load components
+// Lazy load heavy components
+const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
+const NeuralNetworkBg = lazy(() => 
+  import('./components/canvas/NeuralNetwork').then(mod => ({
+    default: mod.NeuralNetworkBackground
+  }))
+);
+
+// Lazy load page components
 const About = lazy(() => import('./components/About'));
 const Education = lazy(() => import('./components/Education'));
 const Experience = lazy(() => import('./components/Experience'));
@@ -39,11 +46,13 @@ const HomePage = () => {
         </div>
 
         {/* About with animated stat counters */}
-        <NeuralNetworkBackground>
-          <Suspense fallback={<LoadingComponent />}>
-            <About />
-          </Suspense>
-        </NeuralNetworkBackground>
+        <Suspense fallback={<div className="h-screen" />}>
+          <NeuralNetworkBg>
+            <Suspense fallback={<LoadingComponent />}>
+              <About />
+            </Suspense>
+          </NeuralNetworkBg>
+        </Suspense>
 
         {/* Experience — most impactful section for SWE credibility */}
         <SectionBackground variant="dots">
@@ -120,7 +129,9 @@ const HomePage = () => {
           <Suspense fallback={<LoadingComponent />}>
             <Contact />
           </Suspense>
-          <StarsCanvas />
+          <Suspense fallback={null}>
+            <StarsCanvas />
+          </Suspense>
         </div>
 
         <Footer />

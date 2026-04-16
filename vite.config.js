@@ -12,11 +12,12 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
           motion: ['framer-motion'],
-          ui: ['react-parallax-tilt', 'react-card-flip', 'react-slick']
+          ui: ['react-parallax-tilt', 'react-card-flip', 'react-slick', 'react-vertical-timeline-component']
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1500,
+    minify: 'esbuild'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion']
