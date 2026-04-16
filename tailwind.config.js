@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
-  mode: "jit",
   theme: {
     extend: {
       colors: {
@@ -17,26 +16,18 @@ module.exports = {
       },
       screens: {
         xs: "450px",
-        "3xl": "2000px",
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },
     },
   },
-  plugins: [    function ({ addUtilities }) {
-    const newUtilities = {
-      '.darken-85': {
-        'filter': 'brightness(85%)',
-      },
-      '.darken-75': {
-        'filter': 'brightness(75%)',
-      },
-    };
-    addUtilities(newUtilities, ['responsive', 'hover']);
-  },],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.darken-85': { 'filter': 'brightness(85%)' },
+        '.darken-75': { 'filter': 'brightness(75%)' },
+      });
+    },
+  ],
 };

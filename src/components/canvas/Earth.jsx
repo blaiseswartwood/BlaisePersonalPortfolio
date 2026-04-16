@@ -1,6 +1,6 @@
 import {Suspense} from 'react';
 import {Canvas} from '@react-three/fiber';
-import {OrbitControls,Preload, useGLTF} from '@react-three/drei';
+import {OrbitControls, useGLTF} from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
@@ -10,8 +10,8 @@ const Earth = () => {
     <primitive 
       object = {earth.scene}
       scale={2.5}
-      position-y={0}
-      rotation-y={0}
+      position={[0, 0, 0]}
+      rotation={[0, 0, 0]}
     />
   )
 }

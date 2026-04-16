@@ -1,31 +1,46 @@
-import React from 'react';
-import { Typography } from "@material-tailwind/react";
-import {github} from '../assets';
-import {linkedin} from '../assets';
+import {github, linkedin} from '../assets';
 
 const Footer = () => {
        
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="relative w-full bg-black-100">
-         
-            <div className="mt-12 flex w-full flex-col items-center justify-center py-5 md:flex-row md:justify-between max-w-7xl mx-auto">
-              <Typography
-                variant="small"
-                className="mb-4 pl-10 text-center font-normal md:mb-0 text-secondary"
-              >
-                &copy; {currentYear} 
-                {/* <a href="https://drive.google.com/file/d/10Ybj21mwfqhpkoe54ls5oZURLARTfiou/view?usp=sharing" target="_blank"> */}
-                  &nbsp;Blaise Swartwood
-              </Typography>
+        <footer className="relative w-full bg-[#050816]">
+            {/* Separator */}
+            <div className="max-w-7xl mx-auto">
+              <div className="h-px bg-gradient-to-r from-transparent via-[#915EFF]/40 to-transparent" />
+            </div>
 
-              <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-                <Typography as="a" href="https://github.com/blaiseswartwood" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
-                    <img src={github} alt="github" className="h-5 w-5 object-cover rounded-2xl"/>
-                </Typography>
-                <Typography as="a" href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" className="opacity-80 transition-opacity hover:opacity-100">
-                    <img src={linkedin} alt="LinkedIn" className="h-5 w-5 object-cover rounded-2xl"/>
-                </Typography>
+            <div className="flex w-full flex-col items-center justify-center py-10 md:flex-row md:justify-between max-w-7xl mx-auto px-6 sm:px-16">
+              <div className="mb-6 md:mb-0 text-center md:text-left">
+                <p className="text-white/80 text-sm font-medium tracking-wide">
+                  &copy; {currentYear}&nbsp;Blaise Swartwood
+                </p>
+                <p className="text-secondary/50 text-xs mt-1.5 flex items-center gap-1.5 justify-center md:justify-start">
+                  <span className="material-symbols-outlined text-[12px] text-[#915EFF]/60">auto_awesome</span>
+                  AI &middot; ML &middot; Data Science
+                </p>
+                <p className="text-secondary/30 text-[10px] mt-1">
+                  React &middot; Three.js &middot; Framer Motion
+                </p>
+              </div>
+
+              {/* Center — AI tagline */}
+              <div className="mb-6 md:mb-0 text-center hidden md:block">
+                <p className="text-secondary/40 text-[11px] tracking-widest uppercase">
+                  Exploring the frontier of
+                </p>
+                <p className="text-[#915EFF]/60 text-xs font-medium mt-0.5 tracking-wide">
+                  Generative AI &amp; Intelligent Systems
+                </p>
+              </div>
+
+              <div className="flex gap-4 items-center">
+                <a href="https://github.com/blaiseswartwood" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
+                    <img src={github} alt="github" className="h-5 w-5 object-cover rounded-full"/>
+                </a>
+                <a href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
+                    <img src={linkedin} alt="LinkedIn" className="h-5 w-5 object-cover rounded-full"/>
+                </a>
               </div>
             </div>
         </footer>

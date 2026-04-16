@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle with school colors: brown and gold -->
+  <circle cx="100" cy="100" r="95" fill="#4a2c0a"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#d4a843" stroke-width="3"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#d4a843" stroke-width="1"/>
+  <!-- Trojan helmet silhouette -->
+  <path d="M100 35 C70 35 55 55 55 80 C55 100 60 110 65 115 L65 130 C65 135 70 140 80 140 L85 135 L85 115 C90 120 95 122 100 122 C105 122 110 120 115 115 L115 135 L120 140 C130 140 135 135 135 130 L135 115 C140 110 145 100 145 80 C145 55 130 35 100 35Z" fill="#d4a843"/>
+  <path d="M80 80 C80 75 85 70 100 70 C115 70 120 75 120 80 L120 95 C115 100 108 105 100 105 C92 105 85 100 80 95Z" fill="#4a2c0a" opacity="0.6"/>
+  <!-- School name -->
+  <text x="100" y="165" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="16" fill="#d4a843" letter-spacing="3">MILILANI</text>
+  <text x="100" y="183" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="11" fill="#ffffff" letter-spacing="2">TROJANS</text>
+</svg>

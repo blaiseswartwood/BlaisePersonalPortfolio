@@ -1,10 +1,14 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import { Navbar, Hero, StarsCanvas, Footer } from './components';
 import LoadingSpinner from './components/LoadingSpinner';
 import MobileLoader from './components/MobileLoader';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
+import SectionBackground from './components/SectionBackground';
+import { NeuralNetworkBackground } from './components/canvas';
 import useMediaQuery from './hooks/useMediaQuery';
 
 // Lazy load components
@@ -15,6 +19,116 @@ const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
 const Research = lazy(() => import('./components/Research'));
 const Contact = lazy(() => import('./components/Contact'));
+const Awards = lazy(() => import('./components/Awards'));
+const SkillsMatrix = lazy(() => import('./components/SkillsMatrix'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Interests = lazy(() => import('./components/Interests'));
+const Volunteering = lazy(() => import('./components/Volunteering'));
+
+const HomePage = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const LoadingComponent = isMobile ? MobileLoader : LoadingSpinner;
+
+  return (
+    <>
+      <ScrollProgress />
+      <div className="relative z-0">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <Navbar />
+          <Hero />
+        </div>
+
+        {/* About with animated stat counters */}
+        <NeuralNetworkBackground>
+          <Suspense fallback={<LoadingComponent />}>
+            <About />
+          </Suspense>
+        </NeuralNetworkBackground>
+
+        {/* Experience — most impactful section for SWE credibility */}
+        <SectionBackground variant="dots">
+          <Suspense fallback={<LoadingComponent />}>
+            <Experience />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Skills Matrix */}
+        <SectionBackground variant="lines">
+          <Suspense fallback={<LoadingComponent />}>
+            <SkillsMatrix />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Technologies — 3D floating balls */}
+        <SectionBackground variant="pulse">
+          <Suspense fallback={<LoadingComponent />}>
+            <Tech />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Education */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Education />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Projects with filtering */}
+        <SectionBackground variant="mesh">
+          <Suspense fallback={<LoadingComponent />}>
+            <Works />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Research */}
+        <SectionBackground variant="dots">
+          <Suspense fallback={<LoadingComponent />}>
+            <Research />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Awards & Achievements */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Awards />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Testimonials */}
+        <SectionBackground variant="lines">
+          <Suspense fallback={<LoadingComponent />}>
+            <Testimonials />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Volunteering & Leadership */}
+        <SectionBackground variant="pulse">
+          <Suspense fallback={<LoadingComponent />}>
+            <Volunteering />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Life Outside Career */}
+        <SectionBackground variant="grid">
+          <Suspense fallback={<LoadingComponent />}>
+            <Interests />
+          </Suspense>
+        </SectionBackground>
+
+        {/* Contact */}
+        <div className="relative z-0">
+          <Suspense fallback={<LoadingComponent />}>
+            <Contact />
+          </Suspense>
+          <StarsCanvas />
+        </div>
+
+        <Footer />
+        <BackToTop />
+      </div>
+    </>
+  );
+};
 
 const App = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -23,45 +137,9 @@ const App = () => {
   return (
     <ErrorBoundary>
       <BrowserRouter>
-          <div className="relative z-0 bg-primary">
-            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-                <Navbar />
-                <Hero />
-            </div>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <About />
-            </Suspense>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <Education />
-            </Suspense>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <Experience />
-            </Suspense>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <Tech />
-            </Suspense>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <Works />
-            </Suspense>
-            
-            <Suspense fallback={<LoadingComponent />}>
-              <Research />
-            </Suspense>
-            
-            <div className="relative z-0">
-              <Suspense fallback={<LoadingComponent />}>
-                <Contact />
-              </Suspense>
-              <StarsCanvas />
-            </div>
-            
-            <Footer />
-        </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
       </BrowserRouter>
     </ErrorBoundary>
   );
