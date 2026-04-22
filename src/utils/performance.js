@@ -4,7 +4,7 @@ export const trackPageLoad = () => {
     if (entries.length > 0) {
       const navEntry = entries[0];
       if (import.meta.env.DEV) {
-        console.log(`Page load time: ${Math.round(navEntry.loadEventEnd - navEntry.startTime)}ms`);
+        // Log load time
       }
     }
   });

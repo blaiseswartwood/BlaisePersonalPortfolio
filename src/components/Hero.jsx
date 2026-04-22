@@ -52,6 +52,20 @@ const Hero = () => {
             <span className="text-white font-bold">Microsoft</span> focused on <br className="sm:block hidden" />
             generative AI &amp; data science
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <a href="#projects" className="bg-gradient-to-r from-[#915EFF] to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(145,94,255,0.4)] hover:shadow-[0_0_25px_rgba(145,94,255,0.6)] hover:-translate-y-1">
+              View Projects
+            </a>
+            <a href="#contact" className="bg-transparent border-2 border-white/20 hover:border-white/50 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1 backdrop-blur-sm">
+              Contact Me
+            </a>
+          </motion.div>
         </div>
       </div>
 

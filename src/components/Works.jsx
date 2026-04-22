@@ -37,7 +37,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow cursor-pointer"
         onClick={handleCardClick}
       >
-        <div className="bg-tertiary rounded-[20px] p-3 sm:p-5">
+        <div className="glass-card rounded-[20px] p-3 sm:p-5 backdrop-blur-xl border border-white/10 relative overflow-hidden group-hover:border-purple-500/30 transition-all duration-300">
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl group">
             <img 
               src={image} 

@@ -16,7 +16,7 @@ const ServiceCard = ({ index, title, icon }) => {
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow"
       >
         <div
-          className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly 
+          className="glass-card rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly 
           items-center flex-col"
         >
           <img src={icon} alt={title} className="w-16 h-16 object-contain" />
@@ -30,7 +30,7 @@ const ServiceCard = ({ index, title, icon }) => {
 const CompanyCard = ({ name, role, logo, index }) => (
   <motion.div
     variants={fadeIn("up", "spring", 0.2 * index, 0.6)}
-    className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-tertiary/70 border border-white/5
+    className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl glass-card border border-white/5
       hover:border-[#915EFF]/25 transition-all duration-300 flex-1 min-w-[260px]"
   >
     <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 p-2">

@@ -35,7 +35,7 @@ const Contact = () => {
       resetForm();
     }).catch((error) => {
       setLoadingState(false);
-      console.log(error);
+      console.error(error);
       alert('Something went wrong');
     });
   };

@@ -9,7 +9,6 @@ import close from "./close.svg";
 import linkedin from "./linkedin.png";
 import plus from "./plus.png"
 import rosehulman from "./rosehulman.png"
-import masters from "./masters.png"
 import mililani from "./mililani.png"
 
 import java from "./tech/java.png";
@@ -53,5 +52,5 @@ export {
   python, pytorch, rlogo, nginx, matlab, rust, clogo, scikitlearn,
   linkedin, plearn, criticalityscore, myopathy, plus, rosehulman,
   sunsetsails, xv6threads, indiana211, googlelogo, poker, swimdata,
-  pneu, rustascii, masters, auction, lb, mililani,
+  pneu, rustascii, auction, lb, mililani,
 };
