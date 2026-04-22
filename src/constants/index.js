@@ -6,7 +6,7 @@ import {
     python, pytorch, scikitlearn, criticalityscore, myopathy,
     plearn, rosehulman, sunsetsails, xv6threads, indiana211,
     googlelogo, poker, swimdata, pneu, rustascii,
-    auction, lb, mililani,
+    auction, lb, mililani, alohapacific,
 } from "../assets";
 
 // Re-export data constants
@@ -146,8 +146,8 @@ export * from './data';
       title: "IT Intern",
       subtitle: "",
       company_name: "Aloha Pacific Federal Credit Union",
-      icon: purdue,
-      iconBg: "#D3D3D3",
+      icon: alohapacific,
+      iconBg: "#FFFFFF",
       date: "June 2021 - August 2021",
       points: [
         "Built an **inventory management program** (Python front-end, SQL back-end) to organize hardware assets",

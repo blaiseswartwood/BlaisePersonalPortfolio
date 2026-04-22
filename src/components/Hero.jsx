@@ -14,7 +14,7 @@ const Hero = () => {
       <div className={cn(
         "absolute inset-0 top-[120px] max-w-7xl mx-auto",
         styles.paddingX,
-        "flex flex-row items-start gap-5"
+        "flex flex-row items-start gap-5 z-10 pointer-events-none"
       )}>
         {/* Vertical Line */}
         <div className="flex flex-col justify-center items-center mt-5">
@@ -57,7 +57,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-8 flex flex-wrap gap-4 pointer-events-auto"
           >
             <a href="#projects" className="bg-gradient-to-r from-[#915EFF] to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(145,94,255,0.4)] hover:shadow-[0_0_25px_rgba(145,94,255,0.6)] hover:-translate-y-1">
               View Projects
@@ -77,9 +77,9 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.5 }}
-        className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center"
+        className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center pointer-events-none"
       >
-        <button onClick={scrollToAbout} className="group">
+        <button onClick={scrollToAbout} className="group pointer-events-auto">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 group-hover:border-white transition-colors duration-300">
             <motion.div
               animate={{ y: [0, 24, 0] }}

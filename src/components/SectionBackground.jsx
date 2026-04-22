@@ -33,7 +33,6 @@ const variants = {
             x: x1,
             top: '-10%', right: '-5%',
             background: 'radial-gradient(circle, rgba(145,94,255,0.6) 0%, rgba(145,94,255,0.2) 40%, transparent 65%)',
-            filter: 'blur(50px)',
           }}
         />
         {/* Mid purple orb */}
@@ -44,7 +43,6 @@ const variants = {
             x: x2,
             top: '30%', left: '3%',
             background: 'radial-gradient(circle, rgba(145,94,255,0.45) 0%, rgba(145,94,255,0.15) 40%, transparent 65%)',
-            filter: 'blur(50px)',
           }}
         />
         {/* Teal accent orb */}
@@ -54,7 +52,6 @@ const variants = {
             opacity,
             bottom: '-5%', left: '0%',
             background: 'radial-gradient(circle, rgba(0,206,168,0.45) 0%, rgba(0,206,168,0.15) 40%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         <motion.div
@@ -94,7 +91,6 @@ const variants = {
             y: orbY,
             top: '5%', left: '-8%',
             background: 'radial-gradient(circle, rgba(145,94,255,0.5) 0%, rgba(145,94,255,0.15) 40%, transparent 65%)',
-            filter: 'blur(50px)',
           }}
         />
         <motion.div
@@ -104,7 +100,6 @@ const variants = {
             x: orbX2,
             bottom: '10%', right: '-5%',
             background: 'radial-gradient(circle, rgba(0,206,168,0.4) 0%, rgba(0,206,168,0.12) 40%, transparent 65%)',
-            filter: 'blur(50px)',
           }}
         />
         <motion.div
@@ -127,7 +122,6 @@ const variants = {
             opacity,
             scale,
             background: 'radial-gradient(circle, rgba(145,94,255,0.5) 0%, rgba(0,206,168,0.2) 35%, transparent 65%)',
-            filter: 'blur(40px)',
           }}
         />
         <motion.div className="absolute inset-0" style={{ opacity }}>
@@ -159,13 +153,11 @@ const variants = {
         <div className="absolute w-[500px] h-[500px] rounded-full bg-orb-drift-2 top-[25%] right-[-5%]"
           style={{
             background: 'radial-gradient(circle, rgba(145,94,255,0.4) 0%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         <div className="absolute w-[400px] h-[400px] rounded-full bg-orb-drift-3 bottom-[10%] left-[-5%]"
           style={{
             background: 'radial-gradient(circle, rgba(0,206,168,0.3) 0%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         <div className="bg-particles" />
@@ -192,13 +184,11 @@ const variants = {
         <div className="absolute w-[550px] h-[550px] rounded-full bg-orb-drift-1 top-[-10%] left-[-10%]"
           style={{
             background: 'radial-gradient(circle, rgba(0,206,168,0.35) 0%, transparent 55%)',
-            filter: 'blur(50px)',
           }}
         />
         <div className="absolute w-[400px] h-[400px] rounded-full bg-orb-drift-2 bottom-[5%] right-[-5%]"
           style={{
             background: 'radial-gradient(circle, rgba(145,94,255,0.3) 0%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         <div className="bg-particles" />
@@ -233,7 +223,6 @@ const variants = {
             opacity, x: x1,
             top: '5%', left: '-10%',
             background: 'radial-gradient(circle, rgba(145,94,255,0.55) 0%, rgba(145,94,255,0.2) 35%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         {/* Teal right orb */}
@@ -243,7 +232,6 @@ const variants = {
             opacity, x: x2,
             bottom: '0%', right: '-10%',
             background: 'radial-gradient(circle, rgba(0,206,168,0.45) 0%, rgba(0,206,168,0.15) 35%, transparent 60%)',
-            filter: 'blur(50px)',
           }}
         />
         {/* Center accent */}
@@ -253,7 +241,6 @@ const variants = {
             opacity,
             top: '35%', left: '30%',
             background: 'radial-gradient(circle, rgba(145,94,255,0.3) 0%, transparent 65%)',
-            filter: 'blur(40px)',
           }}
         />
         <motion.div

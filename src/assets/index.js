@@ -25,6 +25,7 @@ import clogo from "./tech/c.png";
 import purdue from "./company/purdue.png";
 import microsoft from "./company/microsoft.png";
 import googlelogo from "./company/google.webp";
+import alohapacific from "./company/alohapacific.png";
 
 import clientprototyping from "./projects/ClientPrototyping2.PNG";
 import editortrees from "./projects/EditorTree.png";
@@ -52,5 +53,5 @@ export {
   python, pytorch, rlogo, nginx, matlab, rust, clogo, scikitlearn,
   linkedin, plearn, criticalityscore, myopathy, plus, rosehulman,
   sunsetsails, xv6threads, indiana211, googlelogo, poker, swimdata,
-  pneu, rustascii, auction, lb, mililani,
+  pneu, rustascii, auction, lb, mililani, alohapacific,
 };

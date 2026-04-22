@@ -27,3 +27,6 @@ yarn-error.log*
 # Firebase
 .firebase/
 .firebaserc.bak
+
+# Reports
+eslint_report.json
