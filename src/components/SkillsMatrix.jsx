@@ -12,7 +12,7 @@ const categoryColors = {
   "Languages": "#915EFF",
   "AI / ML": "#00cea8",
   "Cloud / Infra": "#56ccf2",
-  "Web / Systems": "#fc6767",
+  "Web / Systems": "#c471ed",
 };
 
 const SkillBar = ({ name, level, category, index }) => {
@@ -22,7 +22,7 @@ const SkillBar = ({ name, level, category, index }) => {
     <motion.div
       initial={{ opacity: 0, x: -30 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ delay: 0.04 * index, duration: 0.5 }}
       className="group"
     >
@@ -34,7 +34,7 @@ const SkillBar = ({ name, level, category, index }) => {
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1.2, delay: 0.04 * index, ease: "easeOut" }}
           className="h-full rounded-full relative"
           style={{ background: `linear-gradient(90deg, ${color}80, ${color})` }}
@@ -92,4 +92,4 @@ const SkillsMatrix = () => {
   );
 };
 
-export default SectionWrapper(SkillsMatrix, "skills");
+export default SectionWrapper(SkillsMatrix, "skills", "03");

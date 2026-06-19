@@ -51,4 +51,4 @@ const Interests = () => {
   );
 };
 
-export default SectionWrapper(Interests, "interests");
+export default SectionWrapper(Interests, "interests", "11");

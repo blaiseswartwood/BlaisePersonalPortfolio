@@ -2,6 +2,7 @@ import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Preload } from '@react-three/drei';
 import * as THREE from 'three';
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 // Layer colors: warm-to-cool gradient across the network
 const LAYER_COLORS = [
@@ -227,24 +228,10 @@ const NeuralNetworkScene = () => {
   );
 };
 
-const NeuralNetworkCanvas = () => {
-  return (
-    <div className="w-full h-[350px] sm:h-[450px]">
-      <Canvas
-        camera={{ position: [0, 0, 16], fov: 55 }}
-        gl={{ antialias: true, alpha: true }}
-        dpr={[1, 1.5]}
-      >
-        <NeuralNetworkScene />
-        <Preload all />
-      </Canvas>
-    </div>
-  );
-};
-
 export const NeuralNetworkBackground = ({ children }) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -282,7 +269,7 @@ export const NeuralNetworkBackground = ({ children }) => {
       />
       {/* Neural network canvas — extends beyond content with extra height */}
       <div className="absolute pointer-events-none opacity-35 z-0" style={{ top: '-10%', bottom: '-10%', left: 0, right: 0 }}>
-        {isVisible && (
+        {isVisible && !prefersReducedMotion && (
           <Canvas
             camera={{ position: [0, 0, 18], fov: 100 }}
             gl={{ antialias: true, alpha: true }}
@@ -300,5 +287,3 @@ export const NeuralNetworkBackground = ({ children }) => {
     </div>
   );
 };
-
-export default NeuralNetworkCanvas;

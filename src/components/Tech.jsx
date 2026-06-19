@@ -12,10 +12,10 @@ const Tech = () => {
     <div> 
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>
-          My skills
+          What I build with
         </p>
         <h2 className={styles.sectionHeadText}>
-          Tech Stack
+          Languages & Tools
         </h2>
         <div className="section-divider" />
       </motion.div> 
@@ -45,4 +45,4 @@ const Tech = () => {
   )
 }
 
-export default SectionWrapper(Tech, "")
+export default SectionWrapper(Tech, "", "04")

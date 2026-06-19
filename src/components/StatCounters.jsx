@@ -4,19 +4,24 @@ import { stats } from '../constants';
 
 const AnimatedCounter = ({ value, decimal = false, suffix = "" }) => {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimated = useRef(false);
   const ref = useRef(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let timer;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          observer.disconnect();
           const duration = 2000;
           const steps = 60;
           const increment = value / steps;
           let current = 0;
-          const timer = setInterval(() => {
+          timer = setInterval(() => {
             current += increment;
             if (current >= value) {
               setCount(value);
@@ -25,15 +30,17 @@ const AnimatedCounter = ({ value, decimal = false, suffix = "" }) => {
               setCount(decimal ? Math.round(current * 10) / 10 : Math.floor(current));
             }
           }, duration / steps);
-          return () => clearInterval(timer);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [value, decimal, hasAnimated]);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timer) clearInterval(timer);
+    };
+  }, [value, decimal]);
 
   return (
     <span ref={ref}>
@@ -50,7 +57,7 @@ const StatCounters = () => {
           key={stat.label}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.12 * index, duration: 0.6 }}
           className="relative group text-center p-4 sm:p-5 rounded-2xl bg-tertiary/60 border border-[#915EFF]/10
             hover:border-[#915EFF]/30 transition-all duration-300"

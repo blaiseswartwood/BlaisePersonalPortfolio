@@ -1,7 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { ComputersCanvas } from './canvas';
+import HeroSpotlight from './HeroSpotlight';
+import MagneticButton from './MagneticButton';
 import { cn } from '../utils/classNames';
+
+// Lazy-load the heavy Three.js scene so the headline paints immediately
+// instead of waiting on the ~1MB 3D bundle.
+const ComputersCanvas = lazy(() => import('./canvas/Computers'));
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -9,7 +15,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section className="relative w-full h-screen mx-auto overflow-hidden">
+      {/* Cursor-following glow */}
+      <HeroSpotlight />
+
       {/* Content */}
       <div className={cn(
         "absolute inset-0 top-[120px] max-w-7xl mx-auto",
@@ -34,6 +43,21 @@ const Hero = () => {
 
         {/* Text Content */}
         <div>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 mb-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm pointer-events-auto"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+            </span>
+            <span className="text-[12px] sm:text-[13px] font-medium text-white-100 tracking-wide">
+              Software Engineer @ Microsoft
+            </span>
+          </motion.div>
+
           <motion.h1 
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -48,9 +72,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             className={cn(styles.heroSubText, "mt-2 text-white-100")}
           >
-            A software engineer at <br className="sm:block hidden" />
-            <span className="text-white font-bold">Microsoft</span> focused on <br className="sm:block hidden" />
-            generative AI &amp; data science
+            Building intelligent products with <br className="sm:block hidden" />
+            <span className="text-white font-bold">generative AI</span>, machine learning <br className="sm:block hidden" />
+            &amp; data science
           </motion.p>
           
           <motion.div
@@ -59,18 +83,20 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
             className="mt-8 flex flex-wrap gap-4 pointer-events-auto"
           >
-            <a href="#projects" className="bg-gradient-to-r from-[#915EFF] to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(145,94,255,0.4)] hover:shadow-[0_0_25px_rgba(145,94,255,0.6)] hover:-translate-y-1">
+            <MagneticButton href="#projects" className="inline-block bg-gradient-to-r from-[#915EFF] to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(145,94,255,0.4)] hover:shadow-[0_0_25px_rgba(145,94,255,0.6)]">
               View Projects
-            </a>
-            <a href="#contact" className="bg-transparent border-2 border-white/20 hover:border-white/50 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-white/10 hover:-translate-y-1 backdrop-blur-sm">
+            </MagneticButton>
+            <MagneticButton href="#contact" className="inline-block bg-transparent border-2 border-white/20 hover:border-white/50 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:bg-white/10 backdrop-blur-sm">
               Contact Me
-            </a>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>
 
       {/* 3D Model */}
-      <ComputersCanvas />
+      <Suspense fallback={null}>
+        <ComputersCanvas />
+      </Suspense>
 
       {/* Scroll Indicator */}
       <motion.div 

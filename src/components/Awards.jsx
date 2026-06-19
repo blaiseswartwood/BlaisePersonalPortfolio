@@ -61,4 +61,4 @@ const Awards = () => {
   );
 };
 
-export default SectionWrapper(Awards, "awards");
+export default SectionWrapper(Awards, "awards", "08");

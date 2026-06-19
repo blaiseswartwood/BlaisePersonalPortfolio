@@ -80,24 +80,24 @@ const Navbar = () => {
       "w-full flex items-center fixed top-0 z-20 transition-all duration-500",
       scrolled ? "py-3 navbar-glass-scrolled" : "py-5 navbar-glass"
     )}>
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center gap-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2" onClick={handleLogoClick}>
+        <Link to="/" className="flex items-center gap-2 shrink-0" onClick={handleLogoClick}>
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          <p className="text-white text-[18px] font-bold cursor-pointer whitespace-nowrap">
             Blaise Swartwood
-            <span className="sm:block hidden">&nbsp;| Personal Portfolio</span>
+            <span className="hidden xl:inline font-normal text-secondary">&nbsp;| Personal Portfolio</span>
           </p>
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row items-center gap-5 lg:gap-8 xl:gap-10">
           {navLinks.map(link => <NavLink key={link.id} link={link} />)}
           <ResumeLink />
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <button
             aria-label="Toggle navigation menu"
             aria-expanded={toggle}

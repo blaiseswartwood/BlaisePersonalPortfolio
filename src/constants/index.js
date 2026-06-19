@@ -1,9 +1,9 @@
 import {
     mobile, backend, creator, web,
-    clogo, rust, matlab, nginx, rlogo,
+    clogo, rust, matlab, rlogo,
     clientprototyping, editortrees, linter, computerprocessor,
     portfolio, swimming, purdue, microsoft, java, microsoftsql,
-    python, pytorch, scikitlearn, criticalityscore, myopathy,
+    python, criticalityscore, myopathy,
     plearn, rosehulman, sunsetsails, xv6threads, indiana211,
     googlelogo, poker, swimdata, pneu, rustascii,
     auction, lb, mililani, alohapacific,
@@ -107,14 +107,6 @@ export * from './data';
       icon: python,
     },
     {
-      name: "SciKit-Learn",
-      icon: scikitlearn,
-    },
-    {
-      name: "PyTorch",
-      icon: pytorch,
-    },
-    {
       name: "R",
       icon: rlogo,
     },
@@ -131,11 +123,7 @@ export * from './data';
       icon: rust,
     },
     {
-      name: "Nginx",
-      icon: nginx,
-    },
-    {
-      name: "MicrosoftSQL",
+      name: "SQL Server",
       icon: microsoftsql,
     },
 
@@ -630,7 +618,7 @@ export * from './data';
       date: "2022 – 2025",
       description: "Awarded to the student-athlete with the highest GPA. Maintained a perfect 4.0 GPA as a four-year DIII Varsity Swim & Dive athlete.",
       icon: "military_tech",
-      color: "#ff6f00",
+      color: "#915EFF",
     },
     {
       title: "3rd Place Grand Award — Bioinformatics",
@@ -673,22 +661,25 @@ export * from './data';
 
   const testimonials = [
     {
-      quote: "Blaise consistently demonstrated exceptional technical ability and a remarkable aptitude for independent problem-solving. His work on the criticality score algorithm surpassed my expectations for an undergraduate researcher.",
-      name: "Dr. Celik Berkay",
-      title: "Assistant Professor, Computer Science",
-      company: "Purdue University",
+      quote: "You're a very strong engineer and a fast learner — you took Traffic Replayer from a very early POC stage and turned it into something that looks and feels like a production-ready service, which is not easy. What stands out most is your ability to operate independently, while knowing when to reach out for help and when to help others, which makes you very effective in a team setting.",
+      highlights: ["strong engineer", "fast learner", "production-ready service", "operate independently", "very effective in a team setting"],
+      name: "Vlad Polyakov",
+      title: "Principal Software Engineer",
+      company: "Microsoft",
+    },
+    {
+      quote: "When we worked together on the new config test framework for Roxy, I really appreciated the way you took ownership over critical work items — I felt like you're someone I could rely on. You weren't simply trying to get a task done but looked for ways to expand it so the result delivers more value to the team. Your final result was very polished and performed way beyond the initial idea we had.",
+      highlights: ["took ownership over critical work items", "someone I could rely on", "more value to the team", "very polished and performed way beyond"],
+      name: "Damir Ferizovic",
+      title: "Senior Software Engineer",
+      company: "Microsoft",
     },
     {
       quote: "One of the most driven students I've mentored. Blaise's work on Parson's Problems showed both strong engineering skills and a genuine curiosity for understanding how students learn — a rare combination.",
+      highlights: ["most driven students", "strong engineering skills", "genuine curiosity"],
       name: "Dr. Joseph Hollingsworth",
       title: "Professor, Computer Science",
       company: "Rose-Hulman Institute of Technology",
-    },
-    {
-      quote: "Blaise quickly ramped up on a complex distributed system and delivered production-quality features involving both control plane and data plane work. His ability to operate across C#, C, and Rust in a single project was impressive.",
-      name: "Senior Engineer",
-      title: "Azure Front Door Team",
-      company: "Microsoft",
     },
   ];
 
@@ -711,31 +702,31 @@ export * from './data';
       title: "Piano",
       description: "Classically trained with years of lessons",
       icon: "piano",
-      color: "#ce93d8",
+      color: "#a78bfa",
     },
     {
       title: "Guitar",
       description: "Acoustic & electric guitar player",
       icon: "music_note",
-      color: "#ffab40",
+      color: "#00cea8",
     },
     {
       title: "Hiking",
       description: "Exploring trails and the outdoors",
       icon: "hiking",
-      color: "#66bb6a",
+      color: "#2dd4bf",
     },
     {
       title: "Gym",
       description: "Strength training and consistent fitness routines",
       icon: "fitness_center",
-      color: "#ef5350",
+      color: "#c471ed",
     },
     {
       title: "Traveling",
       description: "Exploring new places, cultures, and food",
       icon: "flight_takeoff",
-      color: "#29b6f6",
+      color: "#56ccf2",
     },
   ];
 
@@ -769,7 +760,7 @@ export * from './data';
       date: "2023 \u2013 2024",
       description: "Member of the entrepreneurship club focused on developing business ideas, pitching solutions, and collaborating across disciplines.",
       icon: "lightbulb",
-      color: "#ffab40",
+      color: "#c471ed",
     },  ];
 
   export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };

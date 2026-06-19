@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
 
 const variants = {
   // Aurora with animated floating orbs
@@ -258,17 +259,37 @@ const variants = {
 
 const SectionBackground = ({ variant = 'aurora', children }) => {
   const ref = useRef(null);
+  const [active, setActive] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
+  // Only render the heavy animated background while the section is near the
+  // viewport. This stops dozens of off-screen blurred orbs and particle
+  // animations from continuously consuming the GPU across the whole page.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setActive(entry.isIntersecting),
+      { rootMargin: '250px 0px 250px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const BgComponent = variants[variant];
 
   return (
-    <div ref={ref} className="relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <BgComponent scrollYProgress={scrollYProgress} />
+    <div ref={ref} className="relative">
+      {/* Clipping happens on this inner layer so the useScroll target div above
+          stays a plain (non-overflow) element and framer can measure it. */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {!prefersReducedMotion && active && (
+          <BgComponent scrollYProgress={scrollYProgress} />
+        )}
       </div>
       <div className="relative z-[1]">
         {children}

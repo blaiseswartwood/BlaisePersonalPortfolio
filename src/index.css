@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,6 +13,28 @@
   color-scheme: dark;
 }
 
+/* Display typeface for headings — geometric, modern, distinct from body */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: "Space Grotesk", "Poppins", sans-serif;
+}
+
+/* Subtle film-grain overlay for depth and to reduce gradient banding.
+   position:fixed keeps it on its own layer (no scroll repaints) and we avoid
+   mix-blend-mode, which would force full-viewport recompositing while scrolling. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
 /* Mobile-specific fixes */
 html {
   -webkit-text-size-adjust: 100%;
@@ -25,6 +47,36 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* overflow-x:hidden makes <body> a scroll container; giving it a non-static
+     position lets framer-motion's useScroll compute section offsets correctly
+     (otherwise it warns and scroll-linked backgrounds can mis-calculate). */
+  position: relative;
+}
+
+/* Branded text selection */
+::selection {
+  background: rgba(145, 94, 255, 0.35);
+  color: #ffffff;
+}
+
+/* Branded scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #915eff, #00cea8);
+  border-radius: 8px;
+  border: 2px solid #050816;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a87bff, #1ee0bb);
 }
 
 /* Fix for iOS Safari viewport issues */
@@ -369,20 +421,20 @@ img {
 }
 
 .navbar-glass-scrolled {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   background: rgba(16, 13, 37, 0.92);
   border-bottom: 1px solid rgba(145, 94, 255, 0.15);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Glassmorphism Card Effect */
+/* Glassmorphism Card Effect — backdrop-filter intentionally omitted: the
+   background is near-opaque so the blur is invisible but would force a costly
+   re-blur of everything behind every card on each scroll frame. */
 .glass-card {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background: rgba(10, 7, 25, 0.85);
+  background: rgba(10, 7, 25, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   border-radius: 20px;
 }
 .glass-card:hover {
@@ -449,21 +501,19 @@ img {
 
 .text-shimmer {
   background: linear-gradient(
-    90deg, 
-    #915EFF 0%, 
-    #00cea8 15%,
-    #4fc3f7 30%, 
-    #e040fb 45%,
-    #ff6f00 60%,
-    #915EFF 75%,
-    #00cea8 90%,
-    #915EFF 100%
+    90deg,
+    #915eff 0%,
+    #6ea8ff 22%,
+    #4fd1c5 42%,
+    #c471ed 62%,
+    #915eff 82%,
+    #4fd1c5 100%
   );
-  background-size: 300% auto;
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 6s linear infinite;
+  animation: shimmer 8s linear infinite;
 }
 
 /* Ambient glow orbs */
@@ -607,15 +657,30 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body::before {
+    display: none;
+  }
+
   .bg-orb-drift-1,
   .bg-orb-drift-2,
   .bg-orb-drift-3 {
     animation: none;
+    transform: none;
   }
   .bg-particles::before,
   .bg-particles::after,
   .bg-particles-extra::before,
   .bg-particles-extra::after {
     animation: none;
+    opacity: 0;
   }
 }

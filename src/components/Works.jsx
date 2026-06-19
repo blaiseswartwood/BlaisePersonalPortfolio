@@ -37,7 +37,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card card-hover-glow cursor-pointer"
         onClick={handleCardClick}
       >
-        <div className="glass-card rounded-[20px] p-3 sm:p-5 backdrop-blur-xl border border-white/10 relative overflow-hidden group-hover:border-purple-500/30 transition-all duration-300">
+        <div className="glass-card rounded-[20px] p-3 sm:p-5 border border-white/10 relative overflow-hidden group-hover:border-purple-500/30 transition-all duration-300">
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl group">
             <img 
               src={image} 
@@ -48,6 +48,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                 e.target.style.display = 'none';
               }}
             />
+            {/* Bottom-up gradient unifies thumbnails of varied brightness */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0719] via-[#0a0719]/20 to-transparent pointer-events-none" />
             <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
               <div className="black-gradient w-10 h-10 rounded-full flex justify-center items-center hover:scale-110 transition-transform">
                 <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
@@ -137,4 +139,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "projects");
+export default SectionWrapper(Works, "projects", "06");

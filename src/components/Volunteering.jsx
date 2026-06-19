@@ -47,4 +47,4 @@ const Volunteering = () => {
   );
 };
 
-export default SectionWrapper(Volunteering, "volunteering");
+export default SectionWrapper(Volunteering, "volunteering", "10");

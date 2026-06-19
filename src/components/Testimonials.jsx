@@ -4,7 +4,21 @@ import { SectionWrapper } from '../hoc';
 import { testimonials } from '../constants';
 import { textVariant } from '../utils/motion';
 
-const TestimonialCard = ({ quote, name, title, company, index }) => {
+// Wrap any phrases listed in `highlights` with a bold, brighter span so the
+// quotes are scannable instead of being a flat wall of text.
+const renderQuote = (quote, highlights = []) => {
+  if (!highlights.length) return quote;
+  const escaped = highlights.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const regex = new RegExp(`(${escaped.join('|')})`, 'g');
+  const set = new Set(highlights);
+  return quote.split(regex).map((part, i) =>
+    set.has(part)
+      ? <strong key={i} className="text-white font-semibold not-italic">{part}</strong>
+      : part
+  );
+};
+
+const TestimonialCard = ({ quote, highlights, name, title, company, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -20,7 +34,7 @@ const TestimonialCard = ({ quote, name, title, company, index }) => {
         
         {/* Quote text */}
         <p className="text-secondary text-[13px] sm:text-[14px] leading-relaxed italic flex-1">
-          {quote}
+          {renderQuote(quote, highlights)}
         </p>
 
         {/* Author */}
@@ -59,4 +73,4 @@ const Testimonials = () => {
   );
 };
 
-export default SectionWrapper(Testimonials, "testimonials");
+export default SectionWrapper(Testimonials, "testimonials", "09");
