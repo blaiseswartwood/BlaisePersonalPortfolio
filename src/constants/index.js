@@ -1,53 +1,28 @@
-import {
-    mobile, backend, creator, web,
-    clogo, rust, matlab, rlogo,
-    clientprototyping, editortrees, linter, computerprocessor,
-    portfolio, swimming, purdue, microsoft, java, microsoftsql,
-    python, criticalityscore, myopathy,
-    plearn, rosehulman, sunsetsails, xv6threads, indiana211,
-    googlelogo, poker, swimdata, pneu, rustascii,
-    auction, lb, mililani, alohapacific,
-} from "../assets";
+import mililani from '../assets/mililani.png';
+import rosehulman from '../assets/rosehulman.png';
+import auction from '../assets/projects/Auction.png';
+import clientprototyping from '../assets/projects/ClientPrototyping2.PNG';
+import computerprocessor from '../assets/projects/ComputerProcessor.png';
+import criticalityscore from '../assets/projects/criticalityscore.png';
+import editortrees from '../assets/projects/EditorTree.png';
+import indiana211 from '../assets/projects/Indiana211Website.png';
+import lb from '../assets/projects/lb.png';
+import linter from '../assets/projects/Linter.png';
+import myopathy from '../assets/projects/Myopathy.png';
+import plearn from '../assets/projects/plearn.png';
+import pneu from '../assets/projects/pneu.png';
+import poker from '../assets/projects/Poker.png';
+import portfolio from '../assets/projects/Portfolio.png';
+import rustascii from '../assets/projects/rustascii.png';
+import sunsetsails from '../assets/projects/sunsetsailwebsite.png';
+import swimdata from '../assets/projects/SwimData.png';
+import swimming from '../assets/projects/SwimmingDatabase.png';
+import xv6threads from '../assets/projects/xv6threads.png';
 
 // Re-export data constants
 export * from './data';
   
-  const services = [
-
-    {
-      title: "Software Engineering",
-      icon: web,
-    },
-    {
-      title: "AI Agents",
-      icon: mobile,
-    },
-    {
-      title: "Machine Learning",
-      icon: creator,
-    },
-    {
-      title: "Data Science",
-      icon: backend,
-    },
-  ];
-
   const education = [
-    // {
-    //   titlefront: "Masters in Information and Data Science",
-    //   school: "University of California, Berkeley",
-    //   iconfront: masters,
-    //   date: "August 2025 - May 2028",
-    //   points: [ "Research Design and Application for Data and Analysis",
-    //              "Fundamentals of Data Engineering",
-    //              "Applied Machine Learning",
-    //              "Machine Learning at Scale",
-    //              "Machine Learning Systems Engineering",
-    //              "Natural Lang Processing with Deep Learning",
-    //              "Generative AI: Foundations, Techniques, and Challenges",
-    //   ],
-    //   GPA: "4.0",
-    // },
     {
         titlefront: "Bachelors of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
@@ -96,104 +71,6 @@ export * from './data';
     },
 
 ];
-  
-  const technologies = [
-    {
-      name: "Java",
-      icon: java,
-    },
-    {
-      name: "Python",
-      icon: python,
-    },
-    {
-      name: "R",
-      icon: rlogo,
-    },
-    {
-      name: "MATLAB",
-      icon: matlab,
-    },
-    {
-      name: "C",
-      icon: clogo,
-    },
-    {
-      name: "Rust",
-      icon: rust,
-    },
-    {
-      name: "SQL Server",
-      icon: microsoftsql,
-    },
-
-  ];
-  
-  const experiences = [
-    {
-      title: "IT Intern",
-      subtitle: "",
-      company_name: "Aloha Pacific Federal Credit Union",
-      icon: alohapacific,
-      iconBg: "#FFFFFF",
-      date: "June 2021 - August 2021",
-      points: [
-        "Built an **inventory management program** (Python front-end, SQL back-end) to organize hardware assets",
-        "Assisted in general maintenance and inventory keeping of **IT equipment**",
-      ],
-    },
-    {
-      title: "Research Intern",
-      subtitle: "",
-      company_name: "Purdue University",
-      icon: purdue,
-      iconBg: "#CEB888",
-      date: "June 2023 - August 2023",
-      points: [
-        "Presented at NDiSTEM Conference — awarded **travel scholarship**",
-        "Retained **98%** algorithm performance using only **5 features** via ML (Python, R)",
-        "Improved open-source project ranking for the **Open Source Security Foundation**",
-      ],
-    },
-    {
-      title: "Software Engineer Intern",
-      subtitle: "Azure Networking",
-      company_name: "Microsoft",
-      icon: microsoft,
-      iconBg: "#D3D3D3",
-      date: "June 2024 - August 2024",
-      points: [
-        "Designed new **Azure Front Door** feature routing requests to external endpoints for pre-origin verification",
-        "Built **two-rule system** enabling URL redirect, cache control, header modification & more",
-        "Implemented E2E across **control plane (C#)** and **data plane (C, Rust)**",
-      ],
-    },
-    {
-      title: "Software Engineer Intern",
-      subtitle: "Google Cloud Business Partner",
-      company_name: "Google",
-      icon: googlelogo,
-      iconBg: "#D3D3D3",
-      date: "June 2025 - August 2025",
-      points: [
-        "Reduced malformed responses to **0.0%**, improved extraction accuracy to **86%** via model tuning on **1,000+ obligations** (Python)",
-        "Cut integration time by **72%** across **50+ obligation types** with type-safe Gemini library (Java)",
-        "Shipped first **E2E redline obligation extraction** flow in pre-production",
-      ],
-    },
-    {
-      title: "Software Engineer",
-      subtitle: "Azure Front Door",
-      company_name: "Microsoft",
-      icon: microsoft,
-      iconBg: "#D3D3D3",
-      date: "September 2025 - Current",
-      points: [
-        "Built **traffic replayer** forking prod traffic to pre-prod for **A/B pre-release validation**",
-        "Boosted config coverage **24% → 91%** and dev efficiency **~62%** with automated Perl testing framework",
-      ],
-    },
-  ];
   
   const researchprojects = [
     {
@@ -638,27 +515,6 @@ export * from './data';
     },
   ];
 
-  const skills = [
-    { name: "PyTorch", level: 90, category: "AI / ML" },
-    { name: "Scikit-Learn", level: 90, category: "AI / ML" },
-    { name: "TensorFlow", level: 75, category: "AI / ML" },
-    { name: "Hugging Face", level: 80, category: "AI / ML" },
-    { name: "LLM Fine-Tuning", level: 85, category: "AI / ML" },
-    { name: "Computer Vision", level: 80, category: "AI / ML" },
-    { name: "Azure", level: 85, category: "Cloud / Infra" },
-    { name: "Google Cloud", level: 75, category: "Cloud / Infra" },
-    { name: "Docker", level: 70, category: "Cloud / Infra" },
-    { name: "Nginx", level: 75, category: "Cloud / Infra" },
-    { name: "CI / CD", level: 80, category: "Cloud / Infra" },
-    { name: "Linux", level: 85, category: "Cloud / Infra" },
-    { name: "React", level: 80, category: "Web / Systems" },
-    { name: "Node.js", level: 75, category: "Web / Systems" },
-    { name: "REST APIs", level: 85, category: "Web / Systems" },
-    { name: "OS Internals", level: 80, category: "Web / Systems" },
-    { name: "Networking", level: 85, category: "Web / Systems" },
-    { name: "Git", level: 90, category: "Web / Systems" },
-  ];
-
   const testimonials = [
     {
       quote: "You're a very strong engineer and a fast learner — you took Traffic Replayer from a very early POC stage and turned it into something that looks and feels like a production-ready service, which is not easy. What stands out most is your ability to operate independently, while knowing when to reach out for help and when to help others, which makes you very effective in a team setting.",
@@ -681,14 +537,6 @@ export * from './data';
       title: "Professor, Computer Science",
       company: "Rose-Hulman Institute of Technology",
     },
-  ];
-
-  const stats = [
-    { label: "Research Papers", value: 3, icon: "description" },
-    { label: "Cumulative GPA", value: 4.0, decimal: true, icon: "school" },
-    { label: "Languages", value: 8, suffix: "+", icon: "code" },
-    { label: "Projects Shipped", value: 15, suffix: "+", icon: "rocket_launch" },
-    { label: "Internships", value: 3, icon: "work" },
   ];
 
   const interests = [
@@ -763,4 +611,4 @@ export * from './data';
       color: "#c471ed",
     },  ];
 
-  export { services, technologies, experiences, researchprojects, projects, education, awards, skills, testimonials, stats, interests, volunteering };
+  export { researchprojects, projects, education, awards, testimonials, interests, volunteering };

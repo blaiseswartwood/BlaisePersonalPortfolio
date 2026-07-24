@@ -1,4 +1,4 @@
-import React, { Suspense, memo } from "react";
+import { Suspense, memo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -12,7 +12,9 @@ const Computers = memo(({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={3.15} groundColor="black" />
+      <hemisphereLight intensity={3.7} color="#e8fbff" groundColor="#07111c" />
+      <directionalLight position={[6, 9, 7]} intensity={1.1} color="#9fe8ff" />
+      <pointLight position={[-8, 3, 6]} intensity={0.65} color="#fb7185" />
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
@@ -35,11 +37,10 @@ const ComputersCanvas = () => {
   return (
     <div ref={containerRef} className="absolute inset-0 w-full h-full">
       <Canvas
-        frameloop={inView ? "always" : "demand"}
-        shadows
+        frameloop={inView && !prefersReducedMotion ? "always" : "demand"}
         dpr={[1, 1.5]}
         camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+        gl={{ powerPreference: "high-performance" }}
       >
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls

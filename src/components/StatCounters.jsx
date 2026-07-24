@@ -1,57 +1,62 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { stats } from '../constants';
+import { stats } from '../constants/about';
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
 
 const AnimatedCounter = ({ value, decimal = false, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const hasAnimated = useRef(false);
   const ref = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const element = ref.current;
+    if (!element) return undefined;
 
-    let timer;
+    let animationFrame;
+    const renderValue = (current) => {
+      const formatted = decimal ? current.toFixed(1) : Math.floor(current);
+      element.textContent = `${formatted}${suffix}`;
+    };
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          observer.disconnect();
-          const duration = 2000;
-          const steps = 60;
-          const increment = value / steps;
-          let current = 0;
-          timer = setInterval(() => {
-            current += increment;
-            if (current >= value) {
-              setCount(value);
-              clearInterval(timer);
-            } else {
-              setCount(decimal ? Math.round(current * 10) / 10 : Math.floor(current));
-            }
-          }, duration / steps);
+        if (!entry.isIntersecting || hasAnimated.current) return;
+
+        hasAnimated.current = true;
+        observer.disconnect();
+
+        if (prefersReducedMotion) {
+          renderValue(value);
+          return;
         }
+
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / 1400, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          renderValue(value * eased);
+          if (progress < 1) animationFrame = requestAnimationFrame(tick);
+        };
+
+        animationFrame = requestAnimationFrame(tick);
       },
       { threshold: 0.3 }
     );
 
-    observer.observe(el);
+    observer.observe(element);
     return () => {
       observer.disconnect();
-      if (timer) clearInterval(timer);
+      if (animationFrame) cancelAnimationFrame(animationFrame);
     };
-  }, [value, decimal]);
+  }, [decimal, prefersReducedMotion, suffix, value]);
 
   return (
-    <span ref={ref}>
-      {decimal ? count.toFixed(1) : count}{suffix}
-    </span>
+    <span ref={ref}>{decimal ? '0.0' : '0'}{suffix}</span>
   );
 };
 
 const StatCounters = () => {
   return (
-    <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 max-w-4xl">
+    <div className="mt-14 grid max-w-5xl grid-cols-2 border-y border-white/[0.08] md:grid-cols-3 lg:grid-cols-5">
       {stats.map((stat, index) => (
         <motion.div
           key={stat.label}
@@ -59,18 +64,17 @@ const StatCounters = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: 0.12 * index, duration: 0.6 }}
-          className="relative group text-center p-4 sm:p-5 rounded-2xl bg-tertiary/60 border border-[#915EFF]/10
-            hover:border-[#915EFF]/30 transition-all duration-300"
+          className="group relative border-r border-white/[0.07] p-4 text-left transition-colors duration-300 hover:bg-white/[0.025] sm:p-5"
         >
-          <div className="flex justify-center mb-2">
-            <span className="material-symbols-outlined text-[#915EFF] text-[24px] sm:text-[28px]">
+          <div className="mb-4 flex justify-start">
+            <span className="material-symbols-outlined text-[20px] text-cyan-300/70 sm:text-[22px]">
               {stat.icon}
             </span>
           </div>
-          <div className="text-white font-black text-[28px] sm:text-[36px] leading-none mb-1">
+          <div className="mb-2 font-display text-[28px] font-semibold leading-none text-white sm:text-[34px]">
             <AnimatedCounter value={stat.value} decimal={stat.decimal} suffix={stat.suffix} />
           </div>
-          <p className="text-secondary text-[11px] sm:text-[13px] font-medium tracking-wide uppercase">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-secondary/65 sm:text-[10px]">
             {stat.label}
           </p>
           {stat.highlights && (

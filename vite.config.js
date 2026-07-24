@@ -11,8 +11,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
-          motion: ['framer-motion'],
-          ui: ['react-parallax-tilt', 'react-card-flip', 'react-slick', 'react-vertical-timeline-component']
+          motion: ['framer-motion']
         }
       }
     },

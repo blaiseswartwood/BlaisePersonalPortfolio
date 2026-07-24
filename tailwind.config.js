@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#c0bcd9",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        primary: "#060a12",
+        secondary: "#b7c1cf",
+        tertiary: "#0e1726",
+        "black-100": "#0a1220",
+        "black-200": "#07101c",
+        "white-100": "#f4f8fb",
       },
       fontFamily: {
         display: ["'Space Grotesk'", "'Poppins'", "sans-serif"],

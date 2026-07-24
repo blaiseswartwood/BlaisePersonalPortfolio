@@ -63,7 +63,7 @@ const generateNetwork = () => {
 const NetworkEdges = ({ nodes, edges }) => {
   const ref = useRef();
 
-  const { geometry, colors } = useMemo(() => {
+  const geometry = useMemo(() => {
     const positions = [];
     const colorArr = [];
     edges.forEach(([from, to]) => {
@@ -75,7 +75,7 @@ const NetworkEdges = ({ nodes, edges }) => {
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     geo.setAttribute('color', new THREE.Float32BufferAttribute(colorArr, 3));
-    return { geometry: geo, colors: colorArr };
+    return geo;
   }, [nodes, edges]);
 
   useFrame(({ clock }) => {
@@ -254,19 +254,14 @@ export const NeuralNetworkBackground = ({ children }) => {
           backgroundSize: '32px 32px',
         }}
       />
-      {/* Gradient glow orbs in corners */}
-      <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(255,111,0,0.2) 0%, transparent 60%)', filter: 'blur(50px)' }}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-radial-gradient(circle at 10% 35%, transparent 0, transparent 74px, rgba(79,195,247,0.16) 75px, rgba(79,195,247,0.16) 76px)',
+        }}
       />
-      <div className="absolute bottom-[-10%] right-[-5%] w-[450px] h-[450px] rounded-full bg-orb-drift-3 pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(38,198,218,0.2) 0%, transparent 60%)', filter: 'blur(50px)' }}
-      />
-      <div className="absolute top-[30%] right-[-3%] w-[350px] h-[350px] rounded-full bg-orb-drift-2 pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(171,71,188,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
-      />
-      <div className="absolute bottom-[20%] left-[-3%] w-[300px] h-[300px] rounded-full bg-orb-drift-1 pointer-events-none z-0"
-        style={{ background: 'radial-gradient(circle, rgba(102,187,106,0.15) 0%, transparent 60%)', filter: 'blur(50px)' }}
-      />
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-full max-w-6xl -translate-x-1/2 border-x border-white/[0.035]" />
       {/* Neural network canvas — extends beyond content with extra height */}
       <div className="absolute pointer-events-none opacity-35 z-0" style={{ top: '-10%', bottom: '-10%', left: 0, right: 0 }}>
         {isVisible && !prefersReducedMotion && (

@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import { Navbar, Hero, Footer } from './components';
@@ -7,11 +6,11 @@ import MobileLoader from './components/MobileLoader';
 import ErrorBoundary from './components/ErrorBoundary';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
-import SectionBackground from './components/SectionBackground';
+import SectionAtmosphere from './components/SectionAtmosphere';
+import DeferredSection from './components/DeferredSection';
 import useMediaQuery from './hooks/useMediaQuery';
 
 // Lazy load heavy components
-const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
 const NeuralNetworkBg = lazy(() => 
   import('./components/canvas/NeuralNetwork').then(mod => ({
     default: mod.NeuralNetworkBackground
@@ -20,17 +19,31 @@ const NeuralNetworkBg = lazy(() =>
 
 // Lazy load page components
 const About = lazy(() => import('./components/About'));
-const Education = lazy(() => import('./components/Education'));
+const Education = lazy(() => import('./components/EducationLedger'));
 const Experience = lazy(() => import('./components/Experience'));
-const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
-const Research = lazy(() => import('./components/Research'));
-const Contact = lazy(() => import('./components/Contact'));
+const Research = lazy(() => import('./components/ResearchGallery'));
 const Awards = lazy(() => import('./components/Awards'));
 const SkillsMatrix = lazy(() => import('./components/SkillsMatrix'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Interests = lazy(() => import('./components/Interests'));
 const Volunteering = lazy(() => import('./components/Volunteering'));
+
+const DeferredPortfolioSection = ({
+  id,
+  variant,
+  component: Component,
+  loadingComponent: LoadingComponent,
+  minHeight,
+}) => (
+  <DeferredSection id={id} minHeight={minHeight}>
+    <SectionAtmosphere variant={variant}>
+      <Suspense fallback={<LoadingComponent />}>
+        <Component />
+      </Suspense>
+    </SectionAtmosphere>
+  </DeferredSection>
+);
 
 const HomePage = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -45,94 +58,25 @@ const HomePage = () => {
           <Hero />
         </div>
 
-        {/* About with animated stat counters */}
-        <Suspense fallback={<div className="h-screen" />}>
-          <NeuralNetworkBg>
-            <Suspense fallback={<LoadingComponent />}>
-              <About />
-            </Suspense>
-          </NeuralNetworkBg>
-        </Suspense>
+        <DeferredSection id="about" minHeight="90vh" rootMargin="1200px 0px">
+          <Suspense fallback={<div className="min-h-[90vh]" />}>
+            <NeuralNetworkBg>
+              <Suspense fallback={<LoadingComponent />}>
+                <About />
+              </Suspense>
+            </NeuralNetworkBg>
+          </Suspense>
+        </DeferredSection>
 
-        {/* Experience — most impactful section for SWE credibility */}
-        <SectionBackground variant="dots">
-          <Suspense fallback={<LoadingComponent />}>
-            <Experience />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Skills Matrix */}
-        <SectionBackground variant="lines">
-          <Suspense fallback={<LoadingComponent />}>
-            <SkillsMatrix />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Technologies — 3D floating balls */}
-        <SectionBackground variant="pulse">
-          <Suspense fallback={<LoadingComponent />}>
-            <Tech />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Education */}
-        <SectionBackground variant="grid">
-          <Suspense fallback={<LoadingComponent />}>
-            <Education />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Projects with filtering */}
-        <SectionBackground variant="mesh">
-          <Suspense fallback={<LoadingComponent />}>
-            <Works />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Research */}
-        <SectionBackground variant="dots">
-          <Suspense fallback={<LoadingComponent />}>
-            <Research />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Awards & Achievements */}
-        <SectionBackground variant="grid">
-          <Suspense fallback={<LoadingComponent />}>
-            <Awards />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Testimonials */}
-        <SectionBackground variant="lines">
-          <Suspense fallback={<LoadingComponent />}>
-            <Testimonials />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Volunteering & Leadership */}
-        <SectionBackground variant="pulse">
-          <Suspense fallback={<LoadingComponent />}>
-            <Volunteering />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Life Outside Career */}
-        <SectionBackground variant="grid">
-          <Suspense fallback={<LoadingComponent />}>
-            <Interests />
-          </Suspense>
-        </SectionBackground>
-
-        {/* Contact */}
-        <div className="relative z-0">
-          <Suspense fallback={<LoadingComponent />}>
-            <Contact />
-          </Suspense>
-          <Suspense fallback={null}>
-            <StarsCanvas />
-          </Suspense>
-        </div>
+        <DeferredPortfolioSection id="work" variant="dots" component={Experience} loadingComponent={LoadingComponent} minHeight="110vh" />
+        <DeferredPortfolioSection id="skills" variant="lines" component={SkillsMatrix} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="education" variant="grid" component={Education} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="projects" variant="mesh" component={Works} loadingComponent={LoadingComponent} minHeight="110vh" />
+        <DeferredPortfolioSection id="research" variant="dots" component={Research} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="awards" variant="grid" component={Awards} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="testimonials" variant="lines" component={Testimonials} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="volunteering" variant="pulse" component={Volunteering} loadingComponent={LoadingComponent} />
+        <DeferredPortfolioSection id="interests" variant="grid" component={Interests} loadingComponent={LoadingComponent} />
 
         <Footer />
         <BackToTop />
@@ -142,16 +86,9 @@ const HomePage = () => {
 };
 
 const App = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const LoadingComponent = isMobile ? MobileLoader : LoadingSpinner;
-
   return (
     <ErrorBoundary>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
-      </BrowserRouter>
+      <HomePage />
     </ErrorBoundary>
   );
 }

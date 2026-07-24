@@ -19,39 +19,36 @@ const renderQuote = (quote, highlights = []) => {
 };
 
 const TestimonialCard = ({ quote, highlights, name, title, company, index }) => {
+  const accents = ['#5eead4', '#7dd3fc', '#fb7185'];
+
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ type: "spring", delay: 0.2 * index, duration: 0.8 }}
-      className="flex-1 min-w-[280px] max-w-[420px]"
+      transition={{ duration: 0.7, delay: 0.1 * index, ease: [0.22, 1, 0.36, 1] }}
+      className="signal-card flex min-w-[280px] max-w-[420px] flex-1 flex-col p-6 sm:p-8"
+      style={{ '--signal-accent': accents[index % accents.length] }}
     >
-      <div className="h-full p-6 sm:p-8 rounded-2xl bg-tertiary/80 border border-[#915EFF]/10 
-        hover:border-[#915EFF]/25 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(145,94,255,0.1)] flex flex-col">
-        {/* Quote icon */}
-        <span className="text-[#915EFF] text-[40px] sm:text-[48px] leading-none font-serif mb-2">"</span>
+      <span className="signal-card__quote mb-2 font-serif text-[40px] leading-none sm:text-[48px]">&ldquo;</span>
         
-        {/* Quote text */}
-        <p className="text-secondary text-[13px] sm:text-[14px] leading-relaxed italic flex-1">
-          {renderQuote(quote, highlights)}
-        </p>
+      <p className="flex-1 text-[13px] italic leading-relaxed text-secondary/80 sm:text-[14px]">
+        {renderQuote(quote, highlights)}
+      </p>
 
-        {/* Author */}
-        <div className="mt-6 pt-4 border-t border-gray-800/50">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#915EFF]/15 border border-[#915EFF]/30 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[#915EFF] text-[18px]">person</span>
-            </div>
-            <div>
-              <p className="text-white font-semibold text-[14px]">{name}</p>
-              <p className="text-secondary text-[11px] sm:text-[12px]">{title}</p>
-              <p className="text-[#915EFF]/70 text-[11px] sm:text-[12px]">{company}</p>
-            </div>
+      <div className="mt-6 border-t border-white/[0.07] pt-4">
+        <div className="flex items-center gap-3">
+          <div className="signal-card__avatar flex h-10 w-10 items-center justify-center rounded-full">
+            <span className="material-symbols-outlined text-[18px]">person</span>
+          </div>
+          <div>
+            <p className="text-[14px] font-semibold text-white">{name}</p>
+            <p className="text-[11px] text-secondary/70 sm:text-[12px]">{title}</p>
+            <p className="signal-card__meta text-[11px] sm:text-[12px]">{company}</p>
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
@@ -73,4 +70,4 @@ const Testimonials = () => {
   );
 };
 
-export default SectionWrapper(Testimonials, "testimonials", "09");
+export default SectionWrapper(Testimonials, "testimonials", "08");

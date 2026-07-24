@@ -1,36 +1,30 @@
-import {github, linkedin} from '../assets';
+import github from '../assets/github.png';
+import linkedin from '../assets/linkedin.png';
 
 const Footer = () => {
        
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="relative w-full bg-[#050816]">
-            {/* Separator */}
-            <div className="max-w-7xl mx-auto">
-              <div className="h-px bg-gradient-to-r from-transparent via-[#915EFF]/40 to-transparent" />
-            </div>
+        <footer className="site-footer relative w-full">
+            <div className="site-footer__trace mx-auto max-w-7xl" />
 
             <div className="flex w-full flex-col items-center justify-center py-10 md:flex-row md:justify-between max-w-7xl mx-auto px-6 sm:px-16">
               <div className="mb-6 md:mb-0 text-center md:text-left">
-                <p className="text-white/80 text-sm font-medium tracking-wide">
+                <p className="text-sm font-medium tracking-wide text-white/85">
                   &copy; {currentYear}&nbsp;Blaise Swartwood
                 </p>
-                <p className="text-secondary/50 text-xs mt-1.5 flex items-center gap-1.5 justify-center md:justify-start">
-                  <span className="material-symbols-outlined text-[12px] text-[#915EFF]/60">auto_awesome</span>
-                  AI &middot; ML &middot; Data Science
-                </p>
-                <p className="text-secondary/30 text-[10px] mt-1">
-                  React &middot; Three.js &middot; Framer Motion
+                <p className="mt-1.5 flex items-center justify-center gap-2 text-[11px] text-secondary/55 md:justify-start">
+                  <span className="site-footer__status" />
+                  Software &middot; AI &middot; Cloud Systems
                 </p>
               </div>
 
-              {/* Center — AI tagline */}
               <div className="mb-6 md:mb-0 text-center hidden md:block">
-                <p className="text-secondary/40 text-[11px] tracking-widest uppercase">
-                  Exploring the frontier of
+                <p className="text-[9px] uppercase tracking-[0.2em] text-secondary/35">
+                  Built with intent
                 </p>
-                <p className="text-[#915EFF]/60 text-xs font-medium mt-0.5 tracking-wide">
-                  Generative AI &amp; Intelligent Systems
+                <p className="mt-1 text-[11px] font-medium tracking-wide text-cyan-200/60">
+                  React &middot; Three.js &middot; Framer Motion
                 </p>
               </div>
 

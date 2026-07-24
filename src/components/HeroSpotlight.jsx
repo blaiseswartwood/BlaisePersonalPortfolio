@@ -50,7 +50,7 @@ const HeroSpotlight = () => {
       className="pointer-events-none absolute inset-0 z-[2] hidden md:block transition-opacity duration-700"
       style={{
         background:
-          'radial-gradient(550px circle at var(--x, 50%) var(--y, 33%), rgba(145,94,255,0.13), rgba(0,206,168,0.05) 40%, transparent 65%)',
+          'radial-gradient(560px circle at var(--x, 50%) var(--y, 33%), rgba(94,234,212,0.12), rgba(125,211,252,0.06) 42%, transparent 68%)',
       }}
     />
   );
