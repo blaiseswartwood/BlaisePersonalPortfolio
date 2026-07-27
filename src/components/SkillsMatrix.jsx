@@ -5,7 +5,7 @@ import { SectionWrapper } from '../hoc';
 import { skillGroups } from '../constants/skills';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const groupAccents = ['#fb7185', '#5eead4', '#7dd3fc', '#a7f3d0'];
+const groupAccents = ['#5eead4', '#fb7185', '#7dd3fc', '#a7f3d0'];
 
 const SkillsMatrix = () => {
   const [activeIndex, setActiveIndex] = useState(0);

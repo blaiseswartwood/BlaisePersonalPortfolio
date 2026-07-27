@@ -36,7 +36,7 @@ const Interests = () => {
         className="mt-4 text-secondary text-[16px] max-w-2xl leading-[28px]"
       >
         When I&apos;m not engineering software, you can find me in the pool,
-        on a trail, or making music. Born and raised in <span className="text-white font-medium">Hawai&apos;i</span>, now based in <span className="text-white font-medium">Washington</span>.
+        at the gym, or making music. Born and raised in <span className="text-white font-medium">Hawai&apos;i</span>, now based in <span className="text-white font-medium">Sunnyvale, California</span>.
       </motion.p>
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
@@ -48,4 +48,4 @@ const Interests = () => {
   );
 };
 
-export default SectionWrapper(Interests, "interests", "10");
+export default SectionWrapper(Interests, "interests", "08");

@@ -24,15 +24,8 @@ const SectionAtmosphere = ({ variant = 'grid', children }) => {
   return (
     <div ref={sectionRef} className={`section-atmosphere section-atmosphere--${variant} relative`}>
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <motion.div
-          className={`section-atmosphere__pattern section-atmosphere__pattern--${variant}`}
-          initial={false}
-          animate={isActive && !prefersReducedMotion
-            ? { opacity: [0.27, 0.38, 0.27], y: [-8, 10, -8], x: [0, 4, 0] }
-            : { opacity: isActive ? 0.32 : 0, y: 0, x: 0 }}
-          transition={isActive && !prefersReducedMotion
-            ? { duration: 16, repeat: Infinity, ease: 'easeInOut' }
-            : { duration: 0.45 }}
+        <div
+          className={`section-atmosphere__pattern section-atmosphere__pattern--${variant} ${isActive ? 'section-atmosphere__pattern--active' : ''}`}
         />
         {!prefersReducedMotion && (
           <motion.div

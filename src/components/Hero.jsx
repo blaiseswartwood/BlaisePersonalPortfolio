@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
+import { resumeLinks } from '../constants/data';
 import HeroSpotlight from './HeroSpotlight';
 import { cn } from '../utils/classNames';
 
@@ -61,7 +62,7 @@ const Hero = () => {
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.75)]" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 sm:text-[12px]">
-              Software Engineer / Microsoft
+              Software Engineer / Google
             </span>
           </motion.div>
 
@@ -92,13 +93,34 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.72 }}
             className="hero-capabilities mt-9 grid max-w-[570px] grid-cols-3"
           >
-            {['Production AI', 'Cloud systems', 'Applied ML'].map((capability, index) => (
+            {['Agentic AI', 'Cloud systems', 'Applied ML'].map((capability, index) => (
               <li key={capability}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 {capability}
               </li>
             ))}
           </motion.ul>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.86, ease: [0.22, 1, 0.36, 1] }}
+            className="hero-actions pointer-events-auto mt-7 flex flex-wrap gap-3"
+          >
+            <a href="#work" className="hero-action hero-action--primary">
+              Experience
+              <span className="material-symbols-outlined" aria-hidden="true">south</span>
+            </a>
+            <a
+              href={resumeLinks.desktop}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-action"
+            >
+              Resume
+              <span className="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+            </a>
+          </motion.div>
         </div>
       </div>
 

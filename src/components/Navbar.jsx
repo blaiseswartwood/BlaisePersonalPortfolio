@@ -4,10 +4,26 @@ import { navLinks, resumeLinks } from '../constants/data';
 import logo from '../assets/logo.svg';
 import { cn } from '../utils/classNames';
 
+const getInitialTheme = () => {
+  if (typeof document === 'undefined') return 'dark';
+  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+};
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch {
+      // The theme still works when storage is unavailable.
+    }
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -96,6 +112,28 @@ const Navbar = () => {
     </li>
   );
 
+  const ThemeToggle = ({ isMobile = false }) => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+
+    return (
+      <li className={isMobile ? 'mt-1 border-t border-white/[0.07] pt-2' : undefined}>
+        <button
+          type="button"
+          className={cn('theme-toggle', isMobile && 'theme-toggle--mobile')}
+          onClick={() => setTheme(nextTheme)}
+          aria-label={`Switch to ${nextTheme} mode`}
+          aria-pressed={theme === 'light'}
+          title={`Switch to ${nextTheme} mode`}
+        >
+          <span className="material-symbols-outlined" aria-hidden="true">
+            {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+          </span>
+          {isMobile && <span>{nextTheme === 'light' ? 'Light mode' : 'Dark mode'}</span>}
+        </button>
+      </li>
+    );
+  };
+
   return (
     <nav className={cn(
       styles.paddingX,
@@ -114,6 +152,7 @@ const Navbar = () => {
         <ul className="hidden list-none flex-row items-center gap-6 md:flex lg:gap-8">
           {navLinks.map(link => <NavLink key={link.id} link={link} />)}
           <ResumeLink />
+          <ThemeToggle />
         </ul>
 
         <div className="flex flex-1 items-center justify-end md:hidden">
@@ -134,6 +173,7 @@ const Navbar = () => {
             <ul className="flex list-none flex-col items-stretch gap-1">
               {navLinks.map(link => <NavLink key={link.id} link={link} isMobile />)}
               <ResumeLink isMobile />
+              <ThemeToggle isMobile />
             </ul>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
@@ -15,9 +15,13 @@ const projectAccents = {
   Data: "#fbbf24",
 };
 
-const ProjectCard = ({ name, description, tags, image, source_code_link, category, index }) => {
+const ProjectCard = forwardRef(function ProjectCard(
+  { name, description, tags, image, source_code_link, category, index },
+  ref,
+) {
   return (
     <motion.a
+      ref={ref}
       layout="position"
       href={source_code_link}
       target="_blank"
@@ -65,7 +69,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, categor
       </div>
     </motion.a>
   );
-};
+});
 
 const Works = () => {
   const [activeFilter, setActiveFilter] = useState("All");

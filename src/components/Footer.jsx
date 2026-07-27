@@ -8,8 +8,8 @@ const Footer = () => {
         <footer className="site-footer relative w-full">
             <div className="site-footer__trace mx-auto max-w-7xl" />
 
-            <div className="flex w-full flex-col items-center justify-center py-10 md:flex-row md:justify-between max-w-7xl mx-auto px-6 sm:px-16">
-              <div className="mb-6 md:mb-0 text-center md:text-left">
+            <div className="site-footer__inner mx-auto w-full max-w-7xl px-6 py-10 sm:px-16">
+              <div className="text-center md:text-left">
                 <p className="text-sm font-medium tracking-wide text-white/85">
                   &copy; {currentYear}&nbsp;Blaise Swartwood
                 </p>
@@ -19,21 +19,36 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="mb-6 md:mb-0 text-center hidden md:block">
-                <p className="text-[9px] uppercase tracking-[0.2em] text-secondary/35">
-                  Built with intent
-                </p>
-                <p className="mt-1 text-[11px] font-medium tracking-wide text-cyan-200/60">
-                  React &middot; Three.js &middot; Framer Motion
-                </p>
-              </div>
-
-              <div className="flex gap-4 items-center">
-                <a href="https://github.com/blaiseswartwood" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
-                    <img src={github} alt="github" className="h-5 w-5 object-cover rounded-full"/>
+              <address className="footer-contact" aria-label="Contact information">
+                <a href="mailto:blaise.swartwood@gmail.com" className="footer-contact__item">
+                  <span className="material-symbols-outlined" aria-hidden="true">mail</span>
+                  <span>
+                    <small>Email</small>
+                    <strong>blaise.swartwood@gmail.com</strong>
+                  </span>
                 </a>
-                <a href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
-                    <img src={linkedin} alt="LinkedIn" className="h-5 w-5 object-cover rounded-full"/>
+                <a href="tel:+18087489720" className="footer-contact__item">
+                  <span className="material-symbols-outlined" aria-hidden="true">call</span>
+                  <span>
+                    <small>Phone</small>
+                    <strong>(808) 748-9720</strong>
+                  </span>
+                </a>
+                <div className="footer-contact__item">
+                  <span className="material-symbols-outlined" aria-hidden="true">location_on</span>
+                  <span>
+                    <small>Based in</small>
+                    <strong>Sunnyvale, USA</strong>
+                  </span>
+                </div>
+              </address>
+
+              <div className="footer-social">
+                <a href="https://github.com/blaiseswartwood" target="_blank" rel="noopener noreferrer" className="footer-icon-link" aria-label="Blaise on GitHub" title="GitHub">
+                    <img src={github} alt="" className="footer-social-icon footer-social-icon--github"/>
+                </a>
+                <a href="https://www.linkedin.com/in/blaise-swartwood-80094b24a/" target="_blank" rel="noopener noreferrer" className="footer-icon-link" aria-label="Blaise on LinkedIn" title="LinkedIn">
+                    <img src={linkedin} alt="" className="footer-social-icon"/>
                 </a>
               </div>
             </div>

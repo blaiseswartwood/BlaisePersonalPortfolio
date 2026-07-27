@@ -243,27 +243,14 @@ export const NeuralNetworkBackground = ({ children }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden pb-10">
+    <div ref={containerRef} className="neural-network-shell relative overflow-hidden pb-10">
       {/* Subtle background tint to stand out from page */}
-      <div className="absolute inset-0 pointer-events-none z-0"
-        style={{ background: 'linear-gradient(180deg, rgba(12,7,32,0.9) 0%, rgba(15,10,40,1) 15%, rgba(15,10,40,1) 85%, rgba(12,7,32,0.9) 100%)' }}
-      />
-      <div className="absolute inset-0 pointer-events-none z-0 opacity-40"
-        style={{
-          backgroundImage: 'radial-gradient(rgba(145,94,255,0.06) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-30"
-        style={{
-          backgroundImage:
-            'repeating-radial-gradient(circle at 10% 35%, transparent 0, transparent 74px, rgba(79,195,247,0.16) 75px, rgba(79,195,247,0.16) 76px)',
-        }}
-      />
+      <div className="neural-network-tint absolute inset-0 pointer-events-none z-0" />
+      <div className="neural-network-grid absolute inset-0 pointer-events-none z-0" />
+      <div className="neural-network-rings pointer-events-none absolute inset-0 z-0" />
       <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-full max-w-6xl -translate-x-1/2 border-x border-white/[0.035]" />
       {/* Neural network canvas — extends beyond content with extra height */}
-      <div className="absolute pointer-events-none opacity-35 z-0" style={{ top: '-10%', bottom: '-10%', left: 0, right: 0 }}>
+      <div className="neural-network-canvas absolute pointer-events-none z-0">
         {isVisible && !prefersReducedMotion && (
           <Canvas
             camera={{ position: [0, 0, 18], fov: 100 }}

@@ -24,23 +24,20 @@ export * from './data';
   
   const education = [
     {
-        titlefront: "Bachelors of Science, Computer Science",
+    titlefront: "Bachelor of Science, Computer Science",
         school: "Rose-Hulman Institute of Technology",
         iconfront: rosehulman,
         date: "August 2022 - May 2025",
         points: [
-                "Artificial Intelligence", 
-                "Generative AI", 
-                "Deep Learning", 
-                "Data Mining", 
-                "Computer Architecture I & II",
-                "Operating Systems",
-                "Design and Analysis of Algorithms",
-                "Theory of Computation",
-                "Software Requirements Engineering",
-                "Software Design",
-                "Computer Networks", 
+      "Deep Learning",
                 "Image Recognition",
+      "Artificial Intelligence",
+      "Generative AI",
+      "Linear Algebra",
+      "Probability & Statistics",
+      "Combinatorics",
+      "Data Mining",
+      "Computer Networks",
         ],
         GPA: "4.0",
         minors: ["Mathematics", "Data Science"],
@@ -74,11 +71,11 @@ export * from './data';
   
   const researchprojects = [
     {
-      title: "Parson's Problems",
+      title: "Parsons Blocks: Effective Teaching Questions",
       description:
-        ["Researched Parson Blocks as an intermediate question type to test their effectiveness while also gaining insights into student thinking to improve course curriculum and test",
-          "Created a data pipeline to extract and analyze the ordering of student submissions",
-          "Completed IRB approved study in Spring 2024, all of 2025 with 2 question sets for CSSE132 Intro to Systems Programming"],
+        ["Used Parsons Blocks to identify 10+ student misconceptions and reduce average homework time by 28%",
+          "Increased average exam scores by 7% by building a Python and Java ETL pipeline to collect, analyze, and visualize problem-set data",
+          "Ranked edit distance and longest common subsequence methods with machine learning to measure distance from correct answers"],
         tags: [
           {
             name: "Education",
@@ -99,14 +96,14 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/ParsonsEducation",
       extra_link: "https://drive.google.com/file/d/1yV_amOxD7P3IUF6ptWxDlPKKbTiq6Y_v/view?usp=sharing",
       img: plearn,
-      date: "02/03/2023 - 05/02/2025",
+      date: "March 2023 - February 2025",
     },
     {
       title: "Criticality Score Algorithm",
       description:
-        ["Improved the criticality score algorithm to rank the importance of open-source projects",
-        "Used SciKit-Learn and Python to run machine learning t-SNE visualization, regressions, and recursive feature analysis",
-        "Presented and earned a travel scholarship for the 2023 National Diversity in STEM Conference (NDiSTEM) in Portland, Oregon"],
+        ["Retained 98% of the criticality algorithm's performance using only 5 features with machine learning in Python and R",
+        "Improved identification of the most significant open-source projects for the Open Source Security Foundation",
+        "Presented at the NDiSTEM Conference in Portland, Oregon with a travel scholarship"],
         tags: [
           {
             name: "SciKit-Learn",
@@ -127,14 +124,13 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/CriticalityScoreAnalysis",
       extra_link: "https://drive.google.com/file/d/1QzbW7GuYYveRGOo0fwb-a43s3KiAaSU8/view?usp=sharing",
       img: criticalityscore,
-      date: "06/01/2023 - 07/26/2023",
+      date: "June 2023 - August 2023",
     },
     {
-      title: "Classifying Myopathy EMGs",
+      title: "High Accuracy Classification of Myopathy",
       description:
-        ["Created a convolutional neural network using transfer learning in Python and MATLAB to that distinguished between myopathic and normal electromyography signals with a 96.57% accuracy",
-          "Transformed images into spectrogram and scalogram images to improve neural network detection",
-         "Earned 3rd Place Grand Award in Bioinformatics at the International Science and Engineering Fair"],
+        ["Won 3rd Place Grand Award in Bioinformatics at the Regeneron International Science and Engineering Fair (ISEF)",
+          "Classified myopathy EMG images with 96.57% accuracy using a deep neural network in Python and MATLAB"],
          tags: [
           {
             name: "PyTorch",
@@ -155,7 +151,7 @@ export * from './data';
       source_code_link: "https://github.com/rhit-swartwba/MyopathyClassification",
       extra_link: "https://isef.net/project/cbio044---high-accuracy-classification-of-myopathy",
       img: myopathy,
-      date: "05/02/2020 - 09/10/2020",
+      date: "April 2020 - September 2020",
     },
   ];
   
@@ -522,6 +518,7 @@ export * from './data';
       name: "Vlad Polyakov",
       title: "Principal Software Engineer",
       company: "Microsoft",
+      linkedin: "https://www.linkedin.com/in/vladislavp/",
     },
     {
       quote: "When we worked together on the new config test framework for Roxy, I really appreciated the way you took ownership over critical work items — I felt like you're someone I could rely on. You weren't simply trying to get a task done but looked for ways to expand it so the result delivers more value to the team. Your final result was very polished and performed way beyond the initial idea we had.",
@@ -529,6 +526,7 @@ export * from './data';
       name: "Damir Ferizovic",
       title: "Senior Software Engineer",
       company: "Microsoft",
+      linkedin: "https://www.linkedin.com/in/damirferizovic/",
     },
     {
       quote: "One of the most driven students I've mentored. Blaise's work on Parson's Problems showed both strong engineering skills and a genuine curiosity for understanding how students learn — a rare combination.",
@@ -536,6 +534,7 @@ export * from './data';
       name: "Dr. Joseph Hollingsworth",
       title: "Professor, Computer Science",
       company: "Rose-Hulman Institute of Technology",
+      linkedin: "https://www.linkedin.com/in/drholly/",
     },
   ];
 
@@ -559,22 +558,10 @@ export * from './data';
       color: "#00cea8",
     },
     {
-      title: "Hiking",
-      description: "Exploring trails and the outdoors",
-      icon: "hiking",
-      color: "#2dd4bf",
-    },
-    {
       title: "Gym",
       description: "Strength training and consistent fitness routines",
       icon: "fitness_center",
       color: "#c471ed",
-    },
-    {
-      title: "Traveling",
-      description: "Exploring new places, cultures, and food",
-      icon: "flight_takeoff",
-      color: "#56ccf2",
     },
   ];
 

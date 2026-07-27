@@ -37,9 +37,8 @@ export const experiences = [
     iconBg: '#D3D3D3',
     date: 'June 2024 - August 2024',
     points: [
-      'Designed new **Azure Front Door** feature routing requests to external endpoints for pre-origin verification',
-      'Built **two-rule system** enabling URL redirect, cache control, header modification & more',
-      'Implemented E2E across **control plane (C#)** and **data plane (C, Rust)**',
+      'Designed an **Azure Front Door** feature that routes requests to external endpoints for verification before they reach the origin',
+      'Implemented E2E support across the **control plane (C#)** and **data plane (C, Rust)**, providing the design and proof of concept for Azure Front Door Edge Actions',
     ],
   },
   {
@@ -50,9 +49,9 @@ export const experiences = [
     iconBg: '#D3D3D3',
     date: 'June 2025 - August 2025',
     points: [
+      'Completed the E2E **redline obligation extraction** flow, using an LLM to extract critical data from edited contracts',
       'Reduced malformed responses to **0.0%**, improved extraction accuracy to **86%** via model tuning on **1,000+ obligations** (Python)',
       'Cut integration time by **72%** across **50+ obligation types** with type-safe Gemini library (Java)',
-      'Shipped first **E2E redline obligation extraction** flow in pre-production',
     ],
   },
   {
@@ -61,10 +60,20 @@ export const experiences = [
     company_name: 'Microsoft',
     icon: microsoft,
     iconBg: '#D3D3D3',
-    date: 'September 2025 - Current',
+    date: 'September 2025 - September 2026',
     points: [
-      'Built **traffic replayer** forking prod traffic to pre-prod for **A/B pre-release validation**',
-      'Boosted config coverage **24% → 91%** and dev efficiency **~62%** with automated Perl testing framework',
+      'Built **Osmosis**, an E2E agent linking control-plane and data-plane repositories that cut feature development from **2 weeks to 2 days**',
+      'Implemented **Traffic Replayer** to clone **0.01% of production traffic** into pre-production for A/B validation and risk-free custom build testing',
+      'Increased total code coverage by **6%** and saved **500+ engineering hours** with RCM Tester, a framework for automatically generating tests',
     ],
+  },
+  {
+    title: 'Software Engineer',
+    subtitle: 'Google Cloud Business Partners',
+    company_name: 'Google',
+    icon: googlelogo,
+    iconBg: '#D3D3D3',
+    date: 'September 2026 - Current',
+    points: [],
   },
 ];

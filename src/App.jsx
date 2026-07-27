@@ -23,11 +23,9 @@ const Education = lazy(() => import('./components/EducationLedger'));
 const Experience = lazy(() => import('./components/Experience'));
 const Works = lazy(() => import('./components/Works'));
 const Research = lazy(() => import('./components/ResearchGallery'));
-const Awards = lazy(() => import('./components/Awards'));
 const SkillsMatrix = lazy(() => import('./components/SkillsMatrix'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Interests = lazy(() => import('./components/Interests'));
-const Volunteering = lazy(() => import('./components/Volunteering'));
 
 const DeferredPortfolioSection = ({
   id,
@@ -68,14 +66,12 @@ const HomePage = () => {
           </Suspense>
         </DeferredSection>
 
-        <DeferredPortfolioSection id="work" variant="dots" component={Experience} loadingComponent={LoadingComponent} minHeight="110vh" />
+        <DeferredPortfolioSection id="work" variant="career" component={Experience} loadingComponent={LoadingComponent} minHeight="110vh" />
         <DeferredPortfolioSection id="skills" variant="lines" component={SkillsMatrix} loadingComponent={LoadingComponent} />
         <DeferredPortfolioSection id="education" variant="grid" component={Education} loadingComponent={LoadingComponent} />
         <DeferredPortfolioSection id="projects" variant="mesh" component={Works} loadingComponent={LoadingComponent} minHeight="110vh" />
         <DeferredPortfolioSection id="research" variant="dots" component={Research} loadingComponent={LoadingComponent} />
-        <DeferredPortfolioSection id="awards" variant="grid" component={Awards} loadingComponent={LoadingComponent} />
         <DeferredPortfolioSection id="testimonials" variant="lines" component={Testimonials} loadingComponent={LoadingComponent} />
-        <DeferredPortfolioSection id="volunteering" variant="pulse" component={Volunteering} loadingComponent={LoadingComponent} />
         <DeferredPortfolioSection id="interests" variant="grid" component={Interests} loadingComponent={LoadingComponent} />
 
         <Footer />

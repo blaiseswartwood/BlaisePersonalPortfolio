@@ -18,7 +18,7 @@ const renderQuote = (quote, highlights = []) => {
   );
 };
 
-const TestimonialCard = ({ quote, highlights, name, title, company, index }) => {
+const TestimonialCard = ({ quote, highlights, name, title, company, linkedin, index }) => {
   const accents = ['#5eead4', '#7dd3fc', '#fb7185'];
 
   return (
@@ -37,16 +37,26 @@ const TestimonialCard = ({ quote, highlights, name, title, company, index }) => 
       </p>
 
       <div className="mt-6 border-t border-white/[0.07] pt-4">
-        <div className="flex items-center gap-3">
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="testimonial-person"
+          aria-label={`View ${name}'s LinkedIn profile`}
+        >
           <div className="signal-card__avatar flex h-10 w-10 items-center justify-center rounded-full">
             <span className="material-symbols-outlined text-[18px]">person</span>
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-[14px] font-semibold text-white">{name}</p>
             <p className="text-[11px] text-secondary/70 sm:text-[12px]">{title}</p>
             <p className="signal-card__meta text-[11px] sm:text-[12px]">{company}</p>
           </div>
-        </div>
+          <span className="testimonial-person__destination">
+            LinkedIn
+            <span className="material-symbols-outlined" aria-hidden="true">north_east</span>
+          </span>
+        </a>
       </div>
     </motion.article>
   );
@@ -63,11 +73,11 @@ const Testimonials = () => {
 
       <div className="mt-12 flex flex-wrap gap-8 justify-center">
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} index={index} {...testimonial} />
+          <TestimonialCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Testimonials, "testimonials", "08");
+export default SectionWrapper(Testimonials, "testimonials", "07");

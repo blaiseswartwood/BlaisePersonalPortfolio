@@ -6,7 +6,7 @@ import microsoft from '../assets/company/microsoft.png';
 import googlelogo from '../assets/company/google.webp';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc'
-import StatCounters from './StatCounters';
+import ProfileFacts from './ProfileFacts';
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -53,23 +53,34 @@ const About = () => {
         <div className="section-divider" />
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
-        Software engineer at <span className="text-white font-medium">Microsoft</span> with internships at 
-        <span className="text-white font-medium"> Google</span> and <span className="text-white font-medium">Microsoft</span>. 
-        BS in Computer Science from <span className="text-white font-medium">Rose-Hulman Institute of Technology</span> with 
-        minors in Mathematics and Data Science. Focused on <span className="text-[#915EFF]">Generative AI</span> and <span className="text-[#915EFF]">Machine Learning</span>.
-      </motion.p>
+      <div className="about-intro-grid">
+        <div className="min-w-0">
+          <motion.p
+            variants={fadeIn("", "", 0.1, 1)}
+            className="text-secondary text-[17px] leading-[30px]">
+            Software engineer at <span className="text-white font-medium">Google</span>, previously building cloud infrastructure and
+            AI-powered developer tools for <span className="text-white font-medium">Microsoft Azure Front Door</span>. BS in Computer
+            Science from <span className="text-white font-medium">Rose-Hulman Institute of Technology</span> with minors in Mathematics
+            and Data Science. Focused on <span className="text-[#915EFF]">Generative AI</span> and <span className="text-[#915EFF]">Machine Learning</span>.
+          </motion.p>
 
-      {/* Company Highlights */}
-      <div className="mt-10 flex flex-wrap gap-5 max-w-3xl">
-        <CompanyCard name="Microsoft" role="Software Engineer — Azure Front Door" logo={microsoft} index={0} />
-        <CompanyCard name="Google" role="Software Engineer Intern — Google Cloud" logo={googlelogo} index={1} />
+          <div className="mt-10 flex flex-wrap gap-5">
+            <CompanyCard name="Google" role="Software Engineer — Google Cloud" logo={googlelogo} index={0} />
+            <CompanyCard name="Microsoft" role="Software Engineer — Azure Front Door" logo={microsoft} index={1} />
+          </div>
+        </div>
+
+        <motion.figure
+          variants={fadeIn('left', 'spring', 0.18, 0.8)}
+          className="about-portrait"
+        >
+          <div className="about-portrait__media">
+            <img src="/assets/portrait-07-2026.jpg" alt="Blaise Swartwood in Venice" loading="lazy" decoding="async" />
+          </div>
+        </motion.figure>
       </div>
 
-      {/* Animated Stat Counters */}
-      <StatCounters />
+      <ProfileFacts />
 
       {/* Focus Areas */}
       <motion.div variants={textVariant()} className="mt-14">

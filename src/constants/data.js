@@ -8,6 +8,6 @@ export const navLinks = [
 
 // Resume links
 export const resumeLinks = {
-  desktop: "https://drive.google.com/file/d/1GelExml7GkmBehUtWqChXHXopSoHezhd/view?usp=sharing",
-  mobile: "https://drive.google.com/file/d/10Ybj21mwfqhpkoe54ls5oZURLARTfiou/view?usp=sharing"
+  desktop: "/assets/BlaiseResumeMaster.pdf",
+  mobile: "/assets/BlaiseResumeMaster.pdf",
 };

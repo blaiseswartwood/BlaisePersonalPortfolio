@@ -19,7 +19,7 @@ function HOC() {
                 <span className="hidden md:flex items-center gap-2 absolute top-20 right-16 z-[2] select-none pointer-events-none">
                     <span className="font-display text-[13px] font-medium tracking-[0.3em] text-[#915EFF]/70">{sectionNumber}</span>
                     <span className="w-8 h-px bg-secondary/25" />
-                    <span className="font-display text-[12px] tracking-[0.3em] text-secondary/40">10</span>
+                    <span className="font-display text-[12px] tracking-[0.3em] text-secondary/40">08</span>
                 </span>
             )}
             <Component />

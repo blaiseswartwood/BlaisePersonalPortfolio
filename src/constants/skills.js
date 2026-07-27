@@ -1,15 +1,15 @@
 export const skillGroups = [
   {
+    title: 'AI / ML',
+    icon: 'model_training',
+    description: 'Agentic systems and models designed for measurable, reliable production outcomes.',
+    skills: ['Agentic AI', 'GitHub Copilot', 'LLM Fine-Tuning', 'PyTorch', 'Hugging Face', 'Scikit-Learn', 'Computer Vision', 'TensorFlow'],
+  },
+  {
     title: 'Languages',
     icon: 'code',
     description: 'Production and research work across application, data, and systems layers.',
     skills: ['Python', 'Java', 'C#', 'C', 'Rust', 'SQL', 'R', 'MATLAB'],
-  },
-  {
-    title: 'AI / ML',
-    icon: 'model_training',
-    description: 'Models and intelligent systems designed for measurable, reliable outcomes.',
-    skills: ['PyTorch', 'Scikit-Learn', 'Hugging Face', 'LLM Fine-Tuning', 'Computer Vision', 'TensorFlow'],
   },
   {
     title: 'Cloud / Infra',
